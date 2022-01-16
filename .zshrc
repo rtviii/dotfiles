@@ -178,7 +178,6 @@ alias utopiarsync="rsync -avzr -e \"ssh -i ~/dev/notes/AWS/rxzhypha.pem\""
 alias sshutopia="ssh -i ~/dev/notes/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com"
 
 alias gcm="git commit -m"
-alias tkn="echo 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"
 alias ribetl='cd ~/dev/riboxyzbackend/ribetl'
 
 
@@ -195,6 +194,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completi    on
 
-export GKB_API_PASSWORD=kush552881498
-export GKB_API_USER=$(whoami)
 source $ZSH/oh-my-zsh.sh

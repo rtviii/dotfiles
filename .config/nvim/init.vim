@@ -14,6 +14,8 @@
 
 :lua require('init')
 
+source $HOME/.config/nvim/rnvimr.vim
+
 hi Comment cterm=italic
 syntax on
 set clipboard+=unnamedplus

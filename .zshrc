@@ -5,10 +5,14 @@ EDITOR=nvim
 unsetopt BEEP
 
 
-source ~/.ssh/vault
 source ~/.bash_functions.sh
 export ZSH="/home/$(whoami)/.oh-my-zsh"
+export litefarm_pg="PGPASSWORD=$litefarm_pwd psql -U $litefarm_usr -h $litefarm_host -p $litefarm_port -d $litefarm_db"
+alias lf="~/dev/litefarm"
 
+export sb_pg="PGPASSWORD=$sb_pg_pwd psql -U $sb_pg_usr -h $sb_pg_host -p $sb_pg_port -d $sb_pg_db --set=sslmode=require --set=sslrootcert=$sb_pg_sslcert"
+#alias sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
+export sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
 
 
 newrepo(){
@@ -17,6 +21,7 @@ newrepo(){
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+alias desk="cd ~/Desktop"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈[[ PROMPT ]]┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 autoload -Uz vcs_info
@@ -56,7 +61,8 @@ alias vimrc="nvim ~/.config/nvim/init.vim"
 alias luarc="nvim ~/.config/nvim/lua/init.lua"
 alias nvimd="~/.config/nvim"
 
-alias secrets="nvim ~/dev/notes/Secrets.md"
+alias secrets='nvim ~/.ssh/secrets.env'
+alias ssc="source ~/.ssh/secrets.env"
 alias dev="cd ~/dev/"
 alias sb="cd ~/dev/sb/"
 alias notes="cd ~/dev/notes/;"
@@ -65,15 +71,23 @@ alias macs="cd ~/.emacs.d"
 
 alias zshsrc="source ~/.zshrc"
 
-alias sv="sudo nvim"
+alias sv="sudo -E -s; vim"
 alias v="nvim"
 alias vim="nvim"
+
+
+
+#----------------------[TMUX]-----------------------------------------
+#
 alias tmuxconf="nvim ~/.tmux.conf"
 alias tmuxls="tmux ls"
 alias tmuxa="tmux attach -t"
-alias tmuxsrc="tmux source-file ~/.tmux.conf"
-
+alias tmuxa="tmux attach -t"
+alias tmuxk="tmux kill-session -at " # kill all sessions except the current one
+alias tkp="tmux kill-pane -t"
 # alias tmuxclean="tmux kill-session -a"
+#
+#---------------------------------------------------------------
 alias xx="exit"
 alias jctl="sudo journalctl -e -u"
 alias p3="python3"
@@ -102,6 +116,7 @@ alias gitrmall="git ls-tree -r master --name-only|xargs git rm -r --cached"
 #------------------------------------------------------------------
 alias ee='nautilus .'
 alias p3rs="p3 manage.py runserver"
+alias shdir="~/.ssh/"
 
 alias sockeye="ssh rtviii@sockeye.arc.ubc.ca"
 alias cv="~/dev/cv/"
@@ -123,6 +138,8 @@ alias biodata="cd /home/$(whoami)/dev/biodata-integration-proposal"
 alias wq="code ."
 alias nst="npm start"
 
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Ribosome
+
 alias bend="cd /home/$(whoami)/dev/riboxyzbackend && vup"
 alias fend="cd /home/$(whoami)/dev/ribosome.xyz-frontend.ts"
 
@@ -134,11 +151,7 @@ alias neoconf="sudo nvim /etc/neo4j/neo4j.conf"
 alias neolog="sudo nvim /var/log/neo4j"
 alias neodata="cd /var/lib/neo4j/data"
 
-
-
-
-
-
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯
 
 alias neologin="sudo -u neo4j /bin/cypher-shell -u neo4j -p 55288"
 alias neostop="sudo systemctl stop neo4j"
@@ -146,9 +159,9 @@ alias neostart="sudo systemctl start neo4j"
 alias neostat="sudo systemctl status  neo4j"
 alias neoimport="/var/lib/neo4j/import"
 
-
-
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯DOCKER
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Redis
+alias rds='redis-cli'
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
 alias dk="docker"
 alias dkcn="docker container"
 alias dknw="docker network"
@@ -156,10 +169,13 @@ alias dkcp="docker-compose"
 alias dkvm="docker volume"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
+# ===================== Solana Beach
+alias sbend="/home/rxz/dev/sb/sb-backend-2"
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 #
 
 
-alias tsh='ssh -i "~/dev/notes/Terra/rxz-terra.pem"  $TERRADNODE'
+alias tsh='ssh -X -i "~/dev/notes/Terra/rxz-terra.pem"  $TERRADNODE'
 alias terrarsync="rsync -avzr -e ssh -i \"~/dev/notes/Terra/rxz-terra.pem\""
 
 alias tfl="~/dev/TFL"
@@ -189,6 +205,10 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+source ~/.ssh/vault
+alias secinit='source ~/.ssh/Secrets.md &> /dev/null'
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

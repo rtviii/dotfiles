@@ -1,4 +1,4 @@
-ZSH_DISABLE_COMPFIX=true
+cSH_DISABLE_COMPFIX=true
 KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search)
 EDITOR=nvim
@@ -8,11 +8,24 @@ unsetopt BEEP
 source ~/.bash_functions.sh
 export ZSH="/home/$(whoami)/.oh-my-zsh"
 export litefarm_pg="PGPASSWORD=$litefarm_pwd psql -U $litefarm_usr -h $litefarm_host -p $litefarm_port -d $litefarm_db"
-alias lf="~/dev/litefarm"
+alias lf="~/dev/litefarm; vup"
 
 export sb_pg="PGPASSWORD=$sb_pg_pwd psql -U $sb_pg_usr -h $sb_pg_host -p $sb_pg_port -d $sb_pg_db --set=sslmode=require --set=sslrootcert=$sb_pg_sslcert"
 #alias sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
 export sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
+
+
+lgtm(){
+    if [[ ${#1} -lt 2 ]]
+    then
+        echo "𓃻 :Provide a sensible commit message, pal."
+        return 1
+    fi
+
+    git add .
+    git commit -m "$1"
+    git push o master
+}
 
 
 newrepo(){
@@ -26,12 +39,19 @@ alias desk="cd ~/Desktop"
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈[[ PROMPT ]]┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git*' formats "⟦ %F{green}%b%f ⟧"
+zstyle ':vcs_info:git*' formats "[%F{green}%b%f𓅊]"
  precmd() {
      vcs_info
      }
 setopt prompt_subst
-prompt='%n ${vcs_info_msg_0_} %(?.%F{blue}☉ .%F{blue}%?)    '
+prompt='⁛⁛⁙ %U%M%u.%n ${vcs_info_msg_0_} '
+
+
+alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
+
+
+
+
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 
 bindkey '\e[A' history-beginning-search-backward
@@ -173,11 +193,9 @@ alias dkvm="docker volume"
 alias sbend="/home/rxz/dev/sb/sb-backend-2"
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 #
-
-
-alias tsh='ssh -X -i "~/dev/notes/Terra/rxz-terra.pem"  $TERRADNODE'
 alias terrarsync="rsync -avzr -e ssh -i \"~/dev/notes/Terra/rxz-terra.pem\""
 
+alias tfld="~/dev/TFL/terrad-loadtest"
 alias tfl="~/dev/TFL"
 alias sol='solana'
 alias cbpf='cargo build-bpf'
@@ -207,7 +225,6 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 source ~/.ssh/vault
-alias secinit='source ~/.ssh/Secrets.md &> /dev/null'
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -215,3 +232,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completi    on
 
 source $ZSH/oh-my-zsh.sh
+
+
+
+# Regular installs:
+# https://github.com/ranger/ranger.git
+# https://github.com/zsh-users/zsh-syntax-highlighting
+# https://github.com/softmoth/zsh-vim-mode
+# https://github.com/zsh-users/zsh-autosuggestions
+# https://github.com/zsh-users/zsh-history-substring-search
+# Packer:
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# sudo add-apt-repository ppa:neovim-ppa/unstable
+# sudo apt-get update
+# sudo apt-get install neovim
+

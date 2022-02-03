@@ -4,18 +4,41 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-su
 EDITOR=nvim
 unsetopt BEEP
 
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈[[ PROMPT
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
+ precmd() {
+     vcs_info
+     }
+setopt prompt_subst
+prompt='%F{cyan}⋄%f  %U%M%u.%n ${vcs_info_msg_0_} '
+#]]┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
+# ◪◈◥◤◣◢◀▼▖▚▙▝▢ 〡
 
 source ~/.bash_functions.sh
 export ZSH="/home/$(whoami)/.oh-my-zsh"
 export litefarm_pg="PGPASSWORD=$litefarm_pwd psql -U $litefarm_usr -h $litefarm_host -p $litefarm_port -d $litefarm_db"
 alias lf="~/dev/litefarm; vup"
 
+alias GG="echo $GIT_TOKEN | xo"
 export sb_pg="PGPASSWORD=$sb_pg_pwd psql -U $sb_pg_usr -h $sb_pg_host -p $sb_pg_port -d $sb_pg_db --set=sslmode=require --set=sslrootcert=$sb_pg_sslcert"
 #alias sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
 export sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
 
 
 lgtm(){
+    if [[ ${#1} -lt 2 ]]
+    then
+        echo "𓃻 :Provide a sensible commit message, pal."
+        return 1
+    fi
+
+    git add .
+    git commit -m "$1"
+    git push origin main
+}
+lgtmo(){
     if [[ ${#1} -lt 2 ]]
     then
         echo "𓃻 :Provide a sensible commit message, pal."
@@ -36,15 +59,6 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias desk="cd ~/Desktop"
 
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈[[ PROMPT ]]┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git*' formats "[%F{green}%b%f𓅊]"
- precmd() {
-     vcs_info
-     }
-setopt prompt_subst
-prompt='⁛⁛⁙ %U%M%u.%n ${vcs_info_msg_0_} '
 
 
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"

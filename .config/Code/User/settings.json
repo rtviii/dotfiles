@@ -304,7 +304,7 @@
     "gitlens.codeLens.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
     "[rust]": {
-      "editor.defaultFormatter": "rust-lang.rust"
+      "editor.defaultFormatter": "matklad.rust-analyzer"
     },
     "[zig]": {
       "editor.defaultFormatter": "tiehuis.zig"
@@ -318,10 +318,11 @@
     "rust-analyzer.lens.debug": false,
     "git.autofetch": true,
     "workbench.colorTheme": "Nord",
-    "workbench.iconTheme": "spectrum-vscode-icons-minimal",
     "workbench.productIconTheme": "icons-carbon",
     "workbench.editor.enablePreview": false,
     "[c]": {
       "editor.defaultFormatter": "ms-vscode.cpptools"
-    }
+    },
+    "git.enableCommitSigning": true,
+    "git.alwaysSignOff": true
 }

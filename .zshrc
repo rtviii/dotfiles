@@ -4,7 +4,6 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-su
 EDITOR=nvim
 unsetopt BEEP
 
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈[[ PROMPT
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
@@ -12,14 +11,20 @@ zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
      vcs_info
      }
 setopt prompt_subst
-prompt='%F{cyan}⋄%f  %U%M%u.%n ${vcs_info_msg_0_} '
-#]]┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
-# ◪◈◥◤◣◢◀▼▖▚▙▝▢ 〡
+prompt='%F{blue}ᢹ%f %M.%B%n%b ${vcs_info_msg_0_} '
+
+
+
+alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
 
 source ~/.bash_functions.sh
 export ZSH="/home/$(whoami)/.oh-my-zsh"
+
 export litefarm_pg="PGPASSWORD=$litefarm_pwd psql -U $litefarm_usr -h $litefarm_host -p $litefarm_port -d $litefarm_db"
+export litefarm_prod="PGPASSWORD=$litefarm_prod_pwd psql -U $litefarm_prod_usr -h $litefarm_prod_host -p $litefarm_prod_port -d $litefarm_prod_db"
+
 alias lf="~/dev/litefarm; vup"
+alias curse="~/dev/ncurses"
 
 alias GG="echo $GIT_TOKEN | xo"
 export sb_pg="PGPASSWORD=$sb_pg_pwd psql -U $sb_pg_usr -h $sb_pg_host -p $sb_pg_port -d $sb_pg_db --set=sslmode=require --set=sslrootcert=$sb_pg_sslcert"
@@ -30,18 +35,18 @@ export sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rd
 lgtm(){
     if [[ ${#1} -lt 2 ]]
     then
-        echo "𓃻 :Provide a sensible commit message, pal."
+        echo "Provide a sensible commit message, pal."
         return 1
     fi
 
     git add .
     git commit -m "$1"
-    git push origin main
+    git push origin master
 }
 lgtmo(){
     if [[ ${#1} -lt 2 ]]
     then
-        echo "𓃻 :Provide a sensible commit message, pal."
+        echo "Provide a sensible commit message, pal."
         return 1
     fi
 
@@ -52,7 +57,7 @@ lgtmo(){
 
 
 newrepo(){
- curl -i -H "Authorization: token $GIT_TOKEN" -d "{\"name\": \"$1\", \"private\": \"$2\"}" https://api.github.com/user/repos
+ curl -i -H "Authorization: token $GIT_TOKEN" -d "{\"name\": \"$1\", \"private\": \"$2\"}" https://api.github.com/user/repos  | grep "clone_url"
 }
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -85,7 +90,7 @@ alias sagu1="sudo apt-get update"
 alias sagu2="sudo apt-get upgrade"
 
 alias zshrc="nvim ~/.zshrc"
-alias ribscp="scp -i ~/dev/notes/AWS/ribosome.pem"
+alias ribscp="scp -i ~/dev/docs/AWS/ribosome.pem"
 
 alias htpconf="cd /etc/apache2"
 alias htpstatus="sudo systemctl status apache2"
@@ -93,14 +98,13 @@ alias htpstatus="sudo systemctl status apache2"
 
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias luarc="nvim ~/.config/nvim/lua/init.lua"
-alias nvimd="~/.config/nvim"
 
 alias secrets='nvim ~/.ssh/secrets.env'
 alias ssc="source ~/.ssh/secrets.env"
 alias dev="cd ~/dev/"
 alias sb="cd ~/dev/sb/"
-alias notes="cd ~/dev/notes/;"
-alias N="cd ~/dev/notes/; nvim ."
+alias docs="cd ~/dev/docs/;"
+alias N="cd ~/dev/docs/; nvim ."
 alias macs="cd ~/.emacs.d"
 
 alias zshsrc="source ~/.zshrc"
@@ -207,7 +211,7 @@ alias dkvm="docker volume"
 alias sbend="/home/rxz/dev/sb/sb-backend-2"
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 #
-alias terrarsync="rsync -avzr -e ssh -i \"~/dev/notes/Terra/rxz-terra.pem\""
+alias terrarsync="rsync -avzr -e ssh -i \"~/dev/docs/Terra/rxz-terra.pem\""
 
 alias tfld="~/dev/TFL/terrad-loadtest"
 alias tfl="~/dev/TFL"
@@ -216,14 +220,14 @@ alias cbpf='cargo build-bpf'
 alias stv='solana-test-validator'
 
 
-alias aws='cd /home/rxz/dev/notes/AWS'
+alias aws='cd /home/rxz/dev/docs/AWS'
 alias rib='ssh ubuntu@ribosome.xyz'
 alias cifparser='cd ~/dev/rust_train/cifparser'
 
 
-alias ribrsync="rsync -avzr -e \"ssh -i ~/dev/notes/AWS/ribosome.pem\""
-alias utopiarsync="rsync -avzr -e \"ssh -i ~/dev/notes/AWS/rxzhypha.pem\""
-alias sshutopia="ssh -i ~/dev/notes/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com"
+alias ribrsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
+alias utopiarsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/rxzhypha.pem\""
+alias sshutopia="ssh -i ~/dev/docs/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com"
 
 alias gcm="git commit -m"
 alias ribetl='cd ~/dev/riboxyzbackend/ribetl'
@@ -247,6 +251,13 @@ export NVM_DIR="$HOME/.nvm"
 
 source $ZSH/oh-my-zsh.sh
 
+
+
+
+alias gpgssh='unset SSH_AGENT_PID;if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then;  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";fi;export GPG_TTY=$(tty);gpg-connect-agent updatestartuptty /bye >/dev/null;'
+# Notes
+
+# vscode configs are at /home/$(whoami)/.config/Code/User
 
 
 # Regular installs:

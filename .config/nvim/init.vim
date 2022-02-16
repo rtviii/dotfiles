@@ -90,3 +90,9 @@ endif
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWinEnter * set foldlevel=999999
 
+let g:neovide_cursor_trail_length=0.02
+let g:neovide_touch_drag_timeout=0.02
+let g:neovide_cursor_animation_length=0.02
+let g:neovide_cursor_trail_length=0.02
+
+

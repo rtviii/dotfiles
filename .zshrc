@@ -154,7 +154,8 @@ alias gitrmall="git ls-tree -r master --name-only|xargs git rm -r --cached"
 #------------------------------------------------------------------
 alias ee='nautilus .'
 alias p3rs="p3 manage.py runserver"
-alias shdir="~/.ssh/"
+alias sshdir="~/.ssh/"
+alias sshconfig="vim /home/$(whoami)/.ssh/config"
 
 alias sockeye="ssh rtviii@sockeye.arc.ubc.ca"
 alias cv="~/dev/cv/"

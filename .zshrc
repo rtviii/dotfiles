@@ -14,10 +14,10 @@ setopt prompt_subst
 prompt='%F{blue}ᢹ%f %M.%B%n%b ${vcs_info_msg_0_} '
 
 
+# "Train a neural network to recognize hashes, addresses, accounts, transactions on multiple chains and vendor that as a browser extension."
+
 
 alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
-
-source ~/.bash_functions.sh
 export ZSH="/home/$(whoami)/.oh-my-zsh"
 
 export litefarm_pg="PGPASSWORD=$litefarm_pwd psql -U $litefarm_usr -h $litefarm_host -p $litefarm_port -d $litefarm_db"
@@ -30,6 +30,19 @@ alias GG="echo $GIT_TOKEN | xo"
 export sb_pg="PGPASSWORD=$sb_pg_pwd psql -U $sb_pg_usr -h $sb_pg_host -p $sb_pg_port -d $sb_pg_db --set=sslmode=require --set=sslrootcert=$sb_pg_sslcert"
 #alias sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
 export sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
+
+
+
+
+alias sbkowl='echo "Starting Kowl"; docker run --network=host -p 8080:8080 -e KAFKA_BROKERS=localhost:9092 quay.io/cloudhut/kowl:master'
+
+alias sbkfkboth='ssh -f -N -g -L 8080:127.0.0.1:8080 -L 9092:127.0.0.1:9092 sb-gateway'
+
+alias sbkfktunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 sb-gateway'
+
+# alias sbkowl='docker run --network=host -p 8080:8080 -e KAFKA_BROKERS=localhost:9092 quay.io/cloudhut/kowl:master'
+
+
 
 
 lgtm(){
@@ -113,15 +126,14 @@ alias sv="sudo -E -s; vim"
 alias v="nvim"
 alias vim="nvim"
 
-
-
 #----------------------[TMUX]-----------------------------------------
 #
 alias tmuxconf="nvim ~/.tmux.conf"
 alias tmuxls="tmux ls"
 alias tmuxa="tmux attach -t"
 alias tmuxa="tmux attach -t"
-alias tmuxk="tmux kill-session -at " # kill all sessions except the current one
+alias tmuxks="tmux kill-session -at " # kill all sessions except the current one
+alias tmuxkw="tmux kill-window -t " # kill all sessions except the current one
 alias tkp="tmux kill-pane -t"
 # alias tmuxclean="tmux kill-session -a"
 #
@@ -165,7 +177,6 @@ alias poly="~/dev/polygen; vup"
 alias i3conf="nvim /home/$(whoami)/.config/i3/config"
 alias i3reload="i3-msg reload && i3-msg restart"
 
-alias shconfig="sudo nvim /etc/ssh/sshd_config"
 alias shrestart="sudo service ssh restart"
 
 alias confs="cd ~/.config/"
@@ -243,8 +254,6 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-source ~/.ssh/vault
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -252,12 +261,20 @@ export NVM_DIR="$HOME/.nvm"
 
 source $ZSH/oh-my-zsh.sh
 
+export bombaynode='ec2-54-67-3-130.us-west-1.compute.amazonaws.com'
+export columbusnode='ec2-54-241-150-249.us-west-1.compute.amazonaws.com'
 
+alias operators_bombay="curl $bombaynode:1317/staking/validators | jq  '.result[].operator_address'"
+alias operators_bombay="curl $columbusnode:1317/staking/validators | jq  '.result[].operator_address'"
+export valopers="curl https://lcd.terra.dev/staking/validators | jq \'.result[].operator_address\'"
 
 
 alias gpgssh='unset SSH_AGENT_PID;if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then;  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";fi;export GPG_TTY=$(tty);gpg-connect-agent updatestartuptty /bye >/dev/null;'
 # Notes
-
+#
+#
+alias tfldocs='~/dev/TFL/docs'
+alias rpkfk='cd ~/dev/sb/redpanda-kafka-python'
 # vscode configs are at /home/$(whoami)/.config/Code/User
 
 

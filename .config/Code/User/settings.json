@@ -1,4 +1,7 @@
 {
+
+
+  // #---------------------------------------------------------------------------[Vim]
   "vim.easymotion"           : true,
   "vim.incsearch"            : true,
   "vim.useSystemClipboard"   : true,
@@ -39,10 +42,9 @@
     "vim.visualModeKeyBindings": [
     {
       "before": ["K"],
-      "after": ["5", "k"]
+      "after":["5","k"]
     },
-    {
-      "before": ["J"],
+    { "before": ["J"],
       "after": ["5", "j"]
     },
   ],
@@ -57,17 +59,24 @@
     {"before":["R", "R"],
       "after":["c", "i", "]"]
     },
-    {
-      "before": ["K"],
-      "after": ["5", "k"]
+    { "before": ["S"],
+        "after": ["J"]
     },
     {
-      "before": ["J"],
+      "before": ["D"],
+       "after" : ["k","J"]
+    },
+    {
+      "before": ["K"],
+      "after":["5","k"]
+    },
+    { "before": ["J"],
       "after": ["5", "j"]
     },
     {
       "before": ["<leader>", "d"],
       "after": ["d", "d"]
+
     },
     {
       "before": ["<C-n>"],
@@ -76,9 +85,8 @@
     {
       "before": ["<C-q>"],
       "after":["f",">","a"]
-    },
+    }
   ],
-  // "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
@@ -86,9 +94,10 @@
   "vim.textwidth": 100, "vim.highlightedyank.color"   : "#0c0907",
   "vim.highlightedyank.enable"  : true,
   "vim.highlightedyank.duration": 400,
+  // #-----------------------------------------------------------------------------------
+
   // Styles-------------------------------------
   // "diffEditor.renderIndicators": false,
-
   "editor.guides.indentation"    : false,
   "editor.foldingHighlight"      : false,
   "editor.occurrencesHighlight"  : false,
@@ -96,7 +105,7 @@
 
     "list.errorForeground"                     : "#ffffff",
     "list.warningForeground"                   : "#f3fdff",
-    "gitDecoration.modifiedResourceForeground" : "#fcedad",
+    "gitDecoration.modifiedResourceForeground" : "#a8cfe6",
     "gitDecoration.untrackedResourceForeground": "#707070",
 
     // "activityBar.activeBorder": "#fff",
@@ -122,9 +131,7 @@
 
   // PRETTIER--------------------------------------------------------
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave"    : false,
-  // PRETTIER--------------------------------------------------------
-  "editor.minimap.enabled"       : false,
+  "editor.formatOnSave": false,
   "window.customMenuBarAltFocus" : false,
   "window.enableMenuBarMnemonics": false,
   "window.titleBarStyle"         : "custom",
@@ -142,7 +149,7 @@
   "[markdown]"            : {
     "editor.wordWrap"        : "wordWrapColumn",
     "editor.wrappingIndent"  : "same",
-    "editor.wordWrapColumn"  : 80,
+    "editor.wordWrapColumn"  : 90,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
   },
   "explorer.confirmDragAndDrop": false,
@@ -150,6 +157,7 @@
   "editor.defaultFormatter": "ms-python.python"
   },
 
+  "eslint.enable": true,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     // "editor.codeActionsOnSave": {
@@ -166,7 +174,6 @@
   "terminal.integrated.inheritEnv"    : false,
   "python.languageServer"             : "Pylance",
   "vim.foldfix"                       : true,
-  "C_Cpp.updateChannel"               : "Insiders",
   "latex-workshop.view.pdf.viewer"    : "tab",
   "breadcrumbs.enabled"               : true,
   "window.menuBarVisibility"          : "hidden",
@@ -209,15 +216,15 @@
     "bold"           : false,
     "italic"         : false
   },
-  {
-    "tag"            : "*",
-    "color"          : "#ccffcb",
-    "strikethrough"  : false,
-    "underline"      : true,
-    "backgroundColor": "transparent",
-    "bold"           : true,
-    "italic"         : false
-  },
+  // {
+  //   "tag"            : "*",
+  //   "color"          : "#ccffcb",
+  //   "strikethrough"  : false,
+  //   "underline"      : true,
+  //   "backgroundColor": "transparent",
+  //   "bold"           : true,
+  //   "italic"         : false
+  // },
 
   {
     "tag"            : "※",
@@ -249,8 +256,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.sideBar.location"                : "left",
-  "explorer.confirmDelete"                    : false,
-  "python.insidersChannel"                    : "daily",
+  "explorer.confirmDelete": false,
   "python.pythonPath"                         : "/usr/bin/python3",
   "jupyter.askForLargeDataFrames"             : true,
   "workbench.statusBar.visible"               : true,
@@ -268,13 +274,13 @@
   "editor.defaultFormatter": "vscode.json-language-features",
   "editor.wordWrap"        : "wordWrapColumn",
   "editor.wrappingIndent"  : "same",
-  "editor.wordWrapColumn"  : 100,
+  "editor.wordWrapColumn"  : 120,
 },
 "editor.tabSize"              : 4,
 "editor.cursorStyle"          : "line",
 "editor.insertSpaces"         : true,
 "editor.lineNumbers"          : "on",
-"editor.wordSeparators"       : "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+"editor.wordSeparators"       : "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_",
 "editor.wordWrap"             : "off",
 "notebook.cellToolbarLocation": {
   "default"         : "right",
@@ -304,25 +310,81 @@
     "gitlens.codeLens.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
     "[rust]": {
-      "editor.defaultFormatter": "matklad.rust-analyzer"
+      "editor.defaultFormatter": "rust-lang.rust-analyzer",
+      "editor.semanticHighlighting.enabled": false
     },
     "[zig]": {
       "editor.defaultFormatter": "tiehuis.zig"
     },
-    "rust-analyzer.inlayHints.enable": false,
-    "rust-analyzer.inlayHints.chainingHints": false,
-    "rust-analyzer.hoverActions.run": false,
-    "rust-analyzer.lens.implementations": false,
-    "rust-analyzer.hoverActions.implementations": false,
-    "rust-analyzer.lens.run": false,
-    "rust-analyzer.lens.debug": false,
     "git.autofetch": true,
     "workbench.colorTheme": "Nord",
-    "workbench.productIconTheme": "icons-carbon",
     "workbench.editor.enablePreview": false,
     "[c]": {
       "editor.defaultFormatter": "ms-vscode.cpptools"
     },
     "git.enableCommitSigning": true,
-    "git.alwaysSignOff": true
+    "git.alwaysSignOff": true,
+    "cmake.configureOnOpen": true,
+    "[toml]": {
+      "editor.defaultFormatter": "be5invis.toml"
+    },
+    // "rust-analyzer.cargo.allFeatures": true,
+    // "rust-analyzer.trace.extension": true,
+    // "rust-analyzer.inlayHints.enable": false,
+    // "rust-analyzer.lens.implementations": false,
+    // "rust-analyzer.lens.run": false,
+    // "rust-analyzer.lens.forceCustomCommands": false,
+    // "rust-analyzer.lens.enable": false,
+    // "rust-analyzer.lens.debug": false,
+    // "rust-analyzer.inlayHints.renderColons": false,
+    // "rust-analyzer.joinLines.joinAssignments": false,
+    // "rust-analyzer.joinLines.joinElseIf": false,
+    // "rust-analyzer.joinLines.unwrapTrivialBlock": false,
+    // "rust-analyzer.joinLines.removeTrailingComma": false,
+    // "rust-analyzer.imports.granularity.enforce": true,
+    // "rust-analyzer.procMacro.attributes.enable": false,
+    // "rust-analyzer.semanticHighlighting.strings.enable": false,
+    // "rust-analyzer.highlightRelated.breakPoints.enable": false,
+    // "rust-analyzer.highlightRelated.exitPoints.enable": false,
+    // "rust-analyzer.highlightRelated.yieldPoints.enable": false,
+    // "rust-analyzer.highlightRelated.references.enable": false,
+    // "rust-analyzer.hover.documentation.enable": false,
+    // "rust-analyzer.hover.links.enable": false,
+    "editor.lineDecorationsWidth": 0.2,
+    // "editor.glyphMargin": false,
+    // "rust-analyzer.inlayHints.parameterHints.enable": false,
+    // "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.rustfmt.rangeFormatting.enable"     : true,
+    "sourcegraph.accessToken"                          : "136637ab9ca15e17c0b723b726abd50ef7238088",
+    "rust-analyzer.inlayHints.chainingHints.enable"    : false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "php.suggest.basic"                                : false,
+    "rust-analyzer.inlayHints.parameterHints.enable"   : false,
+    "rust-analyzer.inlayHints.typeHints.enable"        : false,
+    "rust-analyzer.inlayHints.renderColons"            : false,
+    "rust-analyzer.highlightRelated.breakPoints.enable": false,
+    "rust-analyzer.lens.debug.enable"                  : false,
+    "rust-analyzer.lens.enable"                        : false,
+    "editor.inlineSuggest.enabled": true,
+    "editor.minimap.enabled": false,
+    "sourcegraph.url": "https://sourcegraph.com",
+    "workbench.iconTheme": "chalice-icon-theme",
+    "vikings-icon-theme.activeIconPack": "angular",
+    "material-icon-theme.folders.theme": "none",
+    "material-icon-theme.folders.color": "#ff7043",
+    "material-icon-theme.activeIconPack": "nest",
+    "material-icon-theme.hidesExplorerArrows": false,
+    "material-icon-theme.saturation": 1,
+    "material-icon-theme.opacity": 0.5,
+    "vikings-icon-theme.hidesExplorerArrows": false,
+    "vikings-icon-theme.opacity": 0.5,
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": false,
+      "plaintext": false,
+      "markdown": true
+    },
+    // "editor.folding": false,
+
+
 }

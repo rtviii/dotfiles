@@ -22,10 +22,6 @@
     "command": "workbench.explorer.fileView.focus"
   },
   {
-    "key": "ctrl+alt+s",
-    "command": "workbench.action.focusLastEditorGroup"
-  },
-  {
     "key": "shift+alt+f",
     "command": "-editor.action.formatDocument"
   },
@@ -910,5 +906,101 @@
   {
     "key": "alt+i",
     "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "alt+i",
+    "command": "editor.action.referenceSearch.trigger"
+  },
+  {
+    "key": "shift+alt+-",
+    "command": "git.checkout"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "git.openFile",
+    "when": "editorFocus && isInDiffEditor"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "git.openChange",
+    "when": "editorFocus && !isInDiffEditor"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "sourcegraph.files.toggleVisibility"
+  },
+  {
+    "key": "ctrl+shift+8",
+    "command": "-sourcegraph.search"
+  },
+  {
+    "key": "alt+s",
+    "command": "-sourcegraph.selectionSearchWeb"
+  },
+  {
+    "key": "alt+s f",
+    "command": "sourcegraph.search"
+  },
+  {
+    "key": "alt+s a",
+    "command": "sourcegraph.files.focus"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "breadcrumbs.focusAndSelect",
+    "when": "breadcrumbsPossible"
+  },
+  {
+    "key": "ctrl+shift+[IntlBackslash]",
+    "command": "-breadcrumbs.focusAndSelect",
+    "when": "breadcrumbsPossible"
+  },
+  {
+    "key": "alt+h",
+    "command": "breadcrumbs.focusPreviousWithPicker",
+    "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "-breadcrumbs.focusPreviousWithPicker",
+    "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "breadcrumbs.focusNext",
+    "when": "breadcrumbsActive && breadcrumbsVisible"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "-breadcrumbs.focusNext",
+    "when": "breadcrumbsActive && breadcrumbsVisible"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "breadcrumbs.revealFocusedFromTreeAside",
+    "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-breadcrumbs.revealFocusedFromTreeAside",
+    "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus"
+  },
+  {
+    "key": "alt+a",
+    "command": "-sourcegraph.openInBrowser"
+  },
+  {
+    "key": "shift+alt+w",
+    "command": "workbench.action.addRootFolder"
   }
 ]

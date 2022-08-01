@@ -1,79 +1,67 @@
-cSH_DISABLE_COMPFIX=true
+ZSH_DISABLE_COMPFIX=true
 KEYTIMEOUT=1
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
 EDITOR=nvim
-unsetopt BEEP
-
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
- precmd() {
-     vcs_info
-     }
-setopt prompt_subst
-prompt='%F{blue}ᢹ%f %M.%B%n%b ${vcs_info_msg_0_} '
-
+RUSTFLAGS="-A dead_code -A unused_imports"
+export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
+export FLOB="oHMRfFnQ1HER"
+export bend="/home/rxz/dev/riboxyzbackend"
 
 # "Train a neural network to recognize hashes, addresses, accounts, transactions on multiple chains and vendor that as a browser extension."
 
-
 alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
-export ZSH="/home/$(whoami)/.oh-my-zsh"
 
-export litefarm_pg="PGPASSWORD=$litefarm_pwd psql -U $litefarm_usr -h $litefarm_host -p $litefarm_port -d $litefarm_db"
-export litefarm_prod="PGPASSWORD=$litefarm_prod_pwd psql -U $litefarm_prod_usr -h $litefarm_prod_host -p $litefarm_prod_port -d $litefarm_prod_db"
+function soundup(){
+    echo "sound up said $1"
+    pactl set-sink-volume bluez_sink.38_88_A4_F0_6E_8C.a2dp_sink $1
+}
 
-alias lf="~/dev/litefarm; vup"
-alias curse="~/dev/ncurses"
+
+
+
+alias curse="/home/rxz/dev/curses"
+alias nightmoves="/home/rxz/dev/nightmoves"
+alias cmprs="/home/rxz/dev/sb-compression-benchmarks"
+alias actxlib="/home/rxz/dev/sb-actix-lib"
+alias sbb="/home/rxz/dev/SolanaBeach"
+alias sblib="/home/rxz/dev/SolanaBeach/sb-backend-3-lib"
+alias thrd="/home/rxz/dev/threading"
+
 
 alias GG="echo $GIT_TOKEN | xo"
 export sb_pg="PGPASSWORD=$sb_pg_pwd psql -U $sb_pg_usr -h $sb_pg_host -p $sb_pg_port -d $sb_pg_db --set=sslmode=require --set=sslrootcert=$sb_pg_sslcert"
 #alias sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
 export sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
 
+# [sb-be-3-redpanda-dev]: 164.92.237.90
+alias sbrptunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 164.92.237.90'
 
-
-
+alias ccpy='cargo clippy'
 alias sbkowl='echo "Starting Kowl"; docker run --network=host -p 8080:8080 -e KAFKA_BROKERS=localhost:9092 quay.io/cloudhut/kowl:master'
-
 alias sbkfkboth='ssh -f -N -g -L 8080:127.0.0.1:8080 -L 9092:127.0.0.1:9092 sb-gateway'
-
 alias sbkfktunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 sb-gateway'
 
-# alias sbkowl='docker run --network=host -p 8080:8080 -e KAFKA_BROKERS=localhost:9092 quay.io/cloudhut/kowl:master'
-
-
-
-
-lgtm(){
-    if [[ ${#1} -lt 2 ]]
-    then
-        echo "Provide a sensible commit message, pal."
-        return 1
-    fi
-
-    git add .
-    git commit -m "$1"
-    git push origin master
-}
-lgtmo(){
-    if [[ ${#1} -lt 2 ]]
-    then
-        echo "Provide a sensible commit message, pal."
-        return 1
-    fi
-
-    git add .
-    git commit -m "$1"
-    git push o master
-}
-
+alias ribxzfigs='cd /home/rxz/dev/docs/ribosomexyz/paper_figs'
 
 newrepo(){
  curl -i -H "Authorization: token $GIT_TOKEN" -d "{\"name\": \"$1\", \"private\": \"$2\"}" https://api.github.com/user/repos  | grep "clone_url"
 }
+#curl -H "Authorization: token ACCESS_TOKEN" --data '{"name":"NEW_REPO_NAME"}' https://api.github.com/user/repos
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+function addconfigs(){
+    dot add ~/.emacs.d/init.el
+    dot add ~/.config/i3
+    dot add ~/.config/ranger/{rifle,rc}.conf
+    dot add ~/.config/nvim
+    dot add ~/.tmux.conf
+    dot add ~/.zshrc
+    dot add ~/.config/Code/User/settings.json
+    dot add ~/.config/Code/User/keybindings.json
+}
+
+
 
 alias desk="cd ~/Desktop"
 
@@ -82,6 +70,8 @@ alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
+export ZSH="/home/$(whoami)/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
@@ -93,11 +83,12 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
-
+bindkey -s '^o' 'cargo run ^M'
 alias xo="xclip -selection clipboard"
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 
 
+alias szz="du -ah --max-depth=1 . | sort"
 alias vup='VENVS=($(ls | grep *venv)); source $(pwd)/${VENVS[1]}/bin/activate;'
 alias sagu1="sudo apt-get update"
 alias sagu2="sudo apt-get upgrade"
@@ -108,16 +99,13 @@ alias ribscp="scp -i ~/dev/docs/AWS/ribosome.pem"
 alias htpconf="cd /etc/apache2"
 alias htpstatus="sudo systemctl status apache2"
 
-
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias luarc="nvim ~/.config/nvim/lua/init.lua"
 
 alias secrets='nvim ~/.ssh/secrets.env'
 alias ssc="source ~/.ssh/secrets.env"
 alias dev="cd ~/dev/"
-alias sb="cd ~/dev/sb/"
 alias docs="cd ~/dev/docs/;"
-alias N="cd ~/dev/docs/; nvim ."
 alias macs="cd ~/.emacs.d"
 
 alias zshsrc="source ~/.zshrc"
@@ -142,8 +130,6 @@ alias xx="exit"
 alias jctl="sudo journalctl -e -u"
 alias p3="python3"
 
-
-alias cnf="~/.config/"
 alias crun='~/.actin/crun'
 
 alias mkvenv='python3 -m virtualenv --python=/usr/bin/python3.10'
@@ -165,8 +151,6 @@ alias gitrmall="git ls-tree -r master --name-only|xargs git rm -r --cached"
 
 #------------------------------------------------------------------
 alias ee='nautilus .'
-alias p3rs="p3 manage.py runserver"
-alias sshdir="~/.ssh/"
 alias sshconfig="vim /home/$(whoami)/.ssh/config"
 
 alias sockeye="ssh rtviii@sockeye.arc.ubc.ca"
@@ -176,13 +160,11 @@ alias poly="~/dev/polygen; vup"
 
 alias i3conf="nvim /home/$(whoami)/.config/i3/config"
 alias i3reload="i3-msg reload && i3-msg restart"
-
 alias shrestart="sudo service ssh restart"
 
 alias confs="cd ~/.config/"
 alias cf="cut -d ',' -f"
 alias rr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
 
 alias biodata="cd /home/$(whoami)/dev/biodata-integration-proposal"
 alias wq="code ."
@@ -190,6 +172,7 @@ alias nst="npm start"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Ribosome
 
+alias ribetl="cd /home/$(whoami)/dev/riboxyzbackend/ribetl && vup"
 alias bend="cd /home/$(whoami)/dev/riboxyzbackend && vup"
 alias fend="cd /home/$(whoami)/dev/ribosome.xyz-frontend.ts"
 
@@ -219,30 +202,16 @@ alias dkcp="docker-compose"
 alias dkvm="docker volume"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
-# ===================== Solana Beach
-alias sbend="/home/rxz/dev/sb/sb-backend-2"
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
-#
-alias terrarsync="rsync -avzr -e ssh -i \"~/dev/docs/Terra/rxz-terra.pem\""
-
-alias tfld="~/dev/TFL/terrad-loadtest"
-alias tfl="~/dev/TFL"
-alias sol='solana'
-alias cbpf='cargo build-bpf'
-alias stv='solana-test-validator'
-
-
 alias aws='cd /home/rxz/dev/docs/AWS'
 alias rib='ssh ubuntu@ribosome.xyz'
 alias cifparser='cd ~/dev/rust_train/cifparser'
 
 
 alias ribrsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
+alias ribupdatersync="rsync -hvrPt -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
+
 alias utopiarsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/rxzhypha.pem\""
 alias sshutopia="ssh -i ~/dev/docs/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com"
-
-alias gcm="git commit -m"
-alias ribetl='cd ~/dev/riboxyzbackend/ribetl'
 
 
 export PATH="/usr/local/cuda-11.1/bin:$PATH"
@@ -250,6 +219,8 @@ export PATH="~/.actin/{*}:$PATH"
 export PATH="/home/rxz/.local/share/solana/install/active_release/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/home/rxz/zig-linux-x86_64-0.10.0-dev.2220+802f22073:$PATH"
+
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
@@ -259,24 +230,35 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completi    on
 
-source $ZSH/oh-my-zsh.sh
 
-export bombaynode='ec2-54-67-3-130.us-west-1.compute.amazonaws.com'
-export columbusnode='ec2-54-241-150-249.us-west-1.compute.amazonaws.com'
-
-alias operators_bombay="curl $bombaynode:1317/staking/validators | jq  '.result[].operator_address'"
-alias operators_bombay="curl $columbusnode:1317/staking/validators | jq  '.result[].operator_address'"
-export valopers="curl https://lcd.terra.dev/staking/validators | jq \'.result[].operator_address\'"
 
 
 alias gpgssh='unset SSH_AGENT_PID;if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then;  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";fi;export GPG_TTY=$(tty);gpg-connect-agent updatestartuptty /bye >/dev/null;'
-# Notes
-#
 #
 alias tfldocs='~/dev/TFL/docs'
 alias rpkfk='cd ~/dev/sb/redpanda-kafka-python'
-# vscode configs are at /home/$(whoami)/.config/Code/User
 
+alias ISAPASS='echo !Joaninha29'
+
+
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯ PROMPT -⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
+unsetopt BEEP
+setopt extendedglob
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
+ precmd() {
+     vcs_info
+     }
+
+PROMPT='%F{blue}ᢹ%f %M.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
+RPROMPT='${vcs_info_msg_0_} '
+source ~/.ssh/secrets.env
+
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 
 # Regular installs:
 # https://github.com/ranger/ranger.git
@@ -289,4 +271,5 @@ alias rpkfk='cd ~/dev/sb/redpanda-kafka-python'
 # sudo add-apt-repository ppa:neovim-ppa/unstable
 # sudo apt-get update
 # sudo apt-get install neovim
+
 

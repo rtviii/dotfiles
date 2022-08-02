@@ -1,5 +1,5 @@
 ZSH_DISABLE_COMPFIX=true
-export OMZSH_DIR=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
 EDITOR=nvim
@@ -61,7 +61,7 @@ alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
-source $OMZSH_DIR/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
@@ -288,5 +288,7 @@ function addconfigs(){
     dot add ~/.config/Code/User/settings.json
     dot add ~/.config/Code/User/keybindings.json
 }
+
+
 
 

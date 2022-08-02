@@ -1,4 +1,5 @@
 ZSH_DISABLE_COMPFIX=true
+export OMZSH_DIR=~/.oh-my-zsh
 KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
 EDITOR=nvim
@@ -60,8 +61,7 @@ alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
-export ZSH="/home/$(whoami)/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+source $OMZSH_DIR/oh-my-zsh.sh
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
@@ -254,7 +254,9 @@ function addconfigs(){
     # Make sure $ZSH is congruent with current user (/home/$x or /root)
 
     # 1.install zsh + oh my zsh
-    # 2.cp zshrc to ~
+    #   apt install zsh
+    #   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # 2.cp dotfiles/zshrc to ~
     # 3.copy zshrc plugins to ~/.oh-my-zsh/plugins
     # 3.cp tmux.conf to ~
     # 4.install neovim (>0.5 to work with lua)

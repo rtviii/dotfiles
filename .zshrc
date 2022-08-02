@@ -18,6 +18,14 @@ function soundup(){
 }
 
 
+function rp_tunnels(){
+    # the hosts are in sshconfig
+    ssh -f -N -g -L 29092:127.0.0.1:29092   sb-rp-dev;
+    ssh -f -N -g -L 9095:127.0.0.1:9095     sb-gateway;
+    ssh -f -N -g -L 9092:127.0.0.1:9092     sb-rp-prod;
+}
+
+
 
 
 alias curse="/home/rxz/dev/curses"

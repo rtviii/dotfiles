@@ -50,16 +50,6 @@ newrepo(){
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-function addconfigs(){
-    dot add ~/.emacs.d/init.el
-    dot add ~/.config/i3
-    dot add ~/.config/ranger/{rifle,rc}.conf
-    dot add ~/.config/nvim
-    dot add ~/.tmux.conf
-    dot add ~/.zshrc
-    dot add ~/.config/Code/User/settings.json
-    dot add ~/.config/Code/User/keybindings.json
-}
 
 
 
@@ -260,16 +250,41 @@ source ~/.ssh/secrets.env
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 
-# Regular installs:
-# https://github.com/ranger/ranger.git
-# https://github.com/zsh-users/zsh-syntax-highlighting
-# https://github.com/softmoth/zsh-vim-mode
-# https://github.com/zsh-users/zsh-autosuggestions
-# https://github.com/zsh-users/zsh-history-substring-search
-# Packer:
-# git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-# sudo add-apt-repository ppa:neovim-ppa/unstable
-# sudo apt-get update
-# sudo apt-get install neovim
+function addconfigs(){
+    # Make sure $ZSH is congruent with current user (/home/$x or /root)
+
+    # 1.install zsh + oh my zsh
+    # 2.cp zshrc to ~
+    # 3.copy zshrc plugins to ~/.oh-my-zsh/plugins
+    # 3.cp tmux.conf to ~
+    # 4.install neovim (>0.5 to work with lua)
+    #   sudo apt-get install neovim
+    # 5.copy neovim configs
+    #   D=".config/nvim"; mkdir -p "~/$D" && cp -r dotfiles/$D "~/$D"
+    # 6.install nvim packer
+    #   sudo git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+    # Regular installs:
+    # https://github.com/ranger/ranger.git
+    # https://github.com/zsh-users/zsh-syntax-highlighting
+    # https://github.com/softmoth/zsh-vim-mode
+    # https://github.com/zsh-users/zsh-autosuggestions
+    # https://github.com/zsh-users/zsh-history-substring-search
+    # Packer:
+    # git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    # sudo add-apt-repository ppa:neovim-ppa/unstable
+    # sudo apt-get update
+    # sudo apt-get install neovim
+
+
+    dot add ~/.emacs.d/init.el
+    dot add ~/.config/i3
+    dot add ~/.config/ranger/{rifle,rc}.conf
+    dot add ~/.config/nvim
+    dot add ~/.tmux.conf
+    dot add ~/.zshrc
+    dot add ~/.config/Code/User/settings.json
+    dot add ~/.config/Code/User/keybindings.json
+}
 
 

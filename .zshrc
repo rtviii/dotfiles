@@ -5,8 +5,8 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-su
 EDITOR=nvim
 RUSTFLAGS="-A dead_code -A unused_imports"
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
-export FLOB="oHMRfFnQ1HER"
 export bend="/home/rxz/dev/riboxyzbackend"
+alias notes="/home/rxz/dev/docs/Notes"
 
 # "Train a neural network to recognize hashes, addresses, accounts, transactions on multiple chains and vendor that as a browser extension."
 
@@ -16,7 +16,9 @@ function soundup(){
     echo "sound up said $1"
     pactl set-sink-volume bluez_sink.38_88_A4_F0_6E_8C.a2dp_sink $1
 }
+alias hg="history | grep"
 
+alias lyah="/home/rxz/dev/haskell/lyah"
 
 function rp_tunnels(){
     # the hosts are in sshconfig
@@ -26,6 +28,7 @@ function rp_tunnels(){
 }
 
 
+alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
 
 
 alias curse="/home/rxz/dev/curses"
@@ -313,3 +316,5 @@ function addconfigs(){
 
 
 
+
+[ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env

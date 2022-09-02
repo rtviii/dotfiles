@@ -384,6 +384,7 @@
       "plaintext": false,
       "markdown": true
     },
+    "haskell.manageHLS": "GHCup",
     // "editor.folding": false,
 
 

@@ -19,17 +19,24 @@ function soundup(){
 alias hg="history | grep"
 
 alias lyah="/home/rxz/dev/haskell/lyah"
-
-function rp_tunnels(){
-    # the hosts are in sshconfig
-    ssh -f -N -g -L 29092:127.0.0.1:29092   sb-rp-dev;
-    ssh -f -N -g -L 9095:127.0.0.1:9095     sb-gateway;
-    ssh -f -N -g -L 9092:127.0.0.1:9092     sb-rp-prod;
+function sb_prod_tunnel(){
+    ssh -f -N -g -L 29092:127.0.0.1:29092 -N -L 8080:127.0.0.1:8080 sb-rp-prod
 }
+
+function sb_dev_tunnel(){
+    ssh -f -N -g -L 9092:127.0.0.1:9092 -N -L 8080:127.0.0.1:8080 sb-rp-dev
+}
+
+
+function xtob(){
+    echo "obase=2;$1" | bc
+}
+
 
 
 alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
 
+alias sbcli="/home/rxz/dev/SolanaBeach/sb-backend-3-cli"
 
 alias curse="/home/rxz/dev/curses"
 alias nightmoves="/home/rxz/dev/nightmoves"

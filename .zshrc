@@ -277,61 +277,47 @@ source ~/.ssh/secrets.env
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 #
+#
+
+
+function used_plugins_zsh(){
+    my_plugins=(
+        "https://github.com/zsh-users/zsh-syntax-highlighting"
+        "https://github.com/softmoth/zsh-vim-mode"
+        "https://github.com/zsh-users/zsh-autosuggestions"
+        "https://github.com/zsh-users/zsh-history-substring-search"
+        )
+    for p in ${my_plugins[@]}; do git -C $ZSH/plugins clone $p; done
+
+}
+
 
 function listppas(){
     grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
 }
 
 function addconfigs(){
-    # Make sure $ZSH is congruent with current user (/home/$x or /root)
-
-    # 1.install zsh + oh my zsh
-    #   apt install zsh
-    #   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    #
-    # 2.cp dotfiles/zshrc to ~
-    #
-    # 3.copy zshrc plugins to ~/.oh-my-zsh/plugins
-    #
-    # 3.cp tmux.conf to ~
-    #
-    # 4.install neovim (>0.5 to work with lua)
-    #   sudo add-apt-repository ppa:neovim-ppa/unstable
-    #   sudo apt-get update
-    #   sudo apt-get install neovim
-    #   Packer:
-    #   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-    # 5.copy neovim configs
-    #   D=".config/nvim"; mkdir -p "~/$D" && cp -r dotfiles/$D "~/$D"
-    #
-    # 6.install nvim packer
-    #   sudo git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    #   Then, in nvim: ":PackerInstall"
-    #
-    # 7. install ranger
-    #   p3 ranger.py --copy-config=all creates the ranger folder in .config
-    #   overlay with own configs from dot
-    #
 
 
-    # Regular installs:
-    # https://github.com/ranger/ranger.git
-    # https://github.com/zsh-users/zsh-syntax-highlighting
-    # https://github.com/softmoth/zsh-vim-mode
-    # https://github.com/zsh-users/zsh-autosuggestions
-    # https://github.com/zsh-users/zsh-history-substring-search
-    #
-    #
 
-    dot add ~/.emacs.d/init.el
-    dot add ~/.config/i3
-    dot add ~/.config/ranger/{rifle,rc}.conf
-    dot add ~/.config/nvim
-    dot add ~/.tmux.conf
-    dot add ~/.zshrc
-    dot add ~/.config/Code/User/settings.json
-    dot add ~/.config/Code/User/keybindings.json
+
+# Regular installs:
+https://github.com/ranger/ranger.git
+https://github.com/zsh-users/zsh-syntax-highlighting
+https://github.com/softmoth/zsh-vim-mode
+https://github.com/zsh-users/zsh-autosuggestions
+https://github.com/zsh-users/zsh-history-substring-search
+
+
+
+dot add ~/.emacs.d/init.el
+dot add ~/.config/i3
+dot add ~/.config/ranger/{rifle,rc}.conf
+dot add ~/.config/nvim
+dot add ~/.tmux.conf
+dot add ~/.zshrc
+dot add ~/.config/Code/User/settings.json
+dot add ~/.config/Code/User/keybindings.json
 }
 
 

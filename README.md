@@ -46,11 +46,19 @@ https://github.com/zsh-users/zsh-history-substring-search
 For another machine with different dotconfig, start a new branch and on it, add:
 ```
 dot add ~/.emacs.d/init.el
+
 dot add ~/.config/i3
+
 dot add ~/.config/ranger/{rifle,rc}.conf
+
 dot add ~/.config/nvim
+
 dot add ~/.tmux.conf
+
 dot add ~/.zshrc
+
 dot add ~/.config/Code/User/settings.json
+
 dot add ~/.config/Code/User/keybindings.json
+
 ```

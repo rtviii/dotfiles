@@ -1,5 +1,5 @@
 #  Dotfiles
-My configs for neovim, tmux, zsh and ranger.
+My configs for neovim, tmux, zsh and ranger. Repo structure inspired by [`StreakyCobra`'s method](https://news.ycombinator.com/item?id=11071754).
 
 --------------
 

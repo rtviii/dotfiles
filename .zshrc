@@ -276,6 +276,11 @@ RPROMPT='${vcs_info_msg_0_} '
 source ~/.ssh/secrets.env
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
+#
+
+function listppas(){
+    grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
+}
 
 function addconfigs(){
     # Make sure $ZSH is congruent with current user (/home/$x or /root)
@@ -334,3 +339,9 @@ function addconfigs(){
 
 
 [ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc'; fi

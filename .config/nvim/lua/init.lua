@@ -1,16 +1,41 @@
+
+--[[ init.lua ]]
+
+-- LEADER
+-- These keybindings need to be defined before the first /
+-- is called; otherwise, it will default to "\"
+vim.g.mapleader = ","
+vim.g.localleader = "\\"
+
+-- IMPORTS
+require('vars')      -- Variables
+-- require('opts')      -- Options
+-- require('keys')      -- Keymaps
+-- require('plug')      -- Plugins
+--
+--
+--     vim.api.nvim_set_var to set internal variables.
+--     vim.api.nvim_set_option to set options.
+--     vim.api.nvim_set_keymap to set key mappings.
+--
+-- vim.g: maps to vim.api.nvim_set_var; sets global variables.
+-- vim.o: maps to vim.api.nvim_win_set_var; sets variables scoped to a given window.
+-- vim.b; maps to vim.api.nvim_buf_set_var; sets variables scoped to a given buffer.
+--
+-- In addition to your init.lua file, Neovim will also look for any files that are included in the /lua subdirectory.
+-- All code contained in this subfolder is part of your runtimepath and can be imported for use in Neovim with the command require('name-of-file').
+--
+--
+--
 local map = vim.api.nvim_set_keymap
 vim.cmd('packadd packer.nvim')
-
-require('plugins')
-require('browser')
-
+-- require('plugins')
 
 map('', '<M-f>', ':Telescope find_files <CR>',{})
 map('', '<M-A>', ':NvimTreeToggle <CR>',{})
 
 map('', '<M-E>', ':bp <CR>',{})
 map('', '<M-R>', ':bn <CR>',{})
-
 
 
 map('', '<C-h>', ':wincmd h<CR>',{})
@@ -20,172 +45,12 @@ map('', '<C-l>', ':wincmd l<CR>',{})
 
 map('', '<C-s>', ':w <CR>',{})
 
-
-
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.rust_analyzer.setup{}
-require'lspconfig'.tsserver.setup{}
-
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-local lspconfig = require('lspconfig')
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
-end
-
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
--- luasnip setup
-local luasnip = require 'luasnip'
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-
-    ['<A-k>'] = cmp.mapping.select_prev_item(),
-    ['<A-j>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
-
-
-     --
-     -- Completion
+vim.api.nvim_set_keymap(
+"n",
+"<M-D>",
+"<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+{noremap = true}
+)
 
 
 
- require("bufferline").setup{}
-
-
-
- local tree_cb = require'nvim-tree.config'.nvim_tree_callback
- require'nvim-tree'.setup {
-   update_cwd_on_find = true,
-   git = {
-     enable = false,
-     ignore = false
-   },
-   view = {
-     width = 60,
-     mappings = {
-       list = {
-         { key = "d", cb = tree_cb("vsplit") },
-         { key = "s", cb = tree_cb("split") },
-         { key = "t", cb = tree_cb("tabnew") },
-         { key = "W", cb = tree_cb("dir_up") },
-       }
-     }
-   }
- }
-
-
- vim.api.nvim_set_keymap(
-   "n",
-   "<M-D>",
-   "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
-   {noremap = true}
- )
-
-
- local fb_actions = require "telescope".extensions.file_browser.actions
- local actions = require("telescope.actions")
- require("telescope").load_extension "file_browser"
-
-
-
- require('telescope').setup{
-   defaults = {
-   prompt_prefix = '🔍',
-     initial_mode = 'normal',
-     mappings = {
-       [ 'n' ] = {
-                 ["q"] = actions.close
-         },
-     }
-   },
- }
-
-
- require'lualine'.setup {
-   options = {
-     -- icons_enabled = true,
-     theme = 'tokyonight',
-     component_separators = { left = '', right = ''},
-     section_separators = { left = '', right = ''},
-     disabled_filetypes = {},
-     always_divide_middle = true,
-   },
-   sections = {
-     lualine_a = {'mode'},
-     lualine_b = {'branch', 'diff', 'diagnostics'},
-     lualine_c = {'filename'},
-     lualine_x = {'encoding', 'fileformat', 'filetype'},
-     lualine_y = {'progress'},
-     lualine_z = {'location'}
-   },
-   inactive_sections = {
-     lualine_a = {},
-     lualine_b = {},
-     lualine_c = {'filename'},
-     lualine_x = {'location'},
-     lualine_y = {},
-     lualine_z = {}
-   },
-   tabline = {},
-   extensions = {}
- }
-
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-
--- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
-
--- Load the colorscheme
-vim.cmd[[colorscheme tokyonight]]

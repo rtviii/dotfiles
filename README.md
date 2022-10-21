@@ -24,14 +24,11 @@ For a fresh VM:
  - `sudo add-apt-repository ppa:neovim-ppa/unstable`
  - `sudo apt-get update`
  - `sudo apt-get install neovim`
-   Packer:
+Packer:
  - `git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
-   Then, in nvim: ":PackerInstall"
+ - `cp -r dotfiles/.config/nvim ~/.config`
 
- 6.copy neovim configs
-   D=".config/nvim"; mkdir -p "~/$D" && cp -r dotfiles/$D "~/$D"
-
-
+   Then, in nvim: ":PackerInstall
 
 
 

@@ -21,11 +21,11 @@ For a fresh VM:
    overlay with own configs from dot
 
  5.(optional) install neovim (>0.5 to work with lua)
-   `sudo add-apt-repository ppa:neovim-ppa/unstable`
-   `sudo apt-get update`
-   `sudo apt-get install neovim`
+ - `sudo add-apt-repository ppa:neovim-ppa/unstable`
+ - `sudo apt-get update`
+ - `sudo apt-get install neovim`
    Packer:
-   `git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
+ - `git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
    Then, in nvim: ":PackerInstall"
 
  6.copy neovim configs

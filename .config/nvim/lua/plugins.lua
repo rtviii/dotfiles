@@ -24,5 +24,9 @@ use 'wbthomason/packer.nvim'
   use 'tpope/vim-surround'
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
 
+
+      -- COSMETICS
+      use 'shaunsingh/nord.nvim'
+
 end)
 

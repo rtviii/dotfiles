@@ -1,23 +1,6 @@
 --[[ init.lua ]]
 local map = vim.api.nvim_set_keymap
 vim.cmd('packadd packer.nvim')
-
-
-
--- IMPORTS
-require('plugins')
-
-require('vars')      -- Variables
-require('opts')      -- Options
--- require('keys')      -- Keymaps
--- require('plug')      -- Plugins
---
---
---
---
--- Configuration
-require("mason").setup()
---
 --     vim.api.nvim_set_var to set internal variables.
 --     vim.api.nvim_set_option to set options.
 --     vim.api.nvim_set_keymap to set key mappings.
@@ -30,9 +13,28 @@ require("mason").setup()
 -- All code contained in this subfolder is part of your runtimepath and can be imported for use in Neovim with the command require('name-of-file').
 
 
+
+
+-- IMPORTS
+require('plugins')
+require('vars')      -- Variables
+require('opts')      -- Options
+require('keys')      -- Keymaps
+-- Configuration
+require("mason").setup()
+
+
+
+
+-- COSMETICS
+require('nord').set()
+vim.cmd[[colorscheme nord]]
+
+
+
+
 ------------------------------------------------Configuring LSP
 local rt = require("rust-tools")
-
 rt.setup({
   server = {
     on_attach = function(_, bufnr)
@@ -175,3 +177,4 @@ require('nvim-treesitter.configs').setup {
 }
 
 ------------------------------------------------Configuring LSP
+--

@@ -100,3 +100,5 @@ set updatetime=300
 nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
 set signcolumn=yes
+
+colorscheme nord

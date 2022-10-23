@@ -4,13 +4,11 @@
 :xnoremap K 5k
 :xnoremap J 5j
 
-
 :xnoremap <C-K> K
 :xnoremap <C-J> J
 
 :imap jj <Esc>
 :imap kk <Esc>
-:map Y Y$
 
 :lua require('init')
 
@@ -99,6 +97,5 @@ set shortmess+=c
 set updatetime=300
 nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
-set signcolumn=yes
 
 colorscheme nord

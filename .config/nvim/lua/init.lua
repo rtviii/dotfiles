@@ -17,6 +17,10 @@ vim.cmd('packadd packer.nvim')
 
 -- IMPORTS
 require('plugins')
+    require('easy_align')
+
+
+
 require('vars')      -- Variables
 require('opts')      -- Options
 require('keys')      -- Keymaps
@@ -30,6 +34,8 @@ require("mason").setup()
 require('nord').set()
 vim.cmd[[colorscheme nord]]
 
+vim.opt.termguicolors = true
+require("bufferline").setup{}
 
 
 
@@ -75,7 +81,6 @@ vim.diagnostic.config({
 })
 
 vim.cmd([[
-set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
@@ -99,7 +104,6 @@ vim.api.nvim_set_option('updatetime', 300)
 -- Goto previous / next diagnostic warning / error
 -- Show inlay_hints more frequently
 vim.cmd([[
-set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 

@@ -37,6 +37,7 @@ function xtob(){
 alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
 
 alias sbcli="/home/rxz/dev/SolanaBeach/sb-backend-3-cli"
+alias sbgsr="/home/rxz/dev/SolanaBeach/sb-backend-3-geyser-plugin"
 
 alias curse="/home/rxz/dev/curses"
 alias nightmoves="/home/rxz/dev/nightmoves"
@@ -62,19 +63,8 @@ alias sbkfktunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 sb-gateway'
 
 alias ribxzfigs='cd /home/rxz/dev/docs/ribosomexyz/paper_figs'
 
-newrepo(){
- curl -i -H "Authorization: token $GIT_TOKEN" -d "{\"name\": \"$1\", \"private\": \"$2\"}" https://api.github.com/user/repos  | grep "clone_url"
-}
-
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-
-
-
 alias desk="cd ~/Desktop"
-
-
-
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
@@ -92,6 +82,10 @@ bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 bindkey -s '^o' 'cargo run ^M'
 bindkey -s '^t' 'cargo test -- --nocapture ^M'
+
+bindkey -s '^t' 'cargo test -- --nocapture ^M'
+bindkey -s '^w' 'nvim ~/.zshrc ^M'
+bindkey -s '^x' 'source ~/.zshrc ^M'
 
 function tmux_last_session(){
 
@@ -116,8 +110,8 @@ alias ribscp="scp -i ~/dev/docs/AWS/ribosome.pem"
 alias htpconf="cd /etc/apache2"
 alias htpstatus="sudo systemctl status apache2"
 
-alias vimrc="nvim ~/.config/nvim/init.vim"
-alias luarc="nvim ~/.config/nvim/lua/init.lua"
+
+
 
 alias secrets='nvim ~/.ssh/secrets.env'
 alias ssc="source ~/.ssh/secrets.env"
@@ -127,9 +121,18 @@ alias macs="cd ~/.emacs.d"
 
 alias zshsrc="source ~/.zshrc"
 
-alias sv="sudo -E -s; vim"
-alias v="nvim"
-alias vim="nvim"
+
+
+#----------------------[NEOVIM]-----------------------------------------
+alias viminit="nvim ~/.config/nvim/init.vim"
+alias luainit="nvim ~/.config/nvim/lua/init.lua"
+alias vimrc="nvim ~/.config/nvim/"
+alias plugs="nvim ~/.config/nvim/lua/plugins.lua"
+#---------------------------------------------------------------
+
+
+
+
 
 #----------------------[TMUX]-----------------------------------------
 #
@@ -159,6 +162,8 @@ alias gsw="git switch"
 alias gs="git status"
 alias gc="git checkout"
 alias gcb="git checkout -b"
+alias ll="nvim ~/.config/nvim/lua/init.lua"
+alias vv="nvim ~/.config/nvim/init.vim"
 
 #Creates a new branch and switches to it right away
 alias gswc="git switch -c" #create and switch into
@@ -273,7 +278,6 @@ zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
 
 PROMPT='%F{blue}ᢹ%f %M.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
 RPROMPT='${vcs_info_msg_0_} '
-source ~/.ssh/secrets.env
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 #
@@ -320,6 +324,34 @@ dot add ~/.config/Code/User/settings.json
 dot add ~/.config/Code/User/keybindings.json
 }
 
+newrepo(){
+ curl -i -H "Authorization: token $GIT_TOKEN" -d "{\"name\": \"$1\", \"private\": \"$2\"}" https://api.github.com/user/repos  | grep "clone_url"
+}
+
+
+
+# name it "cline"
+function cl(){
+
+# Function to print, provided a file, exclusively
+# - the line range (if two params are passed)
+# - the single line (if one)
+# - cat the file back whole (if none)
+#
+# This can be accomplished without reading in the whole file via sed :
+#
+#           echo "sed -n '$FIRST,$SECOND\p;$(($SECOND+1))q' file_name"
+#
+# sed -n '20,40p;41q' file_name
+
+if [[ "$#" == "1" ]];
+then
+    cat $1
+elif [[ "$#" == "2" ]]
+then
+    LAST_LINE=$(($1+1));   sed -n '$1,$1p;$LAST_LINEq' "$2"
+fi
+}
 
 
 

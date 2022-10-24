@@ -1,4 +1,4 @@
---[[ init.lua ]]
+-- [[ init.lua ]]
 local map = vim.api.nvim_set_keymap
 vim.cmd('packadd packer.nvim')
 --     vim.api.nvim_set_var to set internal variables.
@@ -17,7 +17,7 @@ vim.cmd('packadd packer.nvim')
 
 -- IMPORTS
 require('plugins')
-    require('easy_align')
+-- require('easy_align')
 
 
 
@@ -34,7 +34,7 @@ require("mason").setup()
 require('nord').set()
 vim.cmd[[colorscheme nord]]
 
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 require("bufferline").setup{}
 
 

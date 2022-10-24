@@ -22,10 +22,6 @@ set clipboard+=unnamedplus
 "----------------------------------------------------------------------
 " checks if your terminal has 24-bit color support
 "
-if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
-endif
 
 scriptencoding utf-8
 set encoding=utf-8
@@ -75,9 +71,9 @@ set wildignore+=*.pyc         " Ignore Python compiled files
 set wildignore+=*.rbc         " Ignore Rubinius compiled files
 set wildignore+=*.swp         " Ignore vim backups
 
-if !has("gui_running")
-    let &t_ut=''
-endif
+
+set background=dark
+
 
 "----------------------------------------------------------------------
 " Autocommands

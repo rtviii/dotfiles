@@ -3,8 +3,16 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'junegunn/vim-easy-align'
 
+    use 'dhruvasagar/vim-zoom'
 
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}
+
+    use {  'nvim-tree/nvim-tree.lua',  requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+          },
+          tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        }
+
 
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"

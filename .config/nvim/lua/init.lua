@@ -12,12 +12,16 @@ vim.cmd('packadd packer.nvim')
 -- In addition to your init.lua file, Neovim will also look for any files that are included in the /lua subdirectory.
 -- All code contained in this subfolder is part of your runtimepath and can be imported for use in Neovim with the command require('name-of-file').
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 
 
 
 -- IMPORTS
 require('plugins')
 -- require('easy_align')
+--- require('nvim-tree')
 
 
 
@@ -36,6 +40,29 @@ vim.cmd[[colorscheme nord]]
 
 -- vim.opt.termguicolors = true
 require("bufferline").setup{}
+
+
+
+------------------ NVIM TREE
+require("nvim-tree").setup({
+  toggle = true,
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+----------------- NVIM TREE
 
 
 

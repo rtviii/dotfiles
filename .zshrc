@@ -5,12 +5,9 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-su
 EDITOR=nvim
 RUSTFLAGS="-A dead_code -A unused_imports"
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
-export bend="/home/rxz/dev/riboxyzbackend"
-alias notes="/home/rxz/dev/docs/Notes"
+alias notes="/home/rxz/dev/notes"
 
-# "Train a neural network to recognize hashes, addresses, accounts, transactions on multiple chains and vendor that as a browser extension."
 
-alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
 
 function soundup(){
     echo "sound up said $1"
@@ -32,7 +29,16 @@ function xtob(){
     echo "obase=2;$1" | bc
 }
 
+function crun(){
+    #compile and run c code; possibly generating a binary name from /dev/urandom bytes
+    C_SOURCE=$1;
+    echo "Got source : $C_SOURCE";
+    gcc $C_SOURCE -l ncurses -o "$C_SOURCE";
+    exec $C_SOURCE
+}
 
+export bend="/home/rxz/dev/riboxyzbackend"
+alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
 
 alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
 
@@ -46,6 +52,7 @@ alias actxlib="/home/rxz/dev/sb-actix-lib"
 alias sbb="/home/rxz/dev/SolanaBeach"
 alias sblib="/home/rxz/dev/SolanaBeach/sb-backend-3-lib"
 alias thrd="/home/rxz/dev/threading"
+alias rbsd="/home/rxz/dev/ribosome-docker/"
 
 
 alias GG="echo $GIT_TOKEN | xo"
@@ -80,12 +87,15 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
+
+
 bindkey -s '^o' 'cargo run ^M'
 bindkey -s '^t' 'cargo test -- --nocapture ^M'
 
 bindkey -s '^t' 'cargo test -- --nocapture ^M'
 bindkey -s '^w' 'nvim ~/.zshrc ^M'
 bindkey -s '^x' 'source ~/.zshrc ^M'
+bindkey -s '^[F' 'nvim ~/dev/docs/Notes/ ^M'
 
 function tmux_last_session(){
 
@@ -124,10 +134,17 @@ alias zshsrc="source ~/.zshrc"
 
 
 #----------------------[NEOVIM]-----------------------------------------
-alias viminit="nvim ~/.config/nvim/init.vim"
-alias luainit="nvim ~/.config/nvim/lua/init.lua"
+alias prc="nvim ~/.config/nvim/lua/plugins.lua"
+alias lrc="nvim ~/.config/nvim/lua/init.lua"
+
+alias vrc="nvim ~/.config/nvim/init.vim"
+alias vimconf="~/.config/nvim/"
+
 alias vimrc="nvim ~/.config/nvim/"
 alias plugs="nvim ~/.config/nvim/lua/plugins.lua"
+
+alias vim="nvim"
+alias v="nvim"
 #---------------------------------------------------------------
 
 
@@ -150,7 +167,6 @@ alias xx="exit"
 alias jctl="sudo journalctl -e -u"
 alias p3="python3"
 
-alias crun='~/.actin/crun'
 
 alias mkvenv='python3 -m virtualenv --python=/usr/bin/python3.10'
 alias countem="sed 's/,/ /g' | wc -w"
@@ -353,6 +369,30 @@ then
 fi
 }
 
+
+# Activate virtualenv.
+function vup(){
+PRES=0
+
+for i in ${local[@]};
+do
+	echo $i
+	if [ $i == *"venv" ];
+	then
+		sourcefile=$(pwd)/$i/bin/activate
+		echo "Sourcefile"
+		echo $sourcefile;
+		source $sourcefile;
+		PRES=1
+	fi;
+done;
+
+if  [[ $PRES -eq 0 ]]; then
+	echo "Nothing with *\"venv\" in here.";
+fi;
+
+
+}
 
 
 

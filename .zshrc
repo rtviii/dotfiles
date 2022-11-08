@@ -1,5 +1,7 @@
 ZSH_DISABLE_COMPFIX=true
 export ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
 KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
 EDITOR=nvim
@@ -27,18 +29,13 @@ function sb_dev_tunnel(){
 }
 
 
-function resource_zsh(){
-    echo "\t...[ Restarting z-shell ]...";exec zsh
-}
+function _open_zshrc(){nvim ~/.zshrc};
+    zle -N _open_zshrc; bindkey  '^[T' _open_zshrc
 
+bindkey  -s '^[Y' 'source ~/.zshrc ^M'
 
-
-function _nvim_here(){
-    echo "neovim here"
-    zle reset-prompt
-}
-zle -N _nvim_here
-bindkey '^[R' _nvim_here
+function _nvim_here(){ nvim . };
+    zle -N _nvim_here;bindkey '^[R' _nvim_here
 
 
 
@@ -52,6 +49,11 @@ function crun(){
     gcc $1 -l ncurses -o "$1.compiled";
     BIN_LOCAL_NAME="$1.compiled"; zsh -c ./$BIN_LOCAL_NAME
 }
+
+bindkey -s '^o' 'cargo run ^M'
+bindkey -s '^t' 'cargo test -- --nocapture ^M'
+
+
 
 export bend="/home/rxz/dev/riboxyzbackend"
 alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
@@ -91,7 +93,6 @@ alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
-source $ZSH/oh-my-zsh.sh
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
@@ -403,14 +404,6 @@ fi;
 
 }
 
-bindkey -s '^o' 'cargo run ^M'
-bindkey -s '^t' 'cargo test -- --nocapture ^M'
-bindkey -s '^t' 'cargo test -- --nocapture ^M'
-bindkey -s '^w' 'nvim ~/.zshrc ^M'
-bindkey -s '^x' 'source ~/.zshrc ^M'
-bindkey -s '^[Y' 'resource_zsh ^M'
-bindkey -s '^[T' 'nvim ~/.zshrc ^M'
-bindkey  '^[R' _nvim_here
 
 [ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env
 

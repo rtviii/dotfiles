@@ -9,6 +9,8 @@ alias notes="/home/rxz/dev/notes"
 
 
 
+
+
 function soundup(){
     echo "sound up said $1"
     pactl set-sink-volume bluez_sink.38_88_A4_F0_6E_8C.a2dp_sink $1
@@ -25,16 +27,30 @@ function sb_dev_tunnel(){
 }
 
 
+function resource_zsh(){
+    echo "\t...[ Restarting z-shell ]...";exec zsh
+}
+
+
+
+function _nvim_here(){
+    echo "neovim here"
+    zle reset-prompt
+}
+zle -N _nvim_here
+bindkey '^[R' _nvim_here
+
+
+
+
 function xtob(){
     echo "obase=2;$1" | bc
 }
 
 function crun(){
     #compile and run c code; possibly generating a binary name from /dev/urandom bytes
-    C_SOURCE=$1;
-    echo "Got source : $C_SOURCE";
-    gcc $C_SOURCE -l ncurses -o "$C_SOURCE";
-    exec $C_SOURCE
+    gcc $1 -l ncurses -o "$1.compiled";
+    BIN_LOCAL_NAME="$1.compiled"; zsh -c ./$BIN_LOCAL_NAME
 }
 
 export bend="/home/rxz/dev/riboxyzbackend"
@@ -79,23 +95,17 @@ source $ZSH/oh-my-zsh.sh
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
-
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
+
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 
 
-bindkey -s '^o' 'cargo run ^M'
-bindkey -s '^t' 'cargo test -- --nocapture ^M'
 
-bindkey -s '^t' 'cargo test -- --nocapture ^M'
-bindkey -s '^w' 'nvim ~/.zshrc ^M'
-bindkey -s '^x' 'source ~/.zshrc ^M'
-bindkey -s '^[F' 'nvim ~/dev/docs/Notes/ ^M'
 
 function tmux_last_session(){
 
@@ -129,7 +139,6 @@ alias dev="cd ~/dev/"
 alias docs="cd ~/dev/docs/;"
 alias macs="cd ~/.emacs.d"
 
-alias zshsrc="source ~/.zshrc"
 
 
 
@@ -394,7 +403,14 @@ fi;
 
 }
 
-
+bindkey -s '^o' 'cargo run ^M'
+bindkey -s '^t' 'cargo test -- --nocapture ^M'
+bindkey -s '^t' 'cargo test -- --nocapture ^M'
+bindkey -s '^w' 'nvim ~/.zshrc ^M'
+bindkey -s '^x' 'source ~/.zshrc ^M'
+bindkey -s '^[Y' 'resource_zsh ^M'
+bindkey -s '^[T' 'nvim ~/.zshrc ^M'
+bindkey  '^[R' _nvim_here
 
 [ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env
 

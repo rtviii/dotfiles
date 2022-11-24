@@ -1,15 +1,13 @@
 ZSH_DISABLE_COMPFIX=true
-export ZSH=~/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
 KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
+export ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 EDITOR=nvim
 RUSTFLAGS="-A dead_code -A unused_imports"
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
 alias notes="/home/rxz/dev/notes"
-
-
+alias djdk="~/dev/docker_together/"
 
 
 
@@ -28,6 +26,9 @@ function sb_dev_tunnel(){
     ssh -f -N -g -L 9092:127.0.0.1:9092 -N -L 8080:127.0.0.1:8080 sb-rp-dev
 }
 
+
+function _code_here(){code .};
+    zle -N _code_here; bindkey  '^[W' _code_here
 
 function _open_zshrc(){nvim ~/.zshrc};
     zle -N _open_zshrc; bindkey  '^[T' _open_zshrc
@@ -244,10 +245,12 @@ alias neoimport="/var/lib/neo4j/import"
 alias rds='redis-cli'
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
 alias dk="docker"
-alias dkcn="docker container"
-alias dknw="docker network"
-alias dkcp="docker-compose"
-alias dkvm="docker volume"
+alias dkc="docker container"
+alias dkn="docker network"
+alias dkv="docker volume"
+alias dki="docker image"
+alias dc="docker-compose"
+
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 alias aws='cd /home/rxz/dev/docs/AWS'

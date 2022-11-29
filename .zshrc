@@ -10,13 +10,12 @@ alias notes="/home/rxz/dev/notes"
 alias djdk="~/dev/docker_together/"
 
 
-
 function soundup(){
     echo "sound up said $1"
     pactl set-sink-volume bluez_sink.38_88_A4_F0_6E_8C.a2dp_sink $1
 }
-alias hg="history | grep"
 
+alias hg="history | grep"
 alias lyah="/home/rxz/dev/haskell/lyah"
 function sb_prod_tunnel(){
     ssh -f -N -g -L 29092:127.0.0.1:29092 -N -L 8080:127.0.0.1:8080 sb-rp-prod
@@ -33,13 +32,12 @@ function _code_here(){code .};
 function _open_zshrc(){nvim ~/.zshrc};
     zle -N _open_zshrc; bindkey  '^[T' _open_zshrc
 
-bindkey  -s '^[Y' 'source ~/.zshrc ^M'
+bindkey -s '^[Y' 'source ~/.zshrc ^M';
+
+bindkey -s '^[>' 'docker container exec -it   /bin/bash';
 
 function _nvim_here(){ nvim . };
-    zle -N _nvim_here;bindkey '^[R' _nvim_here
-
-
-
+zle -N _nvim_here; bindkey '^[r' _nvim_here
 
 function xtob(){
     echo "obase=2;$1" | bc
@@ -245,10 +243,12 @@ alias neoimport="/var/lib/neo4j/import"
 alias rds='redis-cli'
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
 alias dk="docker"
+alias dkls="docker container ls"
 alias dkc="docker container"
 alias dkn="docker network"
 alias dkv="docker volume"
 alias dki="docker image"
+alias dke="docker execute -it"
 alias dc="docker-compose"
 
 

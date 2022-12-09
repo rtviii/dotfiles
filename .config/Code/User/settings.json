@@ -102,31 +102,27 @@
   "editor.foldingHighlight"      : false,
   "editor.occurrencesHighlight"  : false,
   "workbench.colorCustomizations": {
-
-    "list.errorForeground"                     : "#ffffff",
-    "list.warningForeground"                   : "#f3fdff",
-    "gitDecoration.modifiedResourceForeground" : "#a8cfe6",
+    "list.errorForeground": "#ffffff",
+    "list.warningForeground": "#f3fdff",
+    "gitDecoration.modifiedResourceForeground": "#a8cfe6",
     "gitDecoration.untrackedResourceForeground": "#707070",
-
-    // "activityBar.activeBorder": "#fff",
-    // "activityBar.activeBorder": "#fff",
-    "scrollbarSlider.background": "#bbf1f834",     // last two digits are the alpha value
-    "selection.background"                            : "#4666f3",
-    "editor.selectionForeground"                      : "#5f82f7",
+    "scrollbarSlider.background": "#bbf1f834",
+    "selection.background": "#4666f3",
+    "editor.selectionForeground": "#5f82f7",
     "editorOverviewRuler.selectionHighlightForeground": "#7071c0",
-    "editorCursor.foreground"                         : "#000000",
-    "terminalCursor.foreground"                       : "#008cff",
-    "editorCursor.background"                         : "#0004ff",
-    "editor.focusedStackFrameHighlightBackground"     : "#8b50cf00",
-    "editor.lineHighlightBackground"                  : "#f84e0b00",
-    "editor.selectionBackground"                      : "#140d258e",
-    "editor.lineHighlightBorder"                      : "#ff000000",
-    "editorBracketMatch.background"                   : "#01101a",
-    "editorBracketMatch.border"                       : "#978343",
-    "editor.hoverHighlightBackground"                 : "#e0262600",
-    "editor.wordHighlightBorder"                      : "#e0262600",
-    "editor.findMatchHighlightBackground"             : "#321888f3",
-    "editor.selectionHighlightBackground"             : "#0000003d",
+    "editorCursor.foreground": "#000000",
+    "terminalCursor.foreground": "#008cff",
+    "editorCursor.background": "#0004ff",
+    "editor.focusedStackFrameHighlightBackground": "#8b50cf00",
+    "editor.lineHighlightBackground": "#f84e0b00",
+    "editor.selectionBackground": "#140d258e",
+    "editor.lineHighlightBorder": "#ff000000",
+    "editorBracketMatch.background": "#ffffff00",
+    "editorBracketMatch.border": "#2997f167",
+    "editor.hoverHighlightBackground": "#e0262600",
+    "editor.wordHighlightBorder": "#57aeff00",
+    "editor.findMatchHighlightBackground": "#321888f3",
+    "editor.selectionHighlightBackground": "#0000003d"
   },
 
   // PRETTIER--------------------------------------------------------
@@ -258,8 +254,7 @@
   "workbench.sideBar.location"                : "left",
   "explorer.confirmDelete": false,
   "python.pythonPath"                         : "/usr/bin/python3",
-  "jupyter.askForLargeDataFrames"             : true,
-  "workbench.statusBar.visible"               : true,
+  "jupyter.askForLargeDataFrames": true,
   "workbench.editorAssociations"              : {
   "*.ipynb": "jupyter-notebook"
 },
@@ -303,7 +298,6 @@
     "editor.suggestSelection"                 : "first",
     "editor.wordBasedSuggestions"             : true,
     "editor.parameterHints.enabled": true,
-
     "terminal.integrated.enableBell": false,
     "docsView.documentationView.updateMode": "live",
     "gitlens.defaultGravatarsStyle": "wavatar",
@@ -354,8 +348,7 @@
     // "editor.glyphMargin": false,
     // "rust-analyzer.inlayHints.parameterHints.enable": false,
     // "rust-analyzer.inlayHints.typeHints.enable": false,
-    "rust-analyzer.rustfmt.rangeFormatting.enable"     : true,
-    "sourcegraph.accessToken"                          : "136637ab9ca15e17c0b723b726abd50ef7238088",
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
     "rust-analyzer.inlayHints.chainingHints.enable"    : false,
     "rust-analyzer.inlayHints.closingBraceHints.enable": false,
     "php.suggest.basic"                                : false,
@@ -366,7 +359,6 @@
     "rust-analyzer.lens.debug.enable"                  : false,
     "rust-analyzer.lens.enable"                        : false,
     "editor.inlineSuggest.enabled": true,
-    "editor.minimap.enabled": false,
     "sourcegraph.url": "https://sourcegraph.com",
     "workbench.iconTheme": "chalice-icon-theme",
     "vikings-icon-theme.activeIconPack": "angular",
@@ -385,6 +377,16 @@
       "markdown": true
     },
     "haskell.manageHLS": "GHCup",
+    "redhat.telemetry.enabled": true,
+    "[lisp]": {
+      "editor.defaultFormatter": "imjacobclark.vscode-lisp-formatter"
+    },
+    "[scheme]": {
+      "editor.defaultFormatter": "sjhuangx.vscode-scheme"
+    },
+    "[shellscript]": {
+      "editor.defaultFormatter": "shakram02.bash-beautify"
+    },
     // "editor.folding": false,
 
 

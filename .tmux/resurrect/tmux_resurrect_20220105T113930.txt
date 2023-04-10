@@ -1,0 +1,6 @@
+pane	2	0	1	:*	0	:/home/rxz	1	zsh	:
+pane	aws-terra-loop	0	1	:*	0	:/home/rxz/dev/cv/pandoc-resume	0	ssh	:ssh -i ~/dev/notes/rxz-terra.pem ubuntu@ec2-13-56-151-127.us-west-1.compute.amazonaws.com
+pane	aws-terra-loop	0	1	:*	1	:/home/rxz	1	zsh	:
+window	2	0	:zsh	1	:*	cd3f,191x48,0,0,2	:
+window	aws-terra-loop	0	:zsh	1	:*	4246,191x47,0,0[191x23,0,0,1,191x23,0,24,4]	:
+state	aws-terra-loop	2

@@ -12,8 +12,6 @@ export IDOO_PASS="!Ominorej13"
 export PYMOL_PATH=/home/rxz/dev/pymol38 && export PYTHONPATH="$PYTHONPATH:$PYMOL_PATH/modules/:"
 #export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
-
-export PYTHONDONTWRITEBYTECODE=1
 export PYTHONBIN=/usr/bin/python3
 export SPLIT_RENAME_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/split_rename.py
 export EXTRACT_BSITES_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/extract_bsites.py

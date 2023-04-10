@@ -1,0 +1,5 @@
+pane	2	0	1	:*	0	:/home/rxz	1	zsh	:
+pane	4	0	1	:*	0	:/home/rxz	1	zsh	:
+window	2	0	:zsh	1	:*	c93e,191x47,0,0,1	:
+window	4	0	:zsh	1	:*	b0e2,85x23,0,0,5	:
+state	4	

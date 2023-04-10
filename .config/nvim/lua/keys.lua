@@ -7,7 +7,6 @@ local map = vim.api.nvim_set_keymap
 -- remap the key used to leave insert mode
 map('i', 'jj', '<Esc>', {})
 map('i', 'kk', '<Esc>', {})
-
 map('', '<C-_>', ':Commentary <CR>',{})
 
 map('', '<M-E>', ':bp <CR>',{})
@@ -27,6 +26,7 @@ vim.keymap.set('', '<M-A>', toggle_file_explorer ,{})
 
 
 -- telescope
-telescope = require('telescope.builtin')
-vim.keymap.set('', '<M-f>', telescope.find_files, {})
-vim.keymap.set('', '<M-F>', telescope.live_grep, {})
+tele = require('telescope.builtin')
+telefb = require("telescope").extensions.file_browser.file_browser
+vim.keymap.set('', '<M-f>', tele.find_files, {})
+vim.keymap.set('', '<M-F>',telefb,  {})

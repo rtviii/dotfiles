@@ -3,12 +3,40 @@ KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+PYTHONDONTWRITEBYTECODE="1"
 EDITOR=nvim
 RUSTFLAGS="-A dead_code -A unused_imports"
-export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
-alias notes="/home/rxz/dev/notes"
-alias djdk="~/dev/docker_together/"
+export RIBETL_DATA=/home/rxz/dev/static
+export IDOO_PASS="!Ominorej13"
 
+export PYMOL_PATH=/home/rxz/dev/pymol38 && export PYTHONPATH="$PYTHONPATH:$PYMOL_PATH/modules/:"
+#export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
+export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
+
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONBIN=/usr/bin/python3
+export SPLIT_RENAME_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/split_rename.py
+export EXTRACT_BSITES_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/extract_bsites.py
+export COMMIT_STRUCTURE_SH=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/commit_structure.sh
+export RENDER_THUMBNAIL_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/render_thumbnail.py
+export STRUCT_PROCESS_SCRIPTS=/home/rxz/dev/docker_ribxz/cli/scripts
+
+
+
+alias notes="cd /home/rxz/dev/notes;vim scratch.md"
+alias ribxz="~/dev/docker_ribxz/"
+
+export NEO4J_URI="neo4j://0.0.0.0:7687"
+export NEO4J_PASSWORD="ribosomexyz"
+export NEO4J_USER="neo4j"
+export NEO4J_CURRENTDB="neo4j"
+export RIBETL_DATA="/home/rxz/dev/static"
+
+alias nrb="npm run build"
+alias nrs="npm run serve"
+alias dkstopall="docker container stop \$(docker container ls -aq)"
+alias dkrmallc="docker container rm \$(docker container ls -aq);"
+alias dkrmalli="docker image rm \$(docker image ls -aq)"
 
 function soundup(){
     echo "sound up said $1"
@@ -33,7 +61,6 @@ function _open_zshrc(){nvim ~/.zshrc};
     zle -N _open_zshrc; bindkey  '^[T' _open_zshrc
 
 bindkey -s '^[Y' 'source ~/.zshrc ^M';
-
 bindkey -s '^[>' 'docker container exec -it   /bin/bash';
 
 function _nvim_here(){ nvim . };
@@ -91,6 +118,15 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
+alias dk="docker"
+alias dkls="docker container ls"
+alias dkc="docker container"
+alias dkn="docker network"
+alias dkv="docker volume"
+alias dki="docker image"
+alias dke="docker execute -it"
+alias dc="docker-compose"
 
 
 
@@ -175,6 +211,7 @@ alias tkp="tmux kill-pane -t"
 alias xx="exit"
 alias jctl="sudo journalctl -e -u"
 alias p3="python3"
+alias p38="python3.8"
 
 
 alias mkvenv='python3 -m virtualenv --python=/usr/bin/python3.10'
@@ -182,13 +219,6 @@ alias countem="sed 's/,/ /g' | wc -w"
 alias keys="ls -la ~/.ssh | awk -F \" \" '{if (NR>2) {print\$9}}'"
 #----------------------GIT-----------------------------------------
 
-
-alias gsw="git switch"
-alias gs="git status"
-alias gc="git checkout"
-alias gcb="git checkout -b"
-alias ll="nvim ~/.config/nvim/lua/init.lua"
-alias vv="nvim ~/.config/nvim/init.vim"
 
 #Creates a new branch and switches to it right away
 alias gswc="git switch -c" #create and switch into
@@ -241,15 +271,6 @@ alias neoimport="/var/lib/neo4j/import"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Redis
 alias rds='redis-cli'
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
-alias dk="docker"
-alias dkls="docker container ls"
-alias dkc="docker container"
-alias dkn="docker network"
-alias dkv="docker volume"
-alias dki="docker image"
-alias dke="docker execute -it"
-alias dc="docker-compose"
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
@@ -266,8 +287,6 @@ alias sshutopia="ssh -i ~/dev/docs/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com
 
 
 export PATH="/usr/local/cuda-11.1/bin:$PATH"
-export PATH="~/.actin/{*}:$PATH"
-export PATH="/home/rxz/.local/share/solana/install/active_release/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/home/rxz/zig-linux-x86_64-0.10.0-dev.2220+802f22073:$PATH"
@@ -332,14 +351,12 @@ function listppas(){
 function addconfigs(){
 
 
-
-
 # Regular installs:
-https://github.com/ranger/ranger.git
-https://github.com/zsh-users/zsh-syntax-highlighting
-https://github.com/softmoth/zsh-vim-mode
-https://github.com/zsh-users/zsh-autosuggestions
-https://github.com/zsh-users/zsh-history-substring-search
+#https://github.com/ranger/ranger.git
+#https://github.com/zsh-users/zsh-syntax-highlighting
+#https://github.com/softmoth/zsh-vim-mode
+#https://github.com/zsh-users/zsh-autosuggestions
+#https://github.com/zsh-users/zsh-history-substring-search
 
 
 
@@ -410,8 +427,13 @@ fi;
 
 [ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pnpm
+export PNPM_HOME="/home/rxz/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

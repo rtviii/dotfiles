@@ -18,7 +18,7 @@
     "when": "inQuickOpen",
   },
   {
-    "key": "shift+alt+a",
+    "key"    : "shift+alt+a",
     "command": "workbench.explorer.fileView.focus"
   },
   {
@@ -523,10 +523,6 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+alt+f",
-    "command": "wwm.aligncode"
-  },
-  {
     "key": "ctrl+j",
     "command": "-extension.vim_ctrl+j",
     "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
@@ -1020,11 +1016,6 @@
   },
   {
     "key": "tab",
-    "command": "insertBestCompletion",
-    "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
-  },
-  {
-    "key": "tab",
     "command": "-insertBestCompletion",
     "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
   },
@@ -1037,5 +1028,119 @@
     "key": "tab",
     "command": "-jumpToNextSnippetPlaceholder",
     "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-outdent",
+    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  },
+  {
+    "key": "tab",
+    "command": "tab"
+  },
+  {
+    "key": "shift+`",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-insertNextSuggestion",
+    "when": "hasOtherSuggestions && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  },
+  {
+    "key": "shift+`",
+    "command": "insertSnippet",
+    "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+  },
+  {
+    "key": "tab",
+    "command": "-insertSnippet",
+    "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-insertPrevSuggestion",
+    "when": "hasOtherSuggestions && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-jumpToPrevSnippetPlaceholder",
+    "when": "editorTextFocus && hasPrevTabstop && inSnippetMode"
+  },
+  {
+    "key": "shift+`",
+    "command": "acceptAlternativeSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-acceptAlternativeSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "`",
+    "command": "editor.action.inlineSuggest.commit"
+  },
+  {
+    "key": "ctrl+]",
+    "command": "-editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+tab",
+    "command": "editor.action.outdentLines"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "-editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.view.search"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.view.search",
+    "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "references-view.findReferences",
+    "when": "editorHasReferenceProvider"
+  },
+  {
+    "key": "shift+alt+f12",
+    "command": "-references-view.findReferences",
+    "when": "editorHasReferenceProvider"
+  },
+  {
+    "key": "tab",
+    "command": "editor.action.indentLines",
+    "when": "!inputFocus"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "editor.action.joinLines"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "vscode-better-align.align",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+a",
+    "command": "-vscode-better-align.align",
+    "when": "editorTextFocus"
   }
 ]

@@ -16,6 +16,11 @@ use 'wbthomason/packer.nvim'
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use {
+        'ds26gte/neoscmindent'
+    }
+
+    use { "nvim-telescope/telescope-file-browser.nvim" }
 
 
     -- easy-align

@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/rxz/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  neoscmindent = {
+    loaded = true,
+    path = "/home/rxz/.local/share/nvim/site/pack/packer/start/neoscmindent",
+    url = "https://github.com/ds26gte/neoscmindent"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/home/rxz/.local/share/nvim/site/pack/packer/start/nord.nvim",

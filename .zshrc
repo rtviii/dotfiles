@@ -9,6 +9,7 @@ RUSTFLAGS="-A dead_code -A unused_imports"
 export RIBETL_DATA=/home/rxz/dev/static
 export IDOO_PASS="!Ominorej13"
 
+
 export PYMOL_PATH=/home/rxz/dev/pymol38 && export PYTHONPATH="$PYTHONPATH:$PYMOL_PATH/modules/:"
 #export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
@@ -21,6 +22,7 @@ export STRUCT_PROCESS_SCRIPTS=/home/rxz/dev/docker_ribxz/cli/scripts
 
 
 
+alias ribplugin="cd ~/dev/ribxz_molstar_plugin/"
 alias notes="cd /home/rxz/dev/notes;vim scratch.md"
 alias ribxz="~/dev/docker_ribxz/"
 
@@ -30,6 +32,7 @@ export NEO4J_USER="neo4j"
 export NEO4J_CURRENTDB="neo4j"
 export RIBETL_DATA="/home/rxz/dev/static"
 
+alias pymol="/home/rxz/pymol-install-py2/bin/pymol"
 alias nrb="npm run build"
 alias nrs="npm run serve"
 alias dkstopall="docker container stop \$(docker container ls -aq)"
@@ -60,6 +63,8 @@ function _open_zshrc(){nvim ~/.zshrc};
 
 bindkey -s '^[Y' 'source ~/.zshrc ^M';
 bindkey -s '^[>' 'docker container exec -it   /bin/bash';
+bindkey -s '^[d' 'cd .. ^M';
+bindkey -s '^[f' 'cd - ^M';
 
 function _nvim_here(){ nvim . };
 zle -N _nvim_here; bindkey '^[r' _nvim_here
@@ -80,7 +85,6 @@ bindkey -s '^t' 'cargo test -- --nocapture ^M'
 
 
 export bend="/home/rxz/dev/riboxyzbackend"
-alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
 
 alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
 
@@ -112,7 +116,7 @@ alias sbkfktunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 sb-gateway'
 
 alias ribxzfigs='cd /home/rxz/dev/docs/ribosomexyz/paper_figs'
 
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
@@ -189,10 +193,19 @@ alias plugs="nvim ~/.config/nvim/lua/plugins.lua"
 alias vim="nvim"
 alias v="nvim"
 #---------------------------------------------------------------
+#
+alias kittyconf="vim ~/.config/kitty/kitty.conf"
+alias rangerconf="vim ~/.config/ranger/rc.conf"
+alias usrbin="cd /usr/bin"
+alias usrlocalbin="cd /usr/local/bin"
+alias localbin="cd ~/.local/bin/"
 
+alias sshconfig="vim /home/$(whoami)/.ssh/config"
 
-
-
+alias i3conf="nvim /home/$(whoami)/.config/i3/config"
+alias i3reload="i3-msg reload && i3-msg restart"
+alias confs="cd ~/.config/"
+alias lfrc="vim ~/.config/lf/lfrc"
 
 #----------------------[TMUX]-----------------------------------------
 #
@@ -226,20 +239,15 @@ alias gitrmall="git ls-tree -r master --name-only|xargs git rm -r --cached"
 
 #------------------------------------------------------------------
 alias ee='nautilus .'
-alias sshconfig="vim /home/$(whoami)/.ssh/config"
 
 alias sockeye="ssh rtviii@sockeye.arc.ubc.ca"
 alias cv="~/dev/cv/"
 
 alias poly="~/dev/polygen; vup"
 
-alias i3conf="nvim /home/$(whoami)/.config/i3/config"
-alias i3reload="i3-msg reload && i3-msg restart"
 alias shrestart="sudo service ssh restart"
 
-alias confs="cd ~/.config/"
 alias cf="cut -d ',' -f"
-alias rr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 alias biodata="cd /home/$(whoami)/dev/biodata-integration-proposal"
 alias wq="code ."
@@ -287,11 +295,8 @@ alias sshutopia="ssh -i ~/dev/docs/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com
 export PATH="/usr/local/cuda-11.1/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/home/rxz/zig-linux-x86_64-0.10.0-dev.2220+802f22073:$PATH"
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=/opt/bin/:$PATH
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -326,8 +331,9 @@ PROMPT='%F{blue}ᢹ%f %M.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
 RPROMPT='${vcs_info_msg_0_} '
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
-#
-#
+
+
+
 
 
 function used_plugins_zsh(){
@@ -356,16 +362,20 @@ function addconfigs(){
 #https://github.com/zsh-users/zsh-autosuggestions
 #https://github.com/zsh-users/zsh-history-substring-search
 
+dotfiles add ~/.config/Code/User/keybindings.json
+dotfiles add ~/.config/Code/User/settings.json
 
+dotfiles add ~/.config/i3/config
+dotfiles add ~/.config/i3/i3status.conf
 
-dot add ~/.emacs.d/init.el
-dot add ~/.config/i3
-dot add ~/.config/ranger/{rifle,rc}.conf
-dot add ~/.config/nvim
-dot add ~/.tmux.conf
-dot add ~/.zshrc
-dot add ~/.config/Code/User/settings.json
-dot add ~/.config/Code/User/keybindings.json
+dotfiles add ~/.config/nvim
+dotfiles add ~/.config/lf
+dotfiles add ~/.config/kitty
+dotfiles add ~/.tmux.conf
+dotfiles add ~/.zshrc
+
+dotfiles add ~/.emacs.d/init.el
+
 }
 
 newrepo(){
@@ -418,15 +428,34 @@ done;
 if  [[ $PRES -eq 0 ]]; then
 	echo "Nothing with *\"venv\" in here.";
 fi;
-
-
 }
+
+export GOPATH=/opt/go
+export GOROOT=$(which go)
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+
+lfcd () {
+    tmp="$(mktemp)"
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    command lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+bindkey -s '^o' 'lfcd\n'  # zsh
+
+
+
 
 
 [ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc'; fi
 
 # pnpm
 export PNPM_HOME="/home/rxz/.local/share/pnpm"

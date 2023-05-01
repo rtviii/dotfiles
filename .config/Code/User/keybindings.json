@@ -1088,7 +1088,7 @@
     "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "`",
+    "key": "alt+enter",
     "command": "editor.action.inlineSuggest.commit"
   },
   {
@@ -1141,6 +1141,11 @@
   {
     "key": "alt+a",
     "command": "-vscode-better-align.align",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "-bookmarks.shrinkSelection",
     "when": "editorTextFocus"
   }
 ]

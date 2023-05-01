@@ -593,5 +593,7 @@
     "editor.defaultFormatter": "vscode.css-language-features"
   },
   "skyline.port": 8888,
+  "editor.inlineSuggest.showToolbar": "always",
+  "zig.zls.path": "/home/rxz/.config/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
   "window.zoomLevel": 1
 }

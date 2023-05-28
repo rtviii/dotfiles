@@ -1,5 +1,0 @@
-pane	1	0	1	:*	0	:/home/rxz/dev/cv/pandoc-resume	1	zsh	:
-pane	2	0	1	:*	0	:/home/rxz	1	zsh	:
-window	1	0	:zsh	1	:*	b0de,85x23,0,0,1	:
-window	2	0	:zsh	1	:*	cd3f,191x48,0,0,2	:
-state	1	2

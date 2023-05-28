@@ -3,41 +3,22 @@ KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-PYTHONDONTWRITEBYTECODE="1"
+
+
+export XDG_CONFIG_HOME=$HOME
+
 EDITOR=nvim
 RUSTFLAGS="-A dead_code -A unused_imports"
-export RIBETL_DATA=/home/rxz/dev/static
-export IDOO_PASS="!Ominorej13"
-
-
-export PYMOL_PATH=/home/rxz/dev/pymol38 && export PYTHONPATH="$PYTHONPATH:$PYMOL_PATH/modules/:"
-#export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
-export PYTHONBIN=/usr/bin/python3
-export SPLIT_RENAME_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/split_rename.py
-export EXTRACT_BSITES_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/extract_bsites.py
-export COMMIT_STRUCTURE_SH=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/commit_structure.sh
-export RENDER_THUMBNAIL_PY=/home/rxz/dev/docker_ribxz/cli/ribxz/scripts/render_thumbnail.py
-export STRUCT_PROCESS_SCRIPTS=/home/rxz/dev/docker_ribxz/cli/scripts
+alias notes="/home/rxz/dev/notes"
+alias djdk="~/dev/docker_together/"
+alias ritual="ssh -l rxz 24.86.198.77"
 
-
-
-alias ribplugin="cd ~/dev/ribxz_molstar_plugin/"
-alias notes="cd /home/rxz/dev/notes;vim scratch.md"
-alias ribxz="~/dev/docker_ribxz/"
-
-export NEO4J_URI="neo4j://0.0.0.0:7687"
-export NEO4J_PASSWORD="ribosomexyz"
-export NEO4J_USER="neo4j"
-export NEO4J_CURRENTDB="neo4j"
-export RIBETL_DATA="/home/rxz/dev/static"
-
-alias pymol="/home/rxz/pymol-install-py2/bin/pymol"
-alias nrb="npm run build"
-alias nrs="npm run serve"
-alias dkstopall="docker container stop \$(docker container ls -aq)"
-alias dkrmallc="docker container rm \$(docker container ls -aq);"
-alias dkrmalli="docker image rm \$(docker image ls -aq)"
+alias karabinerconf='vim ~/.config/karabiner/karabiner.json'
+alias skhdrc='nvim ~/.config/skhd/skhdrc'
+alias yabairc='nvim ~/.config/yabai/yabairc'
+alias zshsrc="source ~/.zshrc"
+alias tmuxsrc="tmux source ~/.tmux.conf"
 
 function soundup(){
     echo "sound up said $1"
@@ -62,9 +43,8 @@ function _open_zshrc(){nvim ~/.zshrc};
     zle -N _open_zshrc; bindkey  '^[T' _open_zshrc
 
 bindkey -s '^[Y' 'source ~/.zshrc ^M';
+
 bindkey -s '^[>' 'docker container exec -it   /bin/bash';
-bindkey -s '^[d' 'cd .. ^M';
-bindkey -s '^[f' 'cd - ^M';
 
 function _nvim_here(){ nvim . };
 zle -N _nvim_here; bindkey '^[r' _nvim_here
@@ -85,6 +65,7 @@ bindkey -s '^t' 'cargo test -- --nocapture ^M'
 
 
 export bend="/home/rxz/dev/riboxyzbackend"
+alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
 
 alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
 
@@ -116,19 +97,10 @@ alias sbkfktunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 sb-gateway'
 
 alias ribxzfigs='cd /home/rxz/dev/docs/ribosomexyz/paper_figs'
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
-alias dk="docker"
-alias dkls="docker container ls"
-alias dkc="docker container"
-alias dkn="docker network"
-alias dkv="docker volume"
-alias dki="docker image"
-alias dke="docker execute -it"
-alias dc="docker-compose"
 
 
 
@@ -193,19 +165,10 @@ alias plugs="nvim ~/.config/nvim/lua/plugins.lua"
 alias vim="nvim"
 alias v="nvim"
 #---------------------------------------------------------------
-#
-alias kittyconf="vim ~/.config/kitty/kitty.conf"
-alias rangerconf="vim ~/.config/ranger/rc.conf"
-alias usrbin="cd /usr/bin"
-alias usrlocalbin="cd /usr/local/bin"
-alias localbin="cd ~/.local/bin/"
 
-alias sshconfig="vim /home/$(whoami)/.ssh/config"
 
-alias i3conf="nvim /home/$(whoami)/.config/i3/config"
-alias i3reload="i3-msg reload && i3-msg restart"
-alias confs="cd ~/.config/"
-alias lfrc="vim ~/.config/lf/lfrc"
+
+
 
 #----------------------[TMUX]-----------------------------------------
 #
@@ -222,7 +185,6 @@ alias tkp="tmux kill-pane -t"
 alias xx="exit"
 alias jctl="sudo journalctl -e -u"
 alias p3="python3"
-alias p38="python3.8"
 
 
 alias mkvenv='python3 -m virtualenv --python=/usr/bin/python3.10'
@@ -230,6 +192,13 @@ alias countem="sed 's/,/ /g' | wc -w"
 alias keys="ls -la ~/.ssh | awk -F \" \" '{if (NR>2) {print\$9}}'"
 #----------------------GIT-----------------------------------------
 
+
+alias gsw="git switch"
+alias gs="git status"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias ll="nvim ~/.config/nvim/lua/init.lua"
+alias vv="nvim ~/.config/nvim/init.vim"
 
 #Creates a new branch and switches to it right away
 alias gswc="git switch -c" #create and switch into
@@ -239,15 +208,20 @@ alias gitrmall="git ls-tree -r master --name-only|xargs git rm -r --cached"
 
 #------------------------------------------------------------------
 alias ee='nautilus .'
+alias sshconfig="vim /home/$(whoami)/.ssh/config"
 
 alias sockeye="ssh rtviii@sockeye.arc.ubc.ca"
 alias cv="~/dev/cv/"
 
 alias poly="~/dev/polygen; vup"
 
+alias i3conf="nvim /home/$(whoami)/.config/i3/config"
+alias i3reload="i3-msg reload && i3-msg restart"
 alias shrestart="sudo service ssh restart"
 
+alias confs="cd ~/.config/"
 alias cf="cut -d ',' -f"
+alias rr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 alias biodata="cd /home/$(whoami)/dev/biodata-integration-proposal"
 alias wq="code ."
@@ -277,6 +251,15 @@ alias neoimport="/var/lib/neo4j/import"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Redis
 alias rds='redis-cli'
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
+alias dk="docker"
+alias dkls="docker container ls"
+alias dkc="docker container"
+alias dkn="docker network"
+alias dkv="docker volume"
+alias dki="docker image"
+alias dke="docker execute -it"
+alias dc="docker-compose"
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
@@ -293,10 +276,15 @@ alias sshutopia="ssh -i ~/dev/docs/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com
 
 
 export PATH="/usr/local/cuda-11.1/bin:$PATH"
+export PATH="~/.actin/{*}:$PATH"
+export PATH="/home/rxz/.local/share/solana/install/active_release/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/home/rxz/zig-linux-x86_64-0.10.0-dev.2220+802f22073:$PATH"
 
-export PATH=/opt/bin/:$PATH
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -331,9 +319,8 @@ PROMPT='%F{blue}ᢹ%f %M.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
 RPROMPT='${vcs_info_msg_0_} '
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
-
-
-
+#
+#
 
 
 function used_plugins_zsh(){
@@ -355,27 +342,25 @@ function listppas(){
 function addconfigs(){
 
 
+
+
 # Regular installs:
-#https://github.com/ranger/ranger.git
-#https://github.com/zsh-users/zsh-syntax-highlighting
-#https://github.com/softmoth/zsh-vim-mode
-#https://github.com/zsh-users/zsh-autosuggestions
-#https://github.com/zsh-users/zsh-history-substring-search
+https://github.com/ranger/ranger.git
+https://github.com/zsh-users/zsh-syntax-highlighting
+https://github.com/softmoth/zsh-vim-mode
+https://github.com/zsh-users/zsh-autosuggestions
+https://github.com/zsh-users/zsh-history-substring-search
 
-dotfiles add ~/.config/Code/User/keybindings.json
-dotfiles add ~/.config/Code/User/settings.json
 
-dotfiles add ~/.config/i3/config
-dotfiles add ~/.config/i3/i3status.conf
 
-dotfiles add ~/.config/nvim
-dotfiles add ~/.config/lf
-dotfiles add ~/.config/kitty
-dotfiles add ~/.tmux.conf
-dotfiles add ~/.zshrc
-
-dotfiles add ~/.emacs.d/init.el
-
+dot add ~/.emacs.d/init.el
+dot add ~/.config/i3
+dot add ~/.config/ranger/{rifle,rc}.conf
+dot add ~/.config/nvim
+dot add ~/.tmux.conf
+dot add ~/.zshrc
+dot add ~/.config/Code/User/settings.json
+dot add ~/.config/Code/User/keybindings.json
 }
 
 newrepo(){
@@ -428,39 +413,15 @@ done;
 if  [[ $PRES -eq 0 ]]; then
 	echo "Nothing with *\"venv\" in here.";
 fi;
+
+
 }
-
-export GOPATH=/opt/go
-export GOROOT=$(which go)
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-
-lfcd () {
-    tmp="$(mktemp)"
-    # `command` is needed in case `lfcd` is aliased to `lf`
-    command lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-bindkey -s '^o' 'lfcd\n'  # zsh
-
-
-
 
 
 [ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env
 
-# pnpm
-export PNPM_HOME="/home/rxz/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc'; fi

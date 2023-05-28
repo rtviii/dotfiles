@@ -1,13 +1,14 @@
 ZSH_DISABLE_COMPFIX=true
 KEYTIMEOUT=1
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vim-mode history-substring-search last-working-dir)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode history-substring-search last-working-dir)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 
-export XDG_CONFIG_HOME=$HOME
+#export XDG_CONFIG_HOME=$HOME
 
-EDITOR=nvim
+export EDITOR=nvim
+
 RUSTFLAGS="-A dead_code -A unused_imports"
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
 alias notes="/home/rxz/dev/notes"
@@ -18,7 +19,7 @@ alias karabinerconf='vim ~/.config/karabiner/karabiner.json'
 alias skhdrc='nvim ~/.config/skhd/skhdrc'
 alias yabairc='nvim ~/.config/yabai/yabairc'
 alias zshsrc="source ~/.zshrc"
-alias tmuxsrc="tmux source ~/.tmux.conf"
+
 
 function soundup(){
     echo "sound up said $1"
@@ -172,7 +173,7 @@ alias v="nvim"
 
 #----------------------[TMUX]-----------------------------------------
 #
-alias tmuxconf="nvim ~/.tmux.conf"
+alias tmuxconf="vim ~/.tmux.conf"
 alias tmuxls="tmux ls"
 alias tmuxa="tmux attach -t"
 alias tmuxa="tmux attach -t"

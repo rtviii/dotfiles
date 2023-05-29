@@ -5,8 +5,7 @@ export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 
-#export XDG_CONFIG_HOME=$HOME
-
+export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=nvim
 
 RUSTFLAGS="-A dead_code -A unused_imports"
@@ -315,6 +314,9 @@ zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
  precmd() {
      vcs_info
      }
+
+
+export PATH=/opt/bin/:$PATH
 
 PROMPT='%F{blue}ᢹ%f %M.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
 RPROMPT='${vcs_info_msg_0_} '

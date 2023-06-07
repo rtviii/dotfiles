@@ -10,11 +10,11 @@
 :lua require('plugins.nvim-tree')
 :lua require('plugins.nvim-cmp')
 :lua require('plugins.mason')
+:lua require('plugins.lspconfig')
+
 
 hi Comment cterm=italic
 set clipboard+=unnamedplus
-
-
 
 
 "
@@ -38,8 +38,8 @@ set hidden                " Allow buffers to be backgrounded without being saved
 set laststatus=2          " Always show the status bar
 set list                  " Show invisible characters
 "set listchars=tab:›\ ,eol:¬,trail:⋅ "Set the characters for the invisibles
-set number
-set ruler                 " Show the line number and column in the status bar
+" set number
+" set ruler                 " Show the line number and column in the status bar
 set t_Co=256              " Use 256 colors
 set scrolloff=999         " Keep the cursor centered in the screen
 set showmatch             " Highlight matching braces
@@ -47,6 +47,7 @@ set showmode              " Show the current mode on the open buffer
 set splitbelow            " Splits show up below by default
 set splitright            " Splits go to the right by default
 set visualbell            " Use a visual bell to notify us
+
 
 
 " Customize session options. Namely, I don't want to save hidden and  unloaded buffers or empty windows.

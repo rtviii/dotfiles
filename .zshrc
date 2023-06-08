@@ -9,6 +9,8 @@ export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME=$HOME/.config
 
+
+
 RUSTFLAGS="-A dead_code -A unused_imports"
 
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
@@ -243,3 +245,4 @@ if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi
 
+export PATH="/usr/local/opt/llvm/bin:$PATH"

@@ -11,6 +11,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 
 
+
 RUSTFLAGS="-A dead_code -A unused_imports"
 
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
@@ -139,14 +140,9 @@ function _code_here(){code .};
     zle -N _code_here; bindkey  '^[W' _code_here
 
 function _open_zshrc(){nvim ~/.zshrc};
-    zle -N _open_zshrc; bindkey  '^[T' _open_zshrc
+    zle -N _open_zshrc; bindkey  '^[t' _open_zshrc
 
-bindkey -s '^[Y' 'source ~/.zshrc ^M';
 
-bindkey -s '^[>' 'docker container exec -it   /bin/bash';
-
-function _nvim_here(){ nvim . };
-zle -N _nvim_here; bindkey '^[r' _nvim_here
 
 function xtob(){
     echo "obase=2;$1" | bc
@@ -157,7 +153,13 @@ function tmux_last_session(){
     LAST_TMUX_SESSION=$(tmux list-sessions | awk -F ":" '{print$1}' | tail -n1);
     tmux attach -t $LAST_TMUX_SESSION
 }
+
+
+function _nvim_here(){ nvim . };
+zle -N _nvim_here; bindkey '^[r' _nvim_here
 bindkey -s '^s' 'tmux_last_session ^M'
+bindkey -s '^[y' 'source ~/.zshrc ^M';
+bindkey -s '^[>' 'docker container exec -it   /bin/bash';
 # Activate virtualenv.
 function vup(){
 PRES=0

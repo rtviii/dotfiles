@@ -2,18 +2,18 @@ ZSH_DISABLE_COMPFIX=true
 
 KEYTIMEOUT=0
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode history-substring-search last-working-dir)
-
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir zsh-vim-mode)
+source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export EDITOR=nvim
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME=$HOME/.config
 
-
 RUSTFLAGS="-A dead_code -A unused_imports"
 
 export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
 
+alias dl="~/dev/dl/"
 alias notes="$HOME/dev/notes"
 alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
@@ -165,33 +165,24 @@ function _source_zshrc(){ source ~/.zshrc };
     zle -N _source_zshrc; bindkey -v '^[y' _source_zshrc;
 
 
-function _btop(){ btop };
-    zle -N _btop; bindkey -v '^[b' _btop;
 
+function onetwo(){
+    echo "onetwo"
+
+    local venv_folders=()
+      for folder in *(/); do
+        if [[ $folder =~ venv$ ]]; then
+          venv_folders+=("$folder")
+        fi
+      done
+
+      printf '%s\n' "${venv_folders[@]}"
+
+
+}
 
 # bindkey -s '^[>' 'docker container exec -it   /bin/bash';
 # Activate virtualenv.
-function vup(){
-PRES=0
-
-for i in ${local[@]};
-do
-	echo $i
-	if [ $i == *"venv" ];
-	then
-		sourcefile=$(pwd)/$i/bin/activate
-		echo "Sourcefile"
-		echo $sourcefile;
-		source $sourcefile;
-		PRES=1
-	fi;
-done;
-
-if  [[ $PRES -eq 0 ]]; then
-	echo "Nothing with *\"venv\" in here.";
-fi;
-
-}
 
 function used_plugins_zsh(){
     my_plugins=(
@@ -231,7 +222,6 @@ export PATH="/home/rxz/zig-linux-x86_64-0.10.0-dev.2220+802f22073:$PATH"
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
 export NVM_DIR="$HOME/.nvm"
 #[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
@@ -261,3 +251,10 @@ function _lf(){ lf };
     zle -N _lf; bindkey -v '^[d' _lf
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+cd ~/dev
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.3
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

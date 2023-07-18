@@ -2,7 +2,7 @@ ZSH_DISABLE_COMPFIX=true
 
 KEYTIMEOUT=0
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir zsh-vim-mode)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir zsh-vim-mode poetry)
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export EDITOR=nvim
 export ZSH=~/.oh-my-zsh
@@ -11,15 +11,17 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 RUSTFLAGS="-A dead_code -A unused_imports"
 
-export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
+#export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
 
+alias pws="/Users/rtviii/dev/rtviii.github.io"
 alias dl="~/dev/dl/"
 alias notes="$HOME/dev/notes"
 alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
-alias xo="xclip -selection clipboard"
+alias xo="pbcopy"
+alias xp="pbpaste"
 alias szz="du -ah --max-depth=1 . | sort"
 alias vup='VENVS=($(ls | grep *venv)); source $(pwd)/${VENVS[1]}/bin/activate;'
 alias zshrc="vim ~/.zshrc"
@@ -71,6 +73,7 @@ alias tkp="tmux kill-pane -t"
 alias rr='lfcd'
 alias lf='lfcd'
 #
+alias lfrc="nvim ~/.config/lf/lfrc"
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 # *************************************** CONFIGS & RCs ****************************************************
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
@@ -121,6 +124,7 @@ alias dc="docker-compose"
 alias rib='ssh ubuntu@ribosome.xyz'
 alias ribrsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
 alias ribupdatersync="rsync -hvrPt -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
+alias ribxz="~/dev/riboxyz/ && vup"
 
 # -----------------------------------------------------
 # ------------------------------------------- FUNCTIONS
@@ -223,7 +227,7 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
-#[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 unsetopt BEEP
 setopt extendedglob
@@ -251,10 +255,26 @@ function _lf(){ lf };
     zle -N _lf; bindkey -v '^[d' _lf
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-cd ~/dev
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.3
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="/Users/rtviii/.local/bin:$PATH"
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
+
+
+export RIBETL_DATA=/Users/rtviii/dev/ptc_extraction/RIBETL_DATA
+export NEO4J_URI=""
+export NEO4J_USER=""
+export NEO4J_PASSWORD=""
+export NEO4J_DATABASE=""
+
+alias cpp="clang++"
+
+
+
 export PATH="$PATH:$HOME/.rvm/bin"
+

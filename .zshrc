@@ -330,6 +330,7 @@ function used_plugins_zsh(){
     my_plugins=(
         "https://github.com/zsh-users/zsh-syntax-highlighting"
         "https://github.com/softmoth/zsh-vim-mode"
+        "https://github.com/jeffreytse/zsh-vi-mode"
         "https://github.com/zsh-users/zsh-autosuggestions"
         "https://github.com/zsh-users/zsh-history-substring-search"
         )

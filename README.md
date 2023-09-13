@@ -1,7 +1,28 @@
 #  Dotfiles
+
 My configs for neovim, tmux, zsh and ranger. Repo structure inspired by [`StreakyCobra`'s method](https://news.ycombinator.com/item?id=11071754).
 
 --------------
+
+
+Should still keep configs separate:
+
+
+# Common
+zshrc
+code
+nvim
+kitty
+lf
+tmux
+
+# Macos specific
+yabai 
+skhd 
+karabiner-elements
+
+
+
 
 For a fresh VM:
  Make sure $ZSH is congruent with current user (/home/$USR or /root)

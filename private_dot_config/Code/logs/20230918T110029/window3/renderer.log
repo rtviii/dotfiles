@@ -1,0 +1,6 @@
+2023-09-18 18:42:56.045 [error] Extension 'ms-toolsai.datawrangler CANNOT USE these API proposals 'notebookDeprecated'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2023-09-18 18:42:58.731 [info] [perf] Render performance baseline is 28ms
+2023-09-18 18:43:37.834 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2023-09-18 18:43:37.835 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2023-09-18 18:43:37.835 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2023-09-18 18:43:37.850 [warning] [File Watcher (parcel)] Watcher shutdown because watched path got deleted (path: /home/rtviii/dev/eukaryotic_ptcs)

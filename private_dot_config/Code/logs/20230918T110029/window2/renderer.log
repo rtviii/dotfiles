@@ -1,0 +1,197 @@
+2023-09-18 14:26:31.514 [error] Extension 'ms-toolsai.datawrangler CANNOT USE these API proposals 'notebookDeprecated'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2023-09-18 14:26:34.627 [info] [perf] Render performance baseline is 41ms
+2023-09-18 14:45:11.022 [error] Unable to read file '/home/rtviii/dev/ribxzvenv/lib/python3.11/site-packages/Bio/SeqIO/__init__.py' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/ribxzvenv/lib/python3.11/site-packages/Bio/SeqIO/__init__.py' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 14:45:43.476 [error] Cannot read properties of undefined (reading 'data'): TypeError: Cannot read properties of undefined (reading 'data')
+    at /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:70838
+    at _0x14cc73 (/home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:82605)
+    at pe.provideCompletionItems (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:109:51158)
+2023-09-18 15:34:23.312 [error] Actual command not found, wanted to execute _ghostTextPostInsert/3839: Error: Actual command not found, wanted to execute _ghostTextPostInsert/3839
+    at r.h (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:107:83091)
+2023-09-18 15:36:57.529 [error] Cannot read properties of undefined (reading 'data'): TypeError: Cannot read properties of undefined (reading 'data')
+    at /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:70838
+    at _0x14cc73 (/home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:82605)
+    at pe.provideCompletionItems (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:109:51158)
+2023-09-18 16:36:39.281 [error] Cannot read properties of undefined (reading 'data'): TypeError: Cannot read properties of undefined (reading 'data')
+    at /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:70838
+    at _0x14cc73 (/home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:82605)
+    at pe.provideCompletionItems (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:109:51158)
+2023-09-18 16:42:42.638 [error] Cannot read properties of undefined (reading 'data'): TypeError: Cannot read properties of undefined (reading 'data')
+    at /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:70838
+    at _0x14cc73 (/home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:82605)
+    at pe.provideCompletionItems (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:109:51158)
+2023-09-18 16:54:44.734 [error] Actual command not found, wanted to execute _ghostTextPostInsert/17262: Error: Actual command not found, wanted to execute _ghostTextPostInsert/17262
+    at r.h (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:107:83091)
+2023-09-18 17:03:16.100 [error] [Extension Host] [ERROR] [streamChoices] [2023-09-18T22:03:16.095Z] Error parsing extraData: data: {"id":"cmpl-80GclifajIJZtXU0N86tO
+2023-09-18 17:09:50.994 [error] Cannot read properties of undefined (reading 'data'): TypeError: Cannot read properties of undefined (reading 'data')
+    at /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:70838
+    at _0x14cc73 (/home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:82605)
+    at pe.provideCompletionItems (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:109:51158)
+2023-09-18 18:36:35.389 [info] [onWill-handler] applying additional workspace edit from extensions ["Python"]
+2023-09-18 18:44:05.000 [info] [onWill-handler] applying additional workspace edit from extensions ["Python"]
+2023-09-18 19:19:25.429 [error] Server returned 404: Error: Server returned 404
+    at l (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:661:29165)
+    at w.readExtensionResource (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:763:5143)
+    at async g.a (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:1985:909)
+    at async Q.V (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2004:2659)
+2023-09-18 19:19:29.497 [error] Problems processing product icons definitions in https://rubenverg.vscode-unpkg.net/RubenVerg/bootstrap-product-icons/1.0.2/extension/icons/bootstrap-product-icon-theme.json:
+Invalid font weight in font 'bi'. Ignoring setting.
+Invalid font style in font 'bi'. Ignoring setting.
+Invalid font weight in font 'fira'. Ignoring setting.
+Invalid font style in font 'fira'. Ignoring setting.
+2023-09-18 19:19:44.908 [error] Problems processing product icons definitions in https://flippidippi.vscode-unpkg.net/flippidippi/flippidippi-theme/0.0.8/extension/themes/product-icon-theme.json:
+Skipping icon definition 'array'. Unknown fontCharacter.
+Skipping icon definition 'bracket-dot'. Unknown fontCharacter.
+Skipping icon definition 'bracket-error'. Unknown fontCharacter.
+Skipping icon definition 'bracket'. Unknown fontCharacter.
+Skipping icon definition 'chevron-down'. Unknown fontCharacter.
+Skipping icon definition 'chevron-left'. Unknown fontCharacter.
+Skipping icon definition 'chevron-right'. Unknown fontCharacter.
+Skipping icon definition 'chevron-up'. Unknown fontCharacter.
+Skipping icon definition 'circle-filled'. Unknown fontCharacter.
+Skipping icon definition 'circle-large-filled'. Unknown fontCharacter.
+Skipping icon definition 'circle-large-outline'. Unknown fontCharacter.
+Skipping icon definition 'circle-outline'. Unknown fontCharacter.
+Skipping icon definition 'circuit-board'. Unknown fontCharacter.
+Skipping icon definition 'close'. Unknown fontCharacter.
+Skipping icon definition 'close-dirty'. Unknown fontCharacter.
+Skipping icon definition 'code'. Unknown fontCharacter.
+Skipping icon definition 'compass-active'. Unknown fontCharacter.
+Skipping icon definition 'console'. Unknown fontCharacter.
+Skipping icon definition 'debug-all'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-conditional'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-conditional-disabled'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-conditional-unverified'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-data'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-data-disabled'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-data-unverified'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-disabled'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-function'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-function-disabled'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-function-unverified'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-log'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-log-disabled'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-log-unverified'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-unsupported'. Unknown fontCharacter.
+Skipping icon definition 'debug-breakpoint-unverified'. Unknown fontCharacter.
+Skipping icon definition 'debug-console'. Unknown fontCharacter.
+Skipping icon definition 'debug-continue-small'. Unknown fontCharacter.
+Skipping icon definition 'debug-continue'. Unknown fontCharacter.
+Skipping icon definition 'debug-coverage'. Unknown fontCharacter.
+Skipping icon definition 'debug-disconnect'. Unknown fontCharacter.
+Skipping icon definition 'debug-hint'. Unknown fontCharacter.
+Skipping icon definition 'debug-line-by-line'. Unknown fontCharacter.
+Skipping icon definition 'debug-rerun'. Unknown fontCharacter.
+Skipping icon definition 'debug-restart-frame'. Unknown fontCharacter.
+Skipping icon definition 'debug-reverse-continue'. Unknown fontCharacter.
+Skipping icon definition 'debug-stackframe'. Unknown fontCharacter.
+Skipping icon definition 'debug-stackframe-active'. Unknown fontCharacter.
+Skipping icon definition 'debug-stackframe-dot'. Unknown fontCharacter.
+Skipping icon definition 'debug-stackframe-focused'. Unknown fontCharacter.
+Skipping icon definition 'debug-start'. Unknown fontCharacter.
+Skipping icon definition 'debug-step-back'. Unknown fontCharacter.
+Skipping icon definition 'debug-step-into'. Unknown fontCharacter.
+Skipping icon definition 'debug-step-out'. Unknown fontCharacter.
+Skipping icon definition 'debug-step-over'. Unknown fontCharacter.
+Skipping icon definition 'diff'. Unknown fontCharacter.
+Skipping icon definition 'diff-added'. Unknown fontCharacter.
+Skipping icon definition 'diff-ignored'. Unknown fontCharacter.
+Skipping icon definition 'diff-modified'. Unknown fontCharacter.
+Skipping icon definition 'diff-removed'. Unknown fontCharacter.
+Skipping icon definition 'diff-renamed'. Unknown fontCharacter.
+Skipping icon definition 'editor-layout'. Unknown fontCharacter.
+Skipping icon definition 'ellipsis'. Unknown fontCharacter.
+Skipping icon definition 'empty-window'. Unknown fontCharacter.
+Skipping icon definition 'error-small'. Unknown fontCharacter.
+Skipping icon definition 'exclude'. Unknown fontCharacter.
+Skipping icon definition 'expand-all'. Unknown fontCharacter.
+Skipping icon definition 'export'. Unknown fontCharacter.
+Skipping icon definition 'file-binary'. Unknown fontCharacter.
+Skipping icon definition 'file-code'. Unknown fontCharacter.
+Skipping icon definition 'file-pdf'. Unknown fontCharacter.
+Skipping icon definition 'file-submodule'. Unknown fontCharacter.
+Skipping icon definition 'file-symlink-directory'. Unknown fontCharacter.
+Skipping icon definition 'file-symlink-file'. Unknown fontCharacter.
+Skipping icon definition 'file-zip'. Unknown fontCharacter.
+Skipping icon definition 'filter-filled'. Unknown fontCharacter.
+Skipping icon definition 'fold'. Unknown fontCharacter.
+Skipping icon definition 'fold-down'. Unknown fontCharacter.
+Skipping icon definition 'folder-active'. Unknown fontCharacter.
+Skipping icon definition 'folder-library'. Unknown fontCharacter.
+Skipping icon definition 'gather'. Unknown fontCharacter.
+Skipping icon definition 'git-commit'. Unknown fontCharacter.
+Skipping icon definition 'git-merge'. Unknown fontCharacter.
+Skipping icon definition 'git-pull-request'. Unknown fontCharacter.
+Skipping icon definition 'git-pull-request-abandoned'. Unknown fontCharacter.
+Skipping icon definition 'git-pull-request-closed'. Unknown fontCharacter.
+Skipping icon definition 'git-pull-request-create'. Unknown fontCharacter.
+Skipping icon definition 'git-pull-request-draft'. Unknown fontCharacter.
+Skipping icon definition 'graph-scatter'. Unknown fontCharacter.
+2023-09-18 19:19:59.498 [error] Server returned 404: Error: Server returned 404
+    at l (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:661:29165)
+    at w.readExtensionResource (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:763:5143)
+    at async g.a (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:1985:909)
+    at async Q.V (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2004:2659)
+2023-09-18 19:20:28.405 [error] Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/classification.py' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/classification.py' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 19:20:28.481 [error] Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/tunnel.py' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/tunnel.py' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 19:20:28.482 [error] Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/utils.py' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/utils.py' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 19:20:28.483 [error] Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/util_taxonomy.py' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/util_taxonomy.py' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 19:20:28.484 [error] Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/msalib.py' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/riboxyz/ribctl/lib/msalib.py' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 19:20:28.486 [error] Unable to read file '/home/rtviii/dev/riboxyz/scripts/pymol_visualtion.py' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/riboxyz/scripts/pymol_visualtion.py' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 19:20:34.939 [error] Unable to read file 'vscode-userdata:/home/rtviii/.config/Code/User/settings.json' (Error: File not modified since): Error: Unable to read file 'vscode-userdata:/home/rtviii/.config/Code/User/settings.json' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937

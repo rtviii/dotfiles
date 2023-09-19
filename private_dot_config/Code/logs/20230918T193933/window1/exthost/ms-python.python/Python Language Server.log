@@ -1,0 +1,89 @@
+2023-09-18 19:39:38.417 [info] [Info  - 7:39:38 PM] (93398) Pylance language server 2023.9.10 (pyright c70adefc) starting
+2023-09-18 19:39:38.417 [info] [Info  - 7:39:38 PM] (93398) Server root directory: /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist
+2023-09-18 19:39:38.420 [info] [Info  - 7:39:38 PM] (93398) Starting service instance "riboxyz"
+2023-09-18 19:39:38.447 [info] [Info  - 7:39:38 PM] (93398) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:39:38.447 [info] [Info  - 7:39:38 PM] (93398) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:39:38.452 [info] [Warn  - 7:39:38 PM] (93398) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:39:38.483 [info] [Info  - 7:39:38 PM] (93398) Assuming Python version 3.11
+2023-09-18 19:39:38.567 [info] [Info  - 7:39:38 PM] (93398) Found 501 source files
+2023-09-18 19:40:01.824 [info] [Info  - 7:40:01 PM] (93625) Pylance language server 2023.9.10 (pyright c70adefc) starting
+2023-09-18 19:40:01.824 [info] [Info  - 7:40:01 PM] (93625) Server root directory: /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist
+2023-09-18 19:40:01.824 [info] [Info  - 7:40:01 PM] (93625) Starting service instance "riboxyz"
+2023-09-18 19:40:01.856 [info] [Info  - 7:40:01 PM] (93625) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:01.857 [info] [Info  - 7:40:01 PM] (93625) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:01.858 [info] [Warn  - 7:40:01 PM] (93625) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:40:01.877 [info] [Info  - 7:40:01 PM] (93625) Assuming Python version 3.11
+2023-09-18 19:40:01.970 [info] [Info  - 7:40:01 PM] (93625) Found 501 source files
+2023-09-18 19:40:09.205 [info] [Info  - 7:40:09 PM] (93679) Pylance language server 2023.9.10 (pyright c70adefc) starting
+2023-09-18 19:40:09.205 [info] [Info  - 7:40:09 PM] (93679) Server root directory: /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist
+2023-09-18 19:40:09.211 [info] [Info  - 7:40:09 PM] (93679) Starting service instance "riboxyz"
+2023-09-18 19:40:09.242 [info] [Info  - 7:40:09 PM] (93679) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:09.242 [info] [Info  - 7:40:09 PM] (93679) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:09.245 [info] [Warn  - 7:40:09 PM] (93679) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:40:09.266 [info] [Info  - 7:40:09 PM] (93679) Assuming Python version 3.11
+2023-09-18 19:40:09.357 [info] [Info  - 7:40:09 PM] (93679) Found 501 source files
+2023-09-18 19:40:20.418 [info] [Info  - 7:40:20 PM] (93773) Pylance language server 2023.9.10 (pyright c70adefc) starting
+2023-09-18 19:40:20.418 [info] [Info  - 7:40:20 PM] (93773) Server root directory: /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist
+2023-09-18 19:40:20.423 [info] [Info  - 7:40:20 PM] (93773) Starting service instance "riboxyz"
+2023-09-18 19:40:20.453 [info] [Info  - 7:40:20 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:20.453 [info] [Info  - 7:40:20 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:20.453 [info] [Warn  - 7:40:20 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:40:20.476 [info] [Info  - 7:40:20 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:40:20.580 [info] [Info  - 7:40:20 PM] (93773) Found 501 source files
+2023-09-18 19:40:23.616 [info] [Info  - 7:40:23 PM] (93773) [IDX(2)] Long operation: index execution environment /home/rtviii/dev/riboxyz (2126ms)
+2023-09-18 19:40:23.616 [info] [Info  - 7:40:23 PM] (93773) [IDX(2)] Long operation: index packages /home/rtviii/dev/riboxyz (2134ms)
+2023-09-18 19:40:38.954 [info] [Info  - 7:40:38 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:38.954 [info] [Info  - 7:40:38 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:40:38.954 [info] [Warn  - 7:40:38 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:40:38.989 [info] [Info  - 7:40:38 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:40:39.078 [info] [Info  - 7:40:39 PM] (93773) Found 501 source files
+2023-09-18 19:41:34.234 [info] [Info  - 7:41:34 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:41:34.234 [info] [Info  - 7:41:34 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:41:34.234 [info] [Warn  - 7:41:34 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:41:34.261 [info] [Info  - 7:41:34 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:41:34.337 [info] [Info  - 7:41:34 PM] (93773) Found 501 source files
+2023-09-18 19:42:37.946 [info] [Info  - 7:42:37 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:42:37.946 [info] [Info  - 7:42:37 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:42:37.946 [info] [Warn  - 7:42:37 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:42:37.972 [info] [Info  - 7:42:37 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:42:38.039 [info] [Info  - 7:42:38 PM] (93773) Found 501 source files
+2023-09-18 19:42:38.070 [info] [Info  - 7:42:38 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:42:38.071 [info] [Info  - 7:42:38 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:42:38.071 [info] [Warn  - 7:42:38 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:42:38.107 [info] [Info  - 7:42:38 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:42:38.213 [info] [Info  - 7:42:38 PM] (93773) Found 501 source files
+2023-09-18 19:44:33.856 [info] [Info  - 7:44:33 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:44:33.856 [info] [Info  - 7:44:33 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:44:33.857 [info] [Warn  - 7:44:33 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:44:33.887 [info] [Info  - 7:44:33 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:44:33.953 [info] [Info  - 7:44:33 PM] (93773) Found 501 source files
+2023-09-18 19:45:07.347 [info] [Info  - 7:45:07 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:07.347 [info] [Info  - 7:45:07 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:07.347 [info] [Warn  - 7:45:07 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:45:07.382 [info] [Info  - 7:45:07 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:45:07.460 [info] [Info  - 7:45:07 PM] (93773) Found 501 source files
+2023-09-18 19:45:09.999 [info] [Info  - 7:45:09 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:09.999 [info] [Info  - 7:45:09 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:10.000 [info] [Warn  - 7:45:09 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:45:10.041 [info] [Info  - 7:45:10 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:45:10.133 [info] [Info  - 7:45:10 PM] (93773) Found 501 source files
+2023-09-18 19:45:14.152 [info] [Info  - 7:45:14 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:14.152 [info] [Info  - 7:45:14 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:14.152 [info] [Warn  - 7:45:14 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:45:14.196 [info] [Info  - 7:45:14 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:45:14.290 [info] [Info  - 7:45:14 PM] (93773) Found 501 source files
+2023-09-18 19:45:27.662 [info] [Info  - 7:45:27 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:27.662 [info] [Info  - 7:45:27 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:27.662 [info] [Warn  - 7:45:27 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:45:27.715 [info] [Info  - 7:45:27 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:45:27.806 [info] [Info  - 7:45:27 PM] (93773) Found 501 source files
+2023-09-18 19:45:33.424 [info] [Info  - 7:45:33 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:33.424 [info] [Info  - 7:45:33 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:33.424 [info] [Warn  - 7:45:33 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:45:33.476 [info] [Info  - 7:45:33 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:45:33.558 [info] [Info  - 7:45:33 PM] (93773) Found 501 source files
+2023-09-18 19:45:39.927 [info] [Info  - 7:45:39 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:39.927 [info] [Info  - 7:45:39 PM] (93773) Setting pythonPath for service "riboxyz": "/home/rtviii/dev/ribxzvenv/bin/python"
+2023-09-18 19:45:39.928 [info] [Warn  - 7:45:39 PM] (93773) stubPath /home/rtviii/dev/riboxyz/typings is not a valid directory.
+2023-09-18 19:45:39.979 [info] [Info  - 7:45:39 PM] (93773) Assuming Python version 3.11
+2023-09-18 19:45:40.065 [info] [Info  - 7:45:40 PM] (93773) Found 501 source files

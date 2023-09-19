@@ -1,0 +1,13 @@
+Visual Studio Code (1.82.1, undefined, desktop)
+Jupyter Extension Version: 2023.8.1002501831.
+Python Extension Version: 2023.16.0.
+Platform: linux (x64).
+Workspace folder ~/dev/riboxyz, Home = /home/rtviii
+19:34:23.325 [info] User belongs to experiment group 'NewJupyterSession'
+19:34:23.567 [info] Start refreshing Kernel Picker (1695083663567)
+19:34:23.576 [info] Using Pylance
+19:34:25.303 [info] Process Execution: ~/dev/ribxzvenv/bin/python -m pip list
+19:34:25.866 [info] End refreshing Kernel Picker (1695083663567)
+19:39:31.236 [info] Disposing HostJupyterExecution
+19:39:31.236 [info] Shutting down notebooks for 820ef17f-29c5-49ae-9b38-9ac5998f0f12
+19:39:31.236 [info] Disposing HostJupyterExecution

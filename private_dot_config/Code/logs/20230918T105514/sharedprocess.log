@@ -1,0 +1,21 @@
+2023-09-18 10:57:23.266 [info] Getting Manifest... ms-toolsai.datawrangler
+2023-09-18 10:57:23.274 [info] Installing extension: ms-toolsai.datawrangler
+2023-09-18 10:57:23.585 [info] Getting Manifest... ms-dotnettools.vscode-dotnet-runtime
+2023-09-18 10:57:23.794 [info] Installing extension: ms-dotnettools.vscode-dotnet-runtime ms-toolsai.datawrangler
+2023-09-18 10:57:24.578 [warning] Extension signature verification failed with error 'UnknownError': ms-dotnettools.vscode-dotnet-runtime
+2023-09-18 10:57:24.626 [info] Extracted extension to file:///home/rtviii/.vscode/extensions/ms-dotnettools.vscode-dotnet-runtime-1.7.3: ms-dotnettools.vscode-dotnet-runtime
+2023-09-18 10:57:24.628 [info] Renamed to /home/rtviii/.vscode/extensions/ms-dotnettools.vscode-dotnet-runtime-1.7.3
+2023-09-18 10:57:24.629 [info] Extracting extension completed. ms-dotnettools.vscode-dotnet-runtime
+2023-09-18 10:57:29.015 [warning] Extension signature verification failed with error 'UnknownError': ms-toolsai.datawrangler
+2023-09-18 10:57:29.287 [info] Extracted extension to file:///home/rtviii/.vscode/extensions/ms-toolsai.datawrangler-0.16.0: ms-toolsai.datawrangler
+2023-09-18 10:57:29.294 [info] Renamed to /home/rtviii/.vscode/extensions/ms-toolsai.datawrangler-0.16.0
+2023-09-18 10:57:29.296 [info] Extracting extension completed. ms-toolsai.datawrangler
+2023-09-18 10:57:29.301 [info] Extension installed successfully: ms-dotnettools.vscode-dotnet-runtime
+2023-09-18 10:57:29.302 [info] Extension installed successfully: ms-toolsai.datawrangler
+2023-09-18 10:59:26.301 [info] Getting Manifest... randomfractalsinc.vscode-data-preview
+2023-09-18 10:59:26.311 [info] Installing extension: randomfractalsinc.vscode-data-preview
+2023-09-18 10:59:36.424 [warning] Extension signature verification failed with error 'UnknownError': randomfractalsinc.vscode-data-preview
+2023-09-18 10:59:39.832 [info] Extracted extension to file:///home/rtviii/.vscode/extensions/randomfractalsinc.vscode-data-preview-2.3.0: randomfractalsinc.vscode-data-preview
+2023-09-18 10:59:39.835 [info] Renamed to /home/rtviii/.vscode/extensions/randomfractalsinc.vscode-data-preview-2.3.0
+2023-09-18 10:59:39.836 [info] Extracting extension completed. randomfractalsinc.vscode-data-preview
+2023-09-18 10:59:39.840 [info] Extension installed successfully: randomfractalsinc.vscode-data-preview

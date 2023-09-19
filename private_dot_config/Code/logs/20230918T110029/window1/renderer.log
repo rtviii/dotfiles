@@ -1,0 +1,50 @@
+2023-09-18 11:00:30.661 [error] Extension 'ms-toolsai.datawrangler CANNOT USE these API proposals 'notebookDeprecated'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2023-09-18 11:00:31.066 [error] Cannot read properties of undefined (reading 'table'): TypeError: Cannot read properties of undefined (reading 'table')
+	at DataPreviewSerializer.<anonymous> (/home/rtviii/.vscode/extensions/randomfractalsinc.vscode-data-preview-2.3.0/out/data.preview.js:50:37)
+	at Generator.next (<anonymous>)
+	at /home/rtviii/.vscode/extensions/randomfractalsinc.vscode-data-preview-2.3.0/out/data.preview.js:8:71
+	at new Promise (<anonymous>)
+	at __awaiter (/home/rtviii/.vscode/extensions/randomfractalsinc.vscode-data-preview-2.3.0/out/data.preview.js:4:12)
+	at DataPreviewSerializer.deserializeWebviewPanel (/home/rtviii/.vscode/extensions/randomfractalsinc.vscode-data-preview-2.3.0/out/data.preview.js:49:16)
+	at I.$deserializeWebviewPanel (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:111:39133)
+	at i.N (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:116:10813)
+	at i.M (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:116:10579)
+	at i.H (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:116:9660)
+	at i.G (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:116:8736)
+	at n.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:116:7566)
+	at m.w (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:63:1902)
+	at m.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:63:2119)
+	at w.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:79:13940)
+	at n.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:7901)
+	at m.w (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:63:1902)
+	at m.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:63:2119)
+	at w.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:79:13940)
+	at MessagePortMain.<anonymous> (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:6181)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367)
+2023-09-18 11:00:34.299 [info] [perf] Render performance baseline is 34ms
+2023-09-18 11:00:50.445 [error] [Extension Host] raiseError {"code":"missingDependenciesError","value":{"engineId":"pandas","dependencies":{"pandas":{"requiredVersion":"0.25.2"},"regex":{"requiredVersion":"2020.11.13"}}}}
+2023-09-18 11:38:29.004 [error] Unable to read file '/home/rtviii/dev/weber/title_col.csv' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/weber/title_col.csv' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 11:39:24.970 [error] Cannot read properties of undefined (reading 'data'): TypeError: Cannot read properties of undefined (reading 'data')
+    at /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:70838
+    at _0x14cc73 (/home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist/extension.bundle.js:1:82605)
+    at pe.provideCompletionItems (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:109:51158)
+2023-09-18 11:42:51.402 [error] [text file model] handleSaveError(4) - exit - resulted in a save error: Error: Unable to write file '/home/rtviii/dev/weber/content.csv' (Error: File Modified Since) file:///home/rtviii/dev/weber/content.csv
+2023-09-18 11:42:54.791 [error] Unable to read file '/home/rtviii/dev/weber/content.csv' (Error: File not modified since): Error: Unable to read file '/home/rtviii/dev/weber/content.csv' (Error: File not modified since)
+    at r.w (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16316)
+    at r.v (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:630:16204)
+    at async b.H (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:37067)
+    at async b.readStream (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:36824)
+    at async L.zb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:29196)
+    at async L.resolve (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2329:27643)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2340:32937
+2023-09-18 11:45:34.421 [error] [Extension Host] [ERROR] [fetch] [2023-09-18T16:45:34.403Z] Unhandled status from server: 504 request timeout
+
+2023-09-18 14:26:35.744 [warning] [backup tracker] suspended, ignoring dirty change event file:///home/rtviii/dev/weber/report.md 

@@ -1,0 +1,12 @@
+Visual Studio Code (1.82.1, undefined, desktop)
+Jupyter Extension Version: 2023.8.1002501831.
+Python Extension Version: 2023.16.0.
+Platform: linux (x64).
+Workspace folder ~/dev/eukaryotic_ptcs, Home = /home/rtviii
+18:42:56.542 [info] User belongs to experiment group 'NewJupyterSession'
+18:42:56.756 [info] Start refreshing Kernel Picker (1695080576756)
+18:42:56.767 [info] Using Pylance
+18:42:59.446 [info] End refreshing Kernel Picker (1695080576756)
+19:34:13.091 [info] Disposing HostJupyterExecution
+19:34:13.091 [info] Shutting down notebooks for 24b252a2-4ddc-4577-a134-d0343e71ac73
+19:34:13.092 [info] Disposing HostJupyterExecution

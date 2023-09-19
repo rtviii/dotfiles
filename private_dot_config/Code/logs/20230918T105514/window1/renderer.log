@@ -1,0 +1,5 @@
+2023-09-18 10:55:21.737 [info] [perf] Render performance baseline is 38ms
+2023-09-18 10:57:29.381 [error] Extension 'ms-toolsai.datawrangler CANNOT USE these API proposals 'notebookDeprecated'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2023-09-18 10:58:39.231 [error] [Extension Host] raiseError {"code":"missingDependenciesError","value":{"engineId":"pandas","dependencies":{"pandas":{"requiredVersion":"0.25.2"},"regex":{"requiredVersion":"2020.11.13"}}}}
+2023-09-18 10:58:47.299 [error] [Extension Host] raiseError {"code":"missingDependenciesError","value":{"engineId":"pandas","dependencies":{"pandas":{"requiredVersion":"0.25.2"},"regex":{"requiredVersion":"2020.11.13"}}}}
+2023-09-18 10:59:17.334 [error] [Extension Host] raiseError {"code":"missingDependenciesError","value":{"engineId":"pandas","dependencies":{"pandas":{"requiredVersion":"0.25.2"},"regex":{"requiredVersion":"2020.11.13"}}}}

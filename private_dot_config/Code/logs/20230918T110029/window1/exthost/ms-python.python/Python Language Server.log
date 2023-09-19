@@ -1,0 +1,7 @@
+2023-09-18 11:00:50.751 [info] [Info  - 11:00:50 AM] (17772) Pylance language server 2023.9.10 (pyright c70adefc) starting
+2023-09-18 11:00:50.751 [info] [Info  - 11:00:50 AM] (17772) Server root directory: /home/rtviii/.vscode/extensions/ms-python.vscode-pylance-2023.9.10/dist
+2023-09-18 11:00:50.756 [info] [Info  - 11:00:50 AM] (17772) Starting service instance "weber"
+2023-09-18 11:00:50.796 [info] [Info  - 11:00:50 AM] (17772) Setting pythonPath for service "weber": "undefined"
+2023-09-18 11:00:50.799 [info] [Warn  - 11:00:50 AM] (17772) stubPath /home/rtviii/dev/weber/typings is not a valid directory.
+2023-09-18 11:00:50.835 [info] [Info  - 11:00:50 AM] (17772) Auto-excluding /home/rtviii/dev/weber/venv
+2023-09-18 11:00:50.835 [info] [Info  - 11:00:50 AM] (17772) No source files found.

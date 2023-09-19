@@ -1,0 +1,641 @@
+{
+  // #---------------------------------------------------------------------------[Vim]
+  // "editor.autoClosingBrackets": "never",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  // "editor.suggest.: "never",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.surround": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "<Esc>",
+        "l",
+        "a"
+      ]
+    },
+    {
+      "before": [
+        "w",
+        "w"
+      ],
+      "after": [
+        "<Esc>",
+        "f",
+        ")",
+        "a"
+      ]
+    },
+    {
+      "before": [
+        "q",
+        "q"
+      ],
+      "after": [
+        "<Esc>",
+        "f",
+        "}",
+        "a"
+      ]
+    },
+    {
+      "before": [
+        "q",
+        "w"
+      ],
+      "after": [
+        "<Esc>",
+        "f",
+        "]",
+        "a"
+      ]
+    },
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "k",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>",
+        "$",
+        "a",
+        ";",
+        "<Esc>"
+      ],
+    },
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "F"
+      ],
+      "after": [
+        "c",
+        "i",
+        "w"
+      ]
+    },
+    {
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "<Esc>",
+        "l",
+        "a"
+      ]
+    },
+    {
+      "before": [
+        "F",
+        "F"
+      ],
+      "after": [
+        "c",
+        "i",
+        "("
+      ]
+    },
+    {
+      "before": [
+        "R",
+        "R"
+      ],
+      "after": [
+        "c",
+        "i",
+        "]"
+      ]
+    },
+    {
+      "before": [
+        "S"
+      ],
+      "after": [
+        "J"
+      ]
+    },
+    {
+      "before": [
+        "D"
+      ],
+      "after": [
+        "k",
+        "J"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "<C-q>"
+      ],
+      "after": [
+        "f",
+        ">",
+        "a"
+      ]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.textwidth": 100,
+  "vim.highlightedyank.color": "#0c0907",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 400,
+  // #-----------------------------------------------------------------------------------
+  // Styles-------------------------------------
+  // "diffEditor.renderIndicators": false,
+  "editor.guides.indentation": false,
+  "editor.foldingHighlight": false,
+  "editor.occurrencesHighlight": false,
+  "workbench.colorCustomizations": {
+    "list.errorForeground": "#ffffff",
+    "list.warningForeground": "#f3fdff",
+    "editorError.foreground": "#ffffff",
+    // "editorError.foreground": "#87d198",
+    "gitDecoration.modifiedResourceForeground": "#a8cfe6",
+    "gitDecoration.untrackedResourceForeground": "#707070",
+    "scrollbarSlider.background": "#bbf1f834",
+    "selection.background": "#4666f3",
+    "editor.selectionForeground": "#5f82f7",
+    "editorOverviewRuler.selectionHighlightForeground": "#7071c0",
+    "editorCursor.foreground": "#000000",
+    "terminalCursor.foreground": "#008cff",
+    "editorCursor.background": "#0004ff",
+    "editor.focusedStackFrameHighlightBackground": "#8b50cf00",
+    "editor.lineHighlightBackground": "#f84e0b00",
+    "editor.selectionBackground": "#140d258e",
+    "editor.lineHighlightBorder": "#ff000000",
+    "editorBracketMatch.background": "#ffffff00",
+    "editorBracketMatch.border": "#2997f167",
+    "editor.hoverHighlightBackground": "#e0262600",
+    "editor.wordHighlightBorder": "#57aeff00",
+    "editor.findMatchHighlightBackground": "#321888f3",
+    "editor.selectionHighlightBackground": "#0000003d"
+  },
+  // PRETTIER--------------------------------------------------------
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "window.customMenuBarAltFocus": false,
+  "window.enableMenuBarMnemonics": false,
+  "window.titleBarStyle": "custom",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "[cpp]": {
+    "editor.wordBasedSuggestions": true,
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true,
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wrappingIndent": "same",
+    "editor.wordWrapColumn": 90,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnType": true,
+    "editor.semanticHighlighting.enabled": true
+  },
+  "eslint.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    // "editor.codeActionsOnSave": {
+    //         "source.fixAll.eslint": true
+    //     },
+    //     "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "*.md": "markdown"
+  },
+  "editor.unfoldOnClickAfterEndOfLine": false,
+  "editor.largeFileOptimizations": false,
+  "terminal.integrated.inheritEnv": false,
+  "python.languageServer": "Pylance",
+  "vim.foldfix": true,
+  "breadcrumbs.enabled": true,
+  "window.menuBarVisibility": "hidden",
+  "workbench.activityBar.visible": true,
+  // Cosmetics-----------------------------------------------
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#fffacb",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": "?",
+      "color": "#879da4",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "+",
+      "color": "#138327",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#ff0000",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "※",
+      "color": "rgba(0,255,251,1)",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": ":∷∷∷∷",
+      "color": "#0300ff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    }
+  ],
+  "editor.fontFamily": "Fira Code Medium",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.suggestFontSize": 14,
+  "php.validate.executablePath": "", // in modern version
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.sideBar.location": "left",
+  "explorer.confirmDelete": false,
+  "jupyter.askForLargeDataFrames": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wrappingIndent": "same",
+    "editor.wordWrapColumn": 120,
+  },
+  "editor.tabSize": 4,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": true,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_",
+  "editor.wordWrap": "off",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.quickSuggestionsDelay": 0,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggestSelection": "first",
+  "editor.wordBasedSuggestions": true,
+  "editor.parameterHints.enabled": true,
+  "terminal.integrated.enableBell": false,
+  "docsView.documentationView.updateMode": "live",
+  "gitlens.defaultGravatarsStyle": "wavatar",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.semanticHighlighting.enabled": false
+  },
+  "[zig]": {
+    "editor.defaultFormatter": "tiehuis.zig"
+  },
+  "git.autofetch": true,
+  "workbench.editor.enablePreview": false,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "git.enableCommitSigning": true,
+  "git.alwaysSignOff": true,
+  "cmake.configureOnOpen": true,
+  "[toml]": {
+    "editor.defaultFormatter": "be5invis.toml"
+  },
+  // "rust-analyzer.cargo.allFeatures": true,
+  // "rust-analyzer.trace.extension": true,
+  // "rust-analyzer.inlayHints.enable": false,
+  // "rust-analyzer.lens.implementations": false,
+  // "rust-analyzer.lens.run": false,
+  // "rust-analyzer.lens.forceCustomCommands": false,
+  // "rust-analyzer.lens.enable": false,
+  // "rust-analyzer.lens.debug": false,
+  // "rust-analyzer.inlayHints.renderColons": false,
+  // "rust-analyzer.joinLines.joinAssignments": false,
+  // "rust-analyzer.joinLines.joinElseIf": false,
+  // "rust-analyzer.joinLines.unwrapTrivialBlock": false,
+  // "rust-analyzer.joinLines.removeTrailingComma": false,
+  // "rust-analyzer.imports.granularity.enforce": true,
+  // "rust-analyzer.procMacro.attributes.enable": false,
+  // "rust-analyzer.semanticHighlighting.strings.enable": false,
+  // "rust-analyzer.highlightRelated.breakPoints.enable": false,
+  // "rust-analyzer.highlightRelated.exitPoints.enable": false,
+  // "rust-analyzer.highlightRelated.yieldPoints.enable": false,
+  // "rust-analyzer.highlightRelated.references.enable": false,
+  // "rust-analyzer.hover.documentation.enable": false,
+  // "rust-analyzer.hover.links.enable": false,
+  "editor.lineDecorationsWidth": 0.2,
+  // "editor.glyphMargin": false,
+  // "rust-analyzer.inlayHints.parameterHints.enable": false,
+  // "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "php.suggest.basic": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.renderColons": false,
+  "rust-analyzer.highlightRelated.breakPoints.enable": false,
+  "rust-analyzer.lens.debug.enable": false,
+  "rust-analyzer.lens.enable": false,
+  "editor.inlineSuggest.enabled": true,
+  "sourcegraph.url": "https://sourcegraph.com",
+  "workbench.iconTheme": "quill-icons-minimal",
+  "vikings-icon-theme.activeIconPack": "angular",
+  "material-icon-theme.folders.theme": "none",
+  "material-icon-theme.folders.color": "#ff7043",
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "material-icon-theme.saturation": 1,
+  "material-icon-theme.opacity": 0.5,
+  "vikings-icon-theme.hidesExplorerArrows": false,
+  "vikings-icon-theme.opacity": 0.5,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": true
+  },
+  "[lisp]": {
+    "editor.defaultFormatter": "imjacobclark.vscode-lisp-formatter"
+  },
+  "[scheme]": {
+    "editor.defaultFormatter": "sjhuangx.vscode-scheme"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "editor.useTabStops": false,
+  "editor.tabCompletion": "on",
+  "terminal.integrated.tabs.enableAnimation": false,
+  "workbench.colorTheme": "Nord",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.minimap.enabled": false,
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%DOCFILE%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdfLaTeX",
+      "tools": [
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "latexmk 🔃",
+      "tools": [
+        "latexmk"
+      ]
+    },
+    {
+      "name": "xelatex",
+      "tools": [
+        "xelatex"
+      ]
+    },
+    {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+      "tools": [
+        "xelatex",
+        "bibtex",
+        "xelatex",
+        "xelatex"
+      ]
+    }
+  ],
+  "sourcegraph.basePath": "/home/rxz/dev/",
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "skyline.port": 8888,
+  "editor.inlineSuggest.showToolbar": "always",
+  "zig.zls.path": "/home/rxz/.config/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "meta.function-call.generic.python",
+        "settings": {
+          "foreground": "#aaa"
+        }
+      }
+    ]
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "[Nord]": {
+      "enabled": true,
+      "rules": {
+        "templateType": {
+          "foreground": "#ff0000",
+          "fontStyle": "italic bold underline"
+        },
+        "string": {
+          "foreground": "#FF0000",
+          "fontStyle": "bold"
+        },
+        "comment": {
+          "foreground": "#ff0000"
+        }
+      }
+    }
+  },
+}

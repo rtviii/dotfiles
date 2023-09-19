@@ -1,0 +1,1 @@
+For the amount of columns in that csv, the interesting stuff seems somewhat slim.

@@ -1,0 +1,63 @@
+9/18/2023, 10:57:39 AM DotnetRuntimeAcquisitionStarted
+e850f6ca0043d237059f8e08c88e9c70bb56f1fd9840c495dbffd442f4a1fe3d
+
+9/18/2023, 10:57:39 AM DotnetAcquisitionRequested
+6.0
+e850f6ca0043d237059f8e08c88e9c70bb56f1fd9840c495dbffd442f4a1fe3d
+
+9/18/2023, 10:57:39 AM WebRequestSent
+https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json
+
+9/18/2023, 10:57:40 AM DotnetVersionResolutionCompleted
+6.0
+6.0.22
+
+9/18/2023, 10:57:40 AM DotnetAcquisitionStarted
+6.0.22
+e850f6ca0043d237059f8e08c88e9c70bb56f1fd9840c495dbffd442f4a1fe3d
+
+9/18/2023, 10:57:40 AM WebRequestSent
+https://dot.net/v1/dotnet-install.sh
+
+9/18/2023, 10:57:44 AM DotnetFileWriteRequestEvent
+Request to write
+2023-09-18T15:57:44.033Z
+2808beb86d1ba821b3618174d3ef8ccecfc8d169a4946a7bba675de9428f2ffb
+
+9/18/2023, 10:57:44 AM DotnetLockAttemptingAcquireEvent
+Lock Acqusition request to begin.
+2023-09-18T15:57:44.034Z
+e93f58ab0557fbc2cd97ea1448a1e81d983df6721df7160e9c275ff6f352f237
+2808beb86d1ba821b3618174d3ef8ccecfc8d169a4946a7bba675de9428f2ffb
+
+9/18/2023, 10:57:44 AM DotnetLockAcquiredEvent
+Lock Acquired.
+2023-09-18T15:57:44.037Z
+e93f58ab0557fbc2cd97ea1448a1e81d983df6721df7160e9c275ff6f352f237
+2808beb86d1ba821b3618174d3ef8ccecfc8d169a4946a7bba675de9428f2ffb
+
+9/18/2023, 10:57:44 AM DotnetFileWriteRequestEvent
+File content is an exact match, not writing file.
+2023-09-18T15:57:44.038Z
+2808beb86d1ba821b3618174d3ef8ccecfc8d169a4946a7bba675de9428f2ffb
+
+9/18/2023, 10:57:44 AM DotnetLockReleasedEvent
+Lock about to be released.
+2023-09-18T15:57:44.038Z
+e93f58ab0557fbc2cd97ea1448a1e81d983df6721df7160e9c275ff6f352f237
+2808beb86d1ba821b3618174d3ef8ccecfc8d169a4946a7bba675de9428f2ffb
+
+9/18/2023, 10:57:44 AM DotnetInstallScriptAcquisitionCompleted
+
+9/18/2023, 10:57:53 AM DotnetAcquisitionCompleted
+6.0.22
+/home/rtviii/.config/Code/User/globalStorage/ms-dotnettools.vscode-dotnet-runtime/.dotnet/6.0.22/dotnet
+
+9/18/2023, 10:57:53 AM DotnetInstallationValidated
+6.0.22
+
+9/18/2023, 10:57:53 AM DotnetCommandSucceeded
+acquire
+
+9/18/2023, 10:57:55 AM DotnetCommandSucceeded
+ensureDependencies

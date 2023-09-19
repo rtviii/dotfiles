@@ -1,0 +1,18 @@
+2023-09-18 19:39:55.890 [info] Uninstalling extension from the profile: anseki.vscode-color@0.4.5 vscode-userdata:/home/rtviii/.vscode/extensions/extensions.json
+2023-09-18 19:39:55.921 [info] Marked extension as uninstalled anseki.vscode-color-0.4.5
+2023-09-18 19:39:56.113 [info] Successfully uninstalled extension from the profile anseki.vscode-color@0.4.5 vscode-userdata:/home/rtviii/.vscode/extensions/extensions.json
+2023-09-18 19:40:07.455 [info] Getting Manifest... anseki.vscode-color
+2023-09-18 19:40:07.466 [info] Installing extension: anseki.vscode-color
+2023-09-18 19:40:07.661 [warning] Extension signature verification failed with error 'UnknownError': anseki.vscode-color
+2023-09-18 19:40:07.664 [info] Removed the extension from uninstalled list: anseki.vscode-color
+2023-09-18 19:40:07.700 [info] Extension installed successfully: anseki.vscode-color
+2023-09-18 19:40:18.251 [info] Getting Manifest... lihui.vs-color-picker
+2023-09-18 19:40:18.258 [info] Installing extension: lihui.vs-color-picker
+2023-09-18 19:40:18.955 [warning] Extension signature verification failed with error 'UnknownError': lihui.vs-color-picker
+2023-09-18 19:40:18.964 [info] Extracted extension to file:///home/rtviii/.vscode/extensions/lihui.vs-color-picker-1.0.0: lihui.vs-color-picker
+2023-09-18 19:40:18.966 [info] Renamed to /home/rtviii/.vscode/extensions/lihui.vs-color-picker-1.0.0
+2023-09-18 19:40:18.966 [info] Extracting extension completed. lihui.vs-color-picker
+2023-09-18 19:40:18.971 [info] Extension installed successfully: lihui.vs-color-picker
+2023-09-18 19:40:22.691 [info] Uninstalling extension from the profile: anseki.vscode-color@0.4.5 vscode-userdata:/home/rtviii/.vscode/extensions/extensions.json
+2023-09-18 19:40:22.742 [info] Marked extension as uninstalled anseki.vscode-color-0.4.5
+2023-09-18 19:40:22.833 [info] Successfully uninstalled extension from the profile anseki.vscode-color@0.4.5 vscode-userdata:/home/rtviii/.vscode/extensions/extensions.json

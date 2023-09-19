@@ -1,0 +1,56 @@
+2023-09-18 19:34:23.706 [info] Experiment 'pythonPromptNewFormatterExt' is active
+2023-09-18 19:34:23.706 [info] Experiment 'pythonPromptNewToolsExt' is active
+2023-09-18 19:34:23.706 [info] Experiment 'pythonTestAdaptercf' is active
+2023-09-18 19:34:23.706 [info] VS Code was launched from an activated environment: 'ribxzvenv', selecting it as the interpreter for workspace.
+2023-09-18 19:34:23.706 [info] Test server listening.
+2023-09-18 19:34:24.112 [info] > conda info --json
+2023-09-18 19:34:24.201 [info] > ~/dev/ribxzvenv/bin/python -I ~/.vscode/extensions/ms-python.python-2023.16.0/pythonFiles/get_output_via_markers.py ~/.vscode/extensions/ms-python.python-2023.16.0/pythonFiles/interpreterInfo.py
+2023-09-18 19:34:24.345 [info] Python interpreter path: ~/dev/ribxzvenv/bin/python
+2023-09-18 19:34:25.164 [warning] Retry failed, storage update failed for key PYTHON_ENV_INFO_CACHE
+2023-09-18 19:34:25.164 [warning] Retry failed, storage update failed for key PYTHON_ENV_INFO_CACHE
+2023-09-18 19:34:25.236 [info] > . ~/dev/ribxzvenv/bin/activate && echo 'e8b39361-0157-4923-80e1-22d70d46dee6' && python ~/.vscode/extensions/ms-python.python-2023.16.0/pythonFiles/printEnvVariables.py
+2023-09-18 19:34:25.236 [info] shell: bash
+2023-09-18 19:34:26.829 [info] Starting Pylance language server.
+2023-09-18 19:34:30.820 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:34:59.513 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:10.972 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:11.793 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:13.363 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:16.422 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:20.536 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:24.714 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:26.654 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:59.803 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:35:59.812 [info] Discover tests for workspace name: riboxyz - uri: /home/rtviii/dev/riboxyz
+2023-09-18 19:36:03.346 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:11.480 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:12.102 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:15.785 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:16.712 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:17.473 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:20.496 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:21.343 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:43.338 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:45.664 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:46.909 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:48.949 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:54.141 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:55.522 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:57.203 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:36:58.337 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:00.004 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:02.599 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:06.167 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:12.721 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:14.128 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:20.800 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:21.729 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:23.649 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:24.599 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:25.754 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:37:29.221 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:38:28.504 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:38:43.959 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:38:51.262 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:38:55.370 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json
+2023-09-18 19:39:18.397 [info] Discover tests for workspace name: undefined - uri: /home/rtviii/.config/Code/User/settings.json

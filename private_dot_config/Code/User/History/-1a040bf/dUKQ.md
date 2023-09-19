@@ -1,1 +1,0 @@
-# Classification of polypeptides using HMMs

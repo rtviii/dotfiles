@@ -1,8 +1,0 @@
-[2023-09-18 19:45:08.811] [GIT  ] [/home/rtviii/dev/ribxzvenv/lib/python3.11/site-packages/Bio/SeqIO] git rev-parse --show-toplevel • Command failed: /usr/bin/git -c core.quotepath=false -c color.ui=false rev-parse --show-toplevel • not a git repository (or any parent up to mount point /) • Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set). [21ms]
-
-[2023-09-18 19:45:08.942] [GIT  ] [/home/rtviii/dev/ribxzvenv/lib/python3.11/site-packages/Bio/SeqIO] git rev-parse --show-toplevel • Command failed: /usr/bin/git -c core.quotepath=false -c color.ui=false rev-parse --show-toplevel • not a git repository (or any parent up to mount point /) • Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set). [12ms]
-
-[2023-09-18 20:48:30.086] [GIT  ] [/home/rtviii/dev/ribxzvenv/lib/python3.11/site-packages/pyhmmer] git rev-parse --show-toplevel • Command failed: /usr/bin/git -c core.quotepath=false -c color.ui=false rev-parse --show-toplevel • not a git repository (or any parent up to mount point /) • Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set). [25ms]
-
-[2023-09-18 21:59:07.984] [GIT  ] [/home/rtviii/dev/ribxzvenv/lib/python3.11/site-packages/Bio] git rev-parse --show-toplevel • Command failed: /usr/bin/git -c core.quotepath=false -c color.ui=false rev-parse --show-toplevel • not a git repository (or any parent up to mount point /) • Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set). [23ms]
-

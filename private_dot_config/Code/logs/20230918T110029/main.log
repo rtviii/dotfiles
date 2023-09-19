@@ -1,8 +1,0 @@
-2023-09-18 11:00:30.030 [info] update#setState idle
-2023-09-18 11:01:00.032 [info] update#setState checking for updates
-2023-09-18 11:01:00.036 [info] update#setState available for download
-2023-09-18 14:26:35.971 [error] Blocked vscode-file request vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/base/worker/workerMain.js#editorWorkerService
-2023-09-18 14:26:41.020 [info] Extension host with pid 17514 exited with code: 0, signal: unknown.
-2023-09-18 19:34:11.872 [error] [UtilityProcess id: 2, type: fileWatcher, pid: 37594]: crashed with code 15 and reason 'killed'
-2023-09-18 19:34:16.866 [info] Extension host with pid 37575 exited with code: 0, signal: unknown.
-2023-09-18 19:34:18.097 [info] Extension host with pid 83079 exited with code: 0, signal: unknown.

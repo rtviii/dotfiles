@@ -3,7 +3,6 @@ KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode history-substring-search last-working-dir)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-source ~/.secrets
 
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=nvim
@@ -13,10 +12,11 @@ export PYTHONPATH="${PYTHONPATH}:${PYMOL_LIB}/modules"
 export RIBETL_DATA=~/dev/RIBETL_DATA/
 
 
+# "DASDADSA
 
 RUSTFLAGS="-A dead_code -A unused_imports"
 alias ii="sudo pacman -S"
-alias notes="/home/rxz/dev/notes"
+alias notes="/home/rtviii/dev/notes"
 alias djdk="~/dev/docker_together/"
 alias ritual="ssh -l rxz 24.86.198.77"
 

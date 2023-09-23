@@ -1,5 +1,5 @@
 # interpreter for shell commands
-set shell sh
+set shell zsh
 set preview
 set drawbox
 
@@ -30,6 +30,7 @@ map <enter> shell
 
 # show the result of execution of previous commands
 map ` !true
+map . set hidden!
 
 # execute current file (must be executable)
 map x $$f

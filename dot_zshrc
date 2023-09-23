@@ -1,9 +1,12 @@
 ZSH_DISABLE_COMPFIX=true
 KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode history-substring-search last-working-dir)
+
+zmodload zsh/mapfile
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+export PATH="${PATH}:$HOME/bin/"
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=nvim
 
@@ -12,7 +15,7 @@ export PYTHONPATH="${PYTHONPATH}:${PYMOL_LIB}/modules"
 export RIBETL_DATA=~/dev/RIBETL_DATA/
 
 
-# "DASDADSA
+alias papers-rib="~/dev/ribosome-resources/"
 
 RUSTFLAGS="-A dead_code -A unused_imports"
 alias ii="sudo pacman -S"
@@ -22,15 +25,9 @@ alias ritual="ssh -l rxz 24.86.198.77"
 
 alias kittyconf="vim ~/.config/kitty/kitty.conf"
 alias zshsrc="source ~/.zshrc"
+alias lfrc="vim $HOME/.config/lf/lfrc"
 
 
-function soundup(){
-    echo "sound up said $1"
-    pactl set-sink-volume bluez_sink.38_88_A4_F0_6E_8C.a2dp_sink $1
-}
-
-alias hg="history | grep"
-alias lyah="/home/rxz/dev/haskell/lyah"
 function sb_prod_tunnel(){
     ssh -f -N -g -L 29092:127.0.0.1:29092 -N -L 8080:127.0.0.1:8080 sb-rp-prod
 }
@@ -226,7 +223,7 @@ alias shrestart="sudo service ssh restart"
 
 alias confs="cd ~/.config/"
 alias cf="cut -d ',' -f"
-alias rr='lf'
+alias rr='lfcd'
 
 alias biodata="cd /home/$(whoami)/dev/biodata-integration-proposal"
 alias wq="code ."
@@ -442,8 +439,7 @@ fi;
 
 }
 
-LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
-LFCD="/path/to/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
+LFCD="$HOME/.config/lf/lfcd.sh"  # source
 if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi

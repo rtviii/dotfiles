@@ -1115,7 +1115,7 @@
     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
   },
   {
-    "key": "ctrl+alt+r",
+    "key": "shift+alt+f",
     "command": "references-view.findReferences",
     "when": "editorHasReferenceProvider"
   },
@@ -1134,7 +1134,7 @@
     "command": "editor.action.joinLines"
   },
   {
-    "key": "shift+alt+f",
+    "key": "shift+alt+x",
     "command": "vscode-better-align.align",
     "when": "editorTextFocus"
   },
@@ -1147,5 +1147,23 @@
     "key": "shift+alt+k",
     "command": "-bookmarks.shrinkSelection",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+s",
+    "command": "workbench.action.focusPreviousGroup"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "-workbench.action.terminal.runRecentCommand",
+    "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "accessibilityModeEnabled && terminalFocus"
+  },
+  {
+    "key": "shift+alt+q",
+    "command": "references-view.tree.focus"
   }
 ]

@@ -233,7 +233,7 @@
   "workbench.colorCustomizations": {
     "list.errorForeground": "#ffffff",
     "list.warningForeground": "#f3fdff",
-    "editorError.foreground": "#070707",
+    "editorError.foreground": "#e20246",
     "gitDecoration.modifiedResourceForeground": "#a8cfe6",
     "gitDecoration.untrackedResourceForeground": "#707070",
     "scrollbarSlider.background": "#bbf1f834",
@@ -340,7 +340,7 @@
     },
     {
       "tag": "*",
-      "color": "#ff0000",
+      "color": "#0004ff",
       "strikethrough": false,
       "underline": true,
       "backgroundColor": "transparent",
@@ -644,4 +644,5 @@
       // }
     ]
   },
+
 }

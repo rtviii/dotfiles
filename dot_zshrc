@@ -14,6 +14,7 @@ export PYMOL_LIB=~/dev/pymol_lib
 export PYTHONPATH="${PYTHONPATH}:${PYMOL_LIB}/modules"
 export RIBETL_DATA=~/dev/RIBETL_DATA/
 
+alias conf="$HOME/.config/"
 
 alias papers-rib="~/dev/ribosome-resources/"
 

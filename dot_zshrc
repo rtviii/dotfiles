@@ -6,6 +6,7 @@ zmodload zsh/mapfile
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+
 export PATH="${PATH}:$HOME/bin/"
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=nvim
@@ -16,14 +17,18 @@ export RIBETL_DATA=~/dev/RIBETL_DATA/
 
 alias conf="$HOME/.config/"
 
-alias papers-rib="~/dev/ribosome-resources/"
+alias ribres="~/dev/ribosome-resources/"
 
 RUSTFLAGS="-A dead_code -A unused_imports"
+
+
+alias extraconf="vim ~/.config/extraconf.md"
 alias ii="sudo pacman -S"
 alias notes="/home/rtviii/dev/notes"
 alias djdk="~/dev/docker_together/"
 alias ritual="ssh -l rxz 24.86.198.77"
 
+alias zt="zathura"
 alias kittyconf="vim ~/.config/kitty/kitty.conf"
 alias zshsrc="source ~/.zshrc"
 alias lfrc="vim $HOME/.config/lf/lfrc"
@@ -415,6 +420,11 @@ then
 fi
 }
 
+
+function pdf_get_title(){
+    pdfinfo $1 | grep Title | cut -d : -f 2- | sed 's/^[ 	]*//;s/[ 	]*$//'
+}
+alias pdftitle="pdf_get_title"
 
 # Activate virtualenv.
 function vup(){

@@ -422,7 +422,11 @@ fi
 
 
 function pdf_get_title(){
-    pdfinfo $1 | grep Title | cut -d : -f 2- | sed 's/^[ 	]*//;s/[ 	]*$//'
+    pdfinfo_output=$( pdfinfo $1 )
+    authors=$(echo "$pdfinfo_output" | grep -i 'Author:' | awk -F 'Author:' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    title=$(echo "$pdfinfo_output" | grep -i 'Title:' | awk -F 'Title:' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    echo $authors, $title
+
 }
 alias pdftitle="pdf_get_title"
 

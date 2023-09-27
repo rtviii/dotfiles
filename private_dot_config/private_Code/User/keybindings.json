@@ -1130,7 +1130,7 @@
     "when": "!inputFocus"
   },
   {
-    "key": "shift+alt+k",
+    "key": "ctrl+shift+j",
     "command": "editor.action.joinLines"
   },
   {

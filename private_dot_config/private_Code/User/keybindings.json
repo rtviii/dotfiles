@@ -667,11 +667,6 @@
     "command": "-workbench.action.openGlobalKeybindings"
   },
   {
-    "key": "alt+j",
-    "command": "search.action.focusSearchList",
-    "when": "inSearchEditor || searchViewletFocus"
-  },
-  {
     "key": "shift+f4",
     "command": "-search.action.focusPreviousSearchResult",
     "when": "hasSearchResult || inSearchEditor"
@@ -1107,10 +1102,6 @@
   },
   {
     "key": "ctrl+shift+f",
-    "command": "workbench.view.search"
-  },
-  {
-    "key": "ctrl+shift+f",
     "command": "-workbench.view.search",
     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
   },
@@ -1165,5 +1156,28 @@
   {
     "key": "shift+alt+q",
     "command": "references-view.tree.focus"
-  }
+  },
+  {
+    "key": "alt+j",
+    "command": "search.action.focusNextSearchResult",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
+  },
+  {
+    "key": "alt+k",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-search.action.restrictSearchToFolder",
+    "when": "folderMatchWithResourceFocus && searchViewletVisible"
+  },
+{ "key": "alt+k",   "command": "goToPreviousReferenceFromEmbeddedEditor",   "when": "inReferenceSearchEditor"  },
+{ "key": "alt+k",   "command": "search.action.focusPreviousSearchResult",   "when": "hasSearchResult"          },
+{ "key": "alt+k",   "command": "references-view.prev",                      "when": "reference-list.hasResult" },
+{ "key": "alt+k",   "command": "goToPreviousReference",                     "when": "referenceSearchVisible"   },
+{ "key": "alt+j",         "command": "goToNextReferenceFromEmbeddedEditor",       "when": "inReferenceSearchEditor"  },
+{ "key": "alt+j",         "command": "search.action.focusNextSearchResult",       "when": "hasSearchResult"          },
+{ "key": "alt+j",         "command": "goToNextReference",                         "when": "referenceSearchVisible"   },
+{ "key": "alt+j",         "command": "references-view.next",                      "when": "reference-list.hasResult" },
 ]

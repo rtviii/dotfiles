@@ -1157,27 +1157,61 @@
     "key": "shift+alt+q",
     "command": "references-view.tree.focus"
   },
-  {
-    "key": "alt+j",
-    "command": "search.action.focusNextSearchResult",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
-  },
-  {
-    "key": "alt+k",
-    "command": "search.action.focusPreviousSearchResult",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
-  },
+  // {
+  //   "key": "alt+j",
+  //   "command": "search.action.focusNextSearchResult",
+  //   "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
+  // },
+  // {
+  //   "key": "alt+k",
+  //   "command": "search.action.focusPreviousSearchResult",
+  //   "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
+  // },
   {
     "key": "shift+alt+f",
     "command": "-search.action.restrictSearchToFolder",
     "when": "folderMatchWithResourceFocus && searchViewletVisible"
   },
-{ "key": "alt+k", "command": "goToPreviousReferenceFromEmbeddedEditor", "when": "sideBarFocus && inReferenceSearchEditor"  },
-{ "key": "alt+k", "command": "search.action.focusPreviousSearchResult", "when": "sideBarFocus && hasSearchResult"          },
-{ "key": "alt+k", "command": "references-view.prev"                   , "when": "sideBarFocus && reference-list.hasResult" },
-{ "key": "alt+k", "command": "goToPreviousReference"                  , "when": "sideBarFocus && referenceSearchVisible"   },
-{ "key": "alt+j", "command": "goToNextReferenceFromEmbeddedEditor"    , "when": "sideBarFocus && inReferenceSearchEditor"  },
-{ "key": "alt+j", "command": "search.action.focusNextSearchResult"    , "when": "sideBarFocus && hasSearchResult"          },
-{ "key": "alt+j", "command": "goToNextReference"                      , "when": "sideBarFocus && referenceSearchVisible"   },
-{ "key": "alt+j", "command": "references-view.next"                   , "when": "sideBarFocus && reference-list.hasResult" },
+{ "key": "alt+k", "command": "goToPreviousReferenceFromEmbeddedEditor", "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible"  },
+{ "key": "alt+k", "command": "search.action.focusPreviousSearchResult", "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible"          },
+{ "key": "alt+k", "command": "references-view.prev"                   , "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible" },
+{ "key": "alt+k", "command": "goToPreviousReference"                  , "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible"   },
+{ "key": "alt+j", "command": "goToNextReferenceFromEmbeddedEditor"    , "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible"  },
+{ "key": "alt+j", "command": "search.action.focusNextSearchResult"    , "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible"          },
+{ "key": "alt+j", "command": "goToNextReference"                      , "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible"   },
+{
+  "key": "alt+j",
+  "command": "references-view.next",
+  "when": "sideBarFocus && activeViewlet == 'workbench.view.search' && searchViewletVisible"
+},
+{
+  "key": "ctrl+up",
+  "command": "search.action.focusSearchFromResults",
+  "when": "accessibilityModeEnabled && searchViewletVisible || firstMatchFocus && searchViewletVisible"
+},
+{
+  "key": "ctrl+up",
+  "command": "-search.action.focusSearchFromResults",
+  "when": "accessibilityModeEnabled && searchViewletVisible || firstMatchFocus && searchViewletVisible"
+},
+{
+  "key": "alt+j",
+  "command": "search.focus.nextInputBox",
+  "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+},
+{
+  "key": "ctrl+down",
+  "command": "-search.focus.nextInputBox",
+  "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+},
+{
+  "key": "alt+k",
+  "command": "search.focus.previousInputBox",
+  "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+},
+{
+  "key": "ctrl+up",
+  "command": "-search.focus.previousInputBox",
+  "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+},
 ]

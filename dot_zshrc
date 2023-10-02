@@ -237,7 +237,7 @@ alias nst="npm start"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Ribosome
 
-alias ribetl="cd /home/$(whoami)/dev/riboxyzbackend/ribetl && vup"
+alias ribetl="cd ${RIBETL_DATA}"
 alias bend="cd /home/$(whoami)/dev/riboxyzbackend && vup"
 alias fend="cd /home/$(whoami)/dev/ribosome.xyz-frontend.ts"
 

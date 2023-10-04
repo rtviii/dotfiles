@@ -139,7 +139,7 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "alt+u",
+    "key": "alt+h",
     "command": "workbench.action.focusLeftGroup"
   },
   {
@@ -422,7 +422,7 @@
     "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
   },
   {
-    "key": "alt+p",
+    "key": "alt+l",
     "command": "workbench.action.focusRightGroup"
   },
   {
@@ -1213,5 +1213,9 @@
   "key": "ctrl+up",
   "command": "-search.focus.previousInputBox",
   "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+},
+{
+  "key": "ctrl+`",
+  "command": "workbench.action.focusLastEditorGroup"
 },
 ]

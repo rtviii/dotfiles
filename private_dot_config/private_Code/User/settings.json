@@ -645,5 +645,6 @@
     ]
   },
   "editor.unicodeHighlight.ambiguousCharacters": false,
+  "window.zoomLevel": -1,
 
 }

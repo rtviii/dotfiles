@@ -5,6 +5,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode history-sub
 zmodload zsh/mapfile
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+alias pics="~/Pictures/"
 
 
 export PATH="${PATH}:$HOME/bin/"
@@ -16,6 +17,7 @@ export PYTHONPATH="${PYTHONPATH}:${PYMOL_LIB}/modules"
 export RIBETL_DATA=~/dev/RIBETL_DATA/
 
 alias conf="$HOME/.config/"
+alias ribassets="~/dev/riboxyz/ribctl/assets/"
 
 alias ribres="~/dev/ribosome-resources/"
 

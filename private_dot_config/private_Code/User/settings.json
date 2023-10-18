@@ -233,7 +233,7 @@
   "workbench.colorCustomizations": {
     "list.errorForeground": "#ffffff",
     "list.warningForeground": "#f3fdff",
-    "editorError.foreground": "#e20246",
+    "editorError.foreground": "#f0896a",
     "gitDecoration.modifiedResourceForeground": "#a8cfe6",
     "gitDecoration.untrackedResourceForeground": "#707070",
     "scrollbarSlider.background": "#bbf1f834",
@@ -616,7 +616,15 @@
         "settings": {
           "foreground": "#fdfdfd"
         }
+      },{
+        "scope": [
+          "constant.numeric"
+        ],
+        "settings": {
+          "foreground": "#58b4ff"
+        }
       },
+      
       {
         "scope": [
           "constant.character.format.placeholder.other.python"

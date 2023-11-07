@@ -2,11 +2,15 @@ ZSH_DISABLE_COMPFIX=true
 KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode history-substring-search last-working-dir)
 
+#export XDG_SESSION_TYPE=X11
 zmodload zsh/mapfile
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 alias pics="~/Pictures/"
 
+alias pacman_sync="sudo pacman -Syy && sudo pacman -Syu"
+alias rnext="~/dev/ribxz_next/"
+alias pymol="sh -c /home/rtviii/dev/pymol_lib/pymol"
 
 export PATH="${PATH}:$HOME/bin/"
 export XDG_CONFIG_HOME=$HOME/.config
@@ -23,6 +27,8 @@ alias ribres="~/dev/ribosome-resources/"
 
 RUSTFLAGS="-A dead_code -A unused_imports"
 
+
+alias yd="yarn dev"
 
 alias extraconf="vim ~/.config/extraconf.md"
 alias ii="sudo pacman -S"

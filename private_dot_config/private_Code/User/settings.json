@@ -608,14 +608,14 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": [
-          "string.quoted.single.python",
-          "string.quoted.double",
-          "string.quoted.docstring.multi.python"
-        ],
-        "settings": {
-          "foreground": "#fdfdfd"
-        }
+        // "scope": [
+        //   "string.quoted.single.python",
+        //   "string.quoted.double",
+        //   "string.quoted.docstring.multi.python"
+        // ],
+        // "settings": {
+        //   "foreground": "#a8c9a6"
+        // }
       },{
         "scope": [
           "constant.numeric"
@@ -653,6 +653,5 @@
     ]
   },
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "window.zoomLevel": -1,
 
 }

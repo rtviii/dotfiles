@@ -12,6 +12,10 @@ if [[ "$(file -Lb --mime-type "$1")" =~ ^image/png ]]; then
     kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"  < /dev/null > /dev/tty
     exit 1
 fi
+if [[ "$(file -Lb --mime-type "$1")" =~ ^image/jpeg ]]; then
+    kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"  < /dev/null > /dev/tty
+    exit 1
+fi
 
 
 filename=$(basename $(echo "$file" | tr ' ' '_'))

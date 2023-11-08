@@ -1,6 +1,23 @@
 ZSH_DISABLE_COMPFIX=true
 KEYTIMEOUT=1
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode history-substring-search last-working-dir)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir vi-mode)
+
+
+
+function atm(){
+exiftool $1 | grep -E '^(Author|Title|Metadata Date)'| \
+sed -e 's/.*: //'
+}
+function repdf(){
+exiftool $1 | grep -E '^(Author[[:space:]]*:|Title[[:space:]]*:|Metadata Date[[:space:]]*:)'| \
+awk 'BEGIN{FS="\n";RS=""}
+     /Author/{split($1,names," "); author=names[length(names)];}
+     /Title/{gsub(" ", "_", $2);}
+     /Metadata Date/{ split($3,pub_date,":"); year=pub_date[1];}
+     END{print author "[" year "]_" tolower($2) ".pdf"}
+ '
+}
+
 
 #export XDG_SESSION_TYPE=X11
 zmodload zsh/mapfile
@@ -32,7 +49,7 @@ alias yd="yarn dev"
 
 alias extraconf="vim ~/.config/extraconf.md"
 alias ii="sudo pacman -S"
-alias notes="/home/rtviii/dev/notes"
+alias notes="/home/rtviii/notes"
 alias djdk="~/dev/docker_together/"
 alias ritual="ssh -l rxz 24.86.198.77"
 
@@ -49,6 +66,9 @@ function sb_prod_tunnel(){
 function sb_dev_tunnel(){
     ssh -f -N -g -L 9092:127.0.0.1:9092 -N -L 8080:127.0.0.1:8080 sb-rp-dev
 }
+
+
+
 
 
 function _code_here(){code .};
@@ -121,17 +141,10 @@ alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
-
-
-
+#bindkey -v "^[K"
+#bindkey -v "^[J"
+bindkey -M vicmd 'k' history-beginning-search-backward
+bindkey -M vicmd 'j' history-beginning-search-forward
 
 function tmux_last_session(){
 
@@ -180,9 +193,6 @@ alias plugs="nvim ~/.config/nvim/lua/plugins.lua"
 
 alias vim="nvim"
 alias v="nvim"
-#---------------------------------------------------------------
-
-
 
 
 
@@ -236,7 +246,6 @@ alias i3reload="i3-msg reload && i3-msg restart"
 alias shrestart="sudo service ssh restart"
 
 alias confs="cd ~/.config/"
-alias cf="cut -d ',' -f"
 alias rr='lfcd'
 
 alias biodata="cd /home/$(whoami)/dev/biodata-integration-proposal"
@@ -265,8 +274,6 @@ alias neostart="sudo systemctl start neo4j"
 alias neostat="sudo systemctl status  neo4j"
 alias neoimport="/var/lib/neo4j/import"
 
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Redis
-alias rds='redis-cli'
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
 alias dk="docker"
 alias dkls="docker container ls"
@@ -287,16 +294,9 @@ alias cifparser='cd ~/dev/rust_train/cifparser'
 alias ribrsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
 alias ribupdatersync="rsync -hvrPt -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
 
-alias utopiarsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/rxzhypha.pem\""
-alias sshutopia="ssh -i ~/dev/docs/AWS/rxzhypha.pem ec2-user@utopiamushrooms.com"
-
-
 export PATH="/usr/local/cuda-11.1/bin:$PATH"
-export PATH="~/.actin/{*}:$PATH"
-export PATH="/home/rxz/.local/share/solana/install/active_release/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/home/rxz/zig-linux-x86_64-0.10.0-dev.2220+802f22073:$PATH"
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -314,9 +314,6 @@ alias gpgssh='unset SSH_AGENT_PID;if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; 
 #
 alias tfldocs='~/dev/TFL/docs'
 alias rpkfk='cd ~/dev/sb/redpanda-kafka-python'
-
-alias ISAPASS='echo !Joaninha29'
-
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯ PROMPT -⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 unsetopt BEEP
@@ -351,7 +348,6 @@ exists()
 
 function used_plugins_zsh(){
 
-
     my_plugins=(
         "https://github.com/zsh-users/zsh-syntax-highlighting"
         "https://github.com/softmoth/zsh-vim-mode"
@@ -369,16 +365,12 @@ function listppas(){
 if exists apt; then
     grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
 else
-  echo 'Seems like we are not on .buntu anymore, Toto.'
+  echo 'Seems like we are not in buntu anymore, Toto.'
 fi
-
 
 }
 
 function addconfigs(){
-
-
-
 
 # Regular installs:
 https://github.com/ranger/ranger.git
@@ -408,16 +400,6 @@ newrepo(){
 # name it "cline"
 function cl(){
 
-# Function to print, provided a file, exclusively
-# - the line range (if two params are passed)
-# - the single line (if one)
-# - cat the file back whole (if none)
-#
-# This can be accomplished without reading in the whole file via sed :
-#
-#           echo "sed -n '$FIRST,$SECOND\p;$(($SECOND+1))q' file_name"
-#
-# sed -n '20,40p;41q' file_name
 
 if [[ "$#" == "1" ]];
 then
@@ -429,36 +411,25 @@ fi
 }
 
 
-function pdf_get_title(){
-    pdfinfo_output=$( pdfinfo $1 )
-    authors=$(echo "$pdfinfo_output" | grep -i 'Author:' | awk -F 'Author:' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-    title=$(echo "$pdfinfo_output" | grep -i 'Title:' | awk -F 'Title:' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-    echo $authors, $title
-
-}
-alias pdftitle="pdf_get_title"
-
 # Activate virtualenv.
 function vup(){
-PRES=0
+    PRES=0
+    for i in ${local[@]};
+    do
+        echo $i
+        if [ $i == *"venv" ];
+        then
+            sourcefile=$(pwd)/$i/bin/activate
+            echo "Sourcefile"
+            echo $sourcefile;
+            source $sourcefile;
+            PRES=1
+        fi;
+    done;
 
-for i in ${local[@]};
-do
-	echo $i
-	if [ $i == *"venv" ];
-	then
-		sourcefile=$(pwd)/$i/bin/activate
-		echo "Sourcefile"
-		echo $sourcefile;
-		source $sourcefile;
-		PRES=1
-	fi;
-done;
-
-if  [[ $PRES -eq 0 ]]; then
-	echo "Nothing with *\"venv\" in here.";
-fi;
-
+    if  [[ $PRES -eq 0 ]]; then
+        echo "Nothing with *\"venv\" in here.";
+    fi;
 
 }
 

@@ -8,15 +8,6 @@ function atm(){
 exiftool $1 | grep -E '^(Author|Title|Metadata Date)'| \
 sed -e 's/.*: //'
 }
-function repdf(){
-exiftool $1 | grep -E '^(Author[[:space:]]*:|Title[[:space:]]*:|Metadata Date[[:space:]]*:)'| \
-awk 'BEGIN{FS="\n";RS=""}
-     /Author/{split($1,names," "); author=names[length(names)];}
-     /Title/{gsub(" ", "_", $2);}
-     /Metadata Date/{ split($3,pub_date,":"); year=pub_date[1];}
-     END{print author "[" year "]_" tolower($2) ".pdf"}
- '
-}
 
 
 #export XDG_SESSION_TYPE=X11
@@ -29,7 +20,7 @@ alias pacman_sync="sudo pacman -Syy && sudo pacman -Syu"
 alias rnext="~/dev/ribxz_next/"
 alias pymol="sh -c /home/rtviii/dev/pymol_lib/pymol"
 
-export PATH="${PATH}:$HOME/bin/"
+export PATH="${PATH}:$HOME/bin/:$HOME/bin/scripts/"
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=nvim
 

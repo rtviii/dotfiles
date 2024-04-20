@@ -278,7 +278,7 @@
   },
   "explorer.confirmDragAndDrop": false,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true
   },
   "eslint.enable": true,
@@ -290,7 +290,8 @@
     //     "editor.formatOnSave": false
   },
   "files.associations": {
-    "*.md": "markdown"
+    "*.md": "markdown",
+    "*.py": "python"
   },
   "editor.unfoldOnClickAfterEndOfLine": false,
   "editor.largeFileOptimizations": false,
@@ -298,7 +299,7 @@
   "python.languageServer": "Pylance",
   "vim.foldfix": true,
   "breadcrumbs.enabled": true,
-  "window.menuBarVisibility": "hidden",
+  "window.menuBarVisibility": "toggle",
   "workbench.activityBar.visible": true,
   // Cosmetics-----------------------------------------------
   "better-comments.tags": [
@@ -340,9 +341,9 @@
     },
     {
       "tag": "*",
-      "color": "#0004ff",
+      "color": "#b1fbc4",
       "strikethrough": false,
-      "underline": true,
+      "underline": false,
       "backgroundColor": "transparent",
       "bold": true,
       "italic": false
@@ -653,5 +654,7 @@
     ]
   },
   "editor.unicodeHighlight.ambiguousCharacters": false,
+  "remote.tunnels.access.hostNameOverride": "rtviii",
+  "window.zoomLevel": -1,
 
 }

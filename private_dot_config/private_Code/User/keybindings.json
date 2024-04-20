@@ -1140,7 +1140,7 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+alt+s",
+    "key": "shift+alt+u",
     "command": "workbench.action.focusPreviousGroup"
   },
   {
@@ -1217,5 +1217,9 @@
 {
   "key": "ctrl+`",
   "command": "workbench.action.focusLastEditorGroup"
+},
+{
+  "key": "shift+alt+p",
+  "command": "workbench.action.focusNextGroup"
 },
 ]

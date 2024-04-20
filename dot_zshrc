@@ -3,6 +3,10 @@ KEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir vi-mode)
 
 
+alias assets="/home/rtviii/dev/riboxyz/ribctl/assets"
+alias stats="wq  ~/dev/stats_exercises/"
+alias litefarm="~/dev/LiteFarmDataDashboard/"
+alias downs="~/Downloads/"
 
 function atm(){
 exiftool $1 | grep -E '^(Author|Title|Metadata Date)'| \
@@ -12,20 +16,31 @@ sed -e 's/.*: //'
 
 #export XDG_SESSION_TYPE=X11
 zmodload zsh/mapfile
+alias ubcvpn='/opt/cisco/anyconnect/bin/vpnui'
+
+alias ubc="cd /home/rtviii/notes/ubc2024"
+alias school="cd /home/rtviii/notes/ubc2024"
+
+
+
+alias chimerax='/opt/chimerax/bin/ChimeraX'
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 alias pics="~/Pictures/"
 
+alias prefs_sioyek="vim ~/.config/sioyek/prefs_user.config"
+alias keys_sioyek="vim ~/.config/sioyek/keys_user.config"
 alias pacman_sync="sudo pacman -Syy && sudo pacman -Syu"
-alias rnext="~/dev/ribxz_next/"
 alias pymol="sh -c /home/rtviii/dev/pymol_lib/pymol"
 
 export PATH="${PATH}:$HOME/bin/:$HOME/bin/scripts/"
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=nvim
 
+export GEMMI_PATH="~/dev/gemmi/"
 export PYMOL_LIB=~/dev/pymol_lib
 export PYTHONPATH="${PYTHONPATH}:${PYMOL_LIB}/modules"
+#export PYTHONPATH="${PYTHONPATH}:/opt/chimerax/lib/python3.9/site-packages/"
 export RIBETL_DATA=~/dev/RIBETL_DATA/
 
 alias conf="$HOME/.config/"
@@ -69,8 +84,7 @@ function _open_zshrc(){nvim ~/.zshrc};
     zle -N _open_zshrc; bindkey  '^[T' _open_zshrc
 
 bindkey -s '^[Y' 'source ~/.zshrc ^M';
-
-bindkey -s '^[>' 'docker container exec -it   /bin/bash';
+bindkey -s '^[>' 'docker container exec -it  /bin/bash';
 
 function _nvim_here(){ nvim . };
 zle -N _nvim_here; bindkey '^[r' _nvim_here
@@ -109,20 +123,8 @@ alias rbsd="/home/rxz/dev/ribosome-docker/"
 
 
 alias GG="echo $GIT_TOKEN | xo"
-export sb_pg="PGPASSWORD=$sb_pg_pwd psql -U $sb_pg_usr -h $sb_pg_host -p $sb_pg_port -d $sb_pg_db --set=sslmode=require --set=sslrootcert=$sb_pg_sslcert"
-#alias sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
-export sb_rds="redis-cli -u rediss://$sb_rds_usr:$sb_rds_pwd@$sb_rds_host:$sb_rds_port --tls -n 1"
-
-# [sb-be-3-redpanda-dev]: 164.92.237.90
-alias sbrptunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 164.92.237.90'
-
-alias ccpy='cargo clippy'
-alias sbkowl='echo "Starting Kowl"; docker run --network=host -p 8080:8080 -e KAFKA_BROKERS=localhost:9092 quay.io/cloudhut/kowl:master'
-alias sbkfkboth='ssh -f -N -g -L 8080:127.0.0.1:8080 -L 9092:127.0.0.1:9092 sb-gateway'
-alias sbkfktunnel='ssh -f -N -g -L 9092:127.0.0.1:9092 sb-gateway'
-
 alias ribxzfigs='cd /home/rxz/dev/docs/ribosomexyz/paper_figs'
-alias ribxz="cd ~/dev/riboxyz/ && source ~/dev/ribxzvenv/bin/activate"
+alias ribxz="cd ~/dev/riboxyz/ && source ~/dev/riboxyz/ribxzvenv/bin/activate"
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias desk="cd ~/Desktop"
@@ -166,7 +168,7 @@ alias htpstatus="sudo systemctl status apache2"
 alias secrets='nvim ~/.ssh/secrets.env'
 alias ssc="source ~/.ssh/secrets.env"
 alias dev="cd ~/dev/"
-alias docs="cd ~/dev/docs/;"
+alias docs="cd ~/notes/docs/"
 alias macs="cd ~/.emacs.d"
 
 
@@ -246,8 +248,7 @@ alias nst="npm start"
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Ribosome
 
 alias ribetl="cd ${RIBETL_DATA}"
-alias bend="cd /home/$(whoami)/dev/riboxyzbackend && vup"
-alias fend="cd /home/$(whoami)/dev/ribosome.xyz-frontend.ts"
+alias fend="cd /home/rtviii/dev/ribxz_front"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯NEO4J
 #

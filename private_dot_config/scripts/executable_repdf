@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+import os
+import exiftool
+import argparse
+
+parser = argparse.ArgumentParser(description='Title argparse')
+parser.add_argument('-info','--i', action='store_true',default=False, help='Print `exiftool` info.')
+parser.add_argument('-r','--r', action='store_true',default=False, help='Proceed to rename rename', )
+parser.add_argument('filename',type=str, help='path to document', )
+args = parser.parse_args()
+if not os.path.isfile(args.filename):
+    exit("File not found: {}".format(args.filename))
+
+
+title, author, year  = None,None, None
+with exiftool.ExifToolHelper() as et:
+    meta   = et.get_metadata(os.path.join(os.getcwd(), args.filename))[0]
+    if args.i:
+        for k,v in meta.items():
+            print(k,":\t\t", v)
+    if "PDF:Author" in meta and meta["PDF:Author"] != "":
+        author = meta["PDF:Author"]
+        F_author = 1
+
+    if "XMP:MetadataDate" in meta and meta["XMP:MetadataDate"] != "":
+        year   = meta["XMP:MetadataDate"]
+    elif "PDF:CreationDate" in meta and meta["PDF:CreationDate"] != "":
+        year  = meta["PDF:CreationDate"]
+    elif "PDF:CreateDate" in meta and meta["PDF:CreateDate"] != "":
+        year  = meta["PDF:CreateDate"]
+
+    if  "XMP:Title" in meta and meta["XMP:Title"] != "":
+        title  = meta["XMP:Title"]
+    elif "PDF:Title" in meta and meta["PDF:Title"] != "":
+        title  = meta["PDF:Title"]
+
+
+    # ---------- Warning string 
+    warning = []
+    if title == None:
+        warning.append("TITLE")
+    else:
+        title    = ''.join([i if ord(i) < 128 else '_' for i in title.lower().replace(" ","_")])
+
+    if author == None: 
+        warning.append("AUTHOR")
+    else: 
+        author = author.split(" ")[-1]
+
+    if year == None:
+        warning.append("YEAR")
+    else:
+        year     = year.split(":")[0]
+
+    if None in [title, author, year]:
+        print("[\x1b[33mWARNING\x1b[0m]: could not find {} among the metadata.".format(", ".join(warning)))
+    # ---------- Warning string 
+
+    # ----------------Format of the new name ------------------
+    new_name = (year +"_" if year !=None else "")   + (author +"_" if author != None else "" ) + (title if title!=None else "") + ".pdf"
+    # ----------------Format of the new name ------------------
+
+    former_path = os.path.normpath(os.path.join(os.getcwd(), args.filename))
+    new_path    = os.path.join(os.path.dirname(former_path), new_name)
+
+    _fps        = "{}/{}".format(os.path.dirname(former_path),os.path.basename(former_path))
+    _nps        = "{}/\x1b[3{}m{}\x1b[0m".format(os.path.dirname(former_path), 2 if None not in [title, author, year] else 1, new_name)
+
+    if args.r:
+        print("Renaming \t{} \nto  \t\t{}\nProceed? y/n".format(_fps,_nps))
+        if input() != "y":
+            ...
+        else:
+            os.rename(former_path, new_path)
+

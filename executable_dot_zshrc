@@ -1,6 +1,48 @@
-ZSH_DISABLE_COMPFIX=true
-KEYTIMEOUT=1
+ZSH_DISABLE_COMPFIX=trueKEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir vi-mode)
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯ PROMPT -⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
+unsetopt BEEP
+setopt extendedglob
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
+ precmd() {
+     vcs_info
+     }
+
+
+export PATH=/opt/bin/:$PATH
+autoload colors && colors
+
+PROMPT_COMMAND=prompt_fullpath_toggle
+
+export FULL_PATH_PROMPT="0"
+function prompt_fullpath_toggle() {
+    if [ "$FULL_PATH_PROMPT" = "0" ]; then
+        export PS1="%F{blue}ᢹ%f %n [ %F{green}%10d%f ]${vcs_info_msg_1_} "
+        export FULL_PATH_PROMPT="1"
+        zle reset-prompt
+
+    elif [ "$FULL_PATH_PROMPT" = "1" ]; then
+        export PS1="%F{blue}ᢹ%f %n [ %F{green}%2d%f ]${vcs_info_msg_1_} "
+        export FULL_PATH_PROMPT="0"
+        zle reset-prompt
+    fi
+};
+    zle -N prompt_fullpath_toggle; bindkey  '^[Q' prompt_fullpath_toggle
+
+PROMPT="%F{blue}ᢹ%f %n [%F{green}%2d%f]${vcs_info_msg_1_} "
+## for foreign machines(cyan hostname prefixed to user)
+#PROMPT='%F{blue}ᢹ%f %F{cyan}%M%f.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
+RPROMPT="${vcs_info_msg_0_} "
+
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
+
+
+
 
 
 alias assets="/home/rtviii/dev/riboxyz/ribctl/assets"
@@ -9,9 +51,11 @@ alias litefarm="~/dev/LiteFarmDataDashboard/"
 alias downs="~/Downloads/"
 
 function atm(){
-exiftool $1 | grep -E '^(Author|Title|Metadata Date)'| \
-sed -e 's/.*: //'
+    exiftool $1 | grep -E '^(Author|Title|Metadata Date)'| \
+    sed -e 's/.*: //'
 }
+
+
 
 
 #export XDG_SESSION_TYPE=X11
@@ -142,7 +186,6 @@ bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 
 function tmux_last_session(){
-
     LAST_TMUX_SESSION=$(tmux list-sessions | awk -F ":" '{print$1}' | tail -n1);
     tmux attach -t $LAST_TMUX_SESSION
 }
@@ -311,26 +354,6 @@ alias gpgssh='unset SSH_AGENT_PID;if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; 
 alias tfldocs='~/dev/TFL/docs'
 alias rpkfk='cd ~/dev/sb/redpanda-kafka-python'
 
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯ PROMPT -⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
-unsetopt BEEP
-setopt extendedglob
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
- precmd() {
-     vcs_info
-     }
-
-
-export PATH=/opt/bin/:$PATH
-
-PROMPT='%F{blue}ᢹ%f %M.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
-RPROMPT='${vcs_info_msg_0_} '
-
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 #
 #
 

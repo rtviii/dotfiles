@@ -1,8 +1,17 @@
 ZSH_DISABLE_COMPFIX=trueKEYTIMEOUT=1
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir vi-mode)
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯ PROMPT -⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
+export ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+export PATH="${PATH}:$HOME/bin/:$HOME/bin/scripts/"
+export XDG_CONFIG_HOME=$HOME/.config
+export PATH=/opt/bin/:$PATH
+export EDITOR=nvim
 unsetopt BEEP
 setopt extendedglob
+export RUSTFLAGS="-A dead_code -A unused_imports"
+
+
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯ PROMPT -⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
@@ -14,65 +23,47 @@ zstyle ':vcs_info:git*' formats "[%F{green}%b%f]"
      }
 
 
-export PATH=/opt/bin/:$PATH
 autoload colors && colors
 
 PROMPT_COMMAND=prompt_fullpath_toggle
-
+PROMPT="%F{blue}ᢹ%f %n [%F{green}%2d%f]${vcs_info_msg_1_} "
+RPROMPT="${vcs_info_msg_0_} "
+#PROMPT='%F{blue}ᢹ%f %F{cyan}%M%f.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
+## <<- Enable on a foreign machine to highlight the hostname.
 export FULL_PATH_PROMPT="0"
 function prompt_fullpath_toggle() {
     if [ "$FULL_PATH_PROMPT" = "0" ]; then
         export PS1="%F{blue}ᢹ%f %n [ %F{green}%10d%f ]${vcs_info_msg_1_} "
+        RPROMPT="${vcs_info_msg_0_} "
         export FULL_PATH_PROMPT="1"
         zle reset-prompt
 
     elif [ "$FULL_PATH_PROMPT" = "1" ]; then
         export PS1="%F{blue}ᢹ%f %n [ %F{green}%2d%f ]${vcs_info_msg_1_} "
+        RPROMPT="${vcs_info_msg_0_} "
         export FULL_PATH_PROMPT="0"
         zle reset-prompt
     fi
 };
     zle -N prompt_fullpath_toggle; bindkey  '^[Q' prompt_fullpath_toggle
 
-PROMPT="%F{blue}ᢹ%f %n [%F{green}%2d%f]${vcs_info_msg_1_} "
-## for foreign machines(cyan hostname prefixed to user)
-#PROMPT='%F{blue}ᢹ%f %F{cyan}%M%f.%B%n%b[ %F{green}%2d%f ] ${vcs_info_msg_1_} '
-RPROMPT="${vcs_info_msg_0_} "
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 
 
-
-
-
 alias assets="/home/rtviii/dev/riboxyz/ribctl/assets"
-alias stats="wq  ~/dev/stats_exercises/"
-alias litefarm="~/dev/LiteFarmDataDashboard/"
+alias litefarm="cd /home/rtviii/dev/LiteFarmDashboard_New"
 alias downs="~/Downloads/"
-
-function atm(){
-    exiftool $1 | grep -E '^(Author|Title|Metadata Date)'| \
-    sed -e 's/.*: //'
-}
-
-
-
 
 #export XDG_SESSION_TYPE=X11
 zmodload zsh/mapfile
-alias ubcvpn='/opt/cisco/anyconnect/bin/vpnui'
 
 alias ubc="cd /home/rtviii/notes/ubc2024"
 alias school="cd /home/rtviii/notes/ubc2024"
 
-alias papers="~/papers/"
-alias books="~/books/"
-alias notes="~/notes/"
 
 
 alias chimerax='/opt/chimerax/bin/ChimeraX'
-export ZSH=~/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 alias pics="~/Pictures/"
 
 alias prefs_sioyek="vim ~/.config/sioyek/prefs_user.config"
@@ -80,48 +71,59 @@ alias keys_sioyek="vim ~/.config/sioyek/keys_user.config"
 alias pacman_sync="sudo pacman -Syy && sudo pacman -Syu"
 alias pymol="sh -c /home/rtviii/dev/pymol_lib/pymol"
 
-export PATH="${PATH}:$HOME/bin/:$HOME/bin/scripts/"
-export XDG_CONFIG_HOME=$HOME/.config
-export EDITOR=nvim
-
 export GEMMI_PATH="~/dev/gemmi/"
 export PYMOL_LIB=~/dev/pymol_lib
 export PYTHONPATH="${PYTHONPATH}:${PYMOL_LIB}/modules"
 #export PYTHONPATH="${PYTHONPATH}:/opt/chimerax/lib/python3.9/site-packages/"
-export RIBETL_DATA=~/dev/RIBETL_DATA/
+export RIBETL_DATA='~/dev/RIBETL_DATA/'
 
-alias conf="$HOME/.config/"
-alias ribassets="~/dev/riboxyz/ribctl/assets/"
-
-alias ribres="~/dev/ribosome-resources/"
-
-RUSTFLAGS="-A dead_code -A unused_imports"
 
 
 alias yd="yarn dev"
-
-alias extraconf="vim ~/.config/extraconf.md"
-alias ii="sudo pacman -S"
-alias djdk="~/dev/docker_together/"
-alias ritual="ssh -l rxz 24.86.198.77"
-
 alias zt="zathura"
 alias kittyconf="vim ~/.config/kitty/kitty.conf"
+alias zshrc="nvim ~/.zshrc"
 alias zshsrc="source ~/.zshrc"
 alias lfrc="vim $HOME/.config/lf/lfrc"
+alias dev="cd ~/dev/"
+alias docs="cd ~/notes/docs/"
+alias papers="~/papers/"
+alias books="~/books/"
+alias notes="~/notes/"
+alias rr='lfcd'
 
 
-function sb_prod_tunnel(){
-    ssh -f -N -g -L 29092:127.0.0.1:29092 -N -L 8080:127.0.0.1:8080 sb-rp-prod
+
+
+alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
+alias actxlib="/home/$(whoami)/dev/sb-actix-lib"
+alias GG="echo $GIT_TOKEN | xo"
+alias ribxz="cd ~/dev/riboxyz/ && source ~/dev/riboxyz/ribxzvenv/bin/activate"
+alias desk="cd ~/Desktop"
+alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
+
+
+
+
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
+#bindkey -v "^[K"
+#bindkey -v "^[J"
+bindkey -M vicmd 'k' history-beginning-search-backward
+bindkey -M vicmd 'j' history-beginning-search-forward
+
+function tmux_last_session(){
+    LAST_TMUX_SESSION=$(tmux list-sessions | awk -F ":" '{print$1}' | tail -n1);
+    tmux attach -t $LAST_TMUX_SESSION
 }
+bindkey -s '^s' 'tmux_last_session ^M'
 
-function sb_dev_tunnel(){
-    ssh -f -N -g -L 9092:127.0.0.1:9092 -N -L 8080:127.0.0.1:8080 sb-rp-dev
+
+alias xo="xclip -selection clipboard"
+
+function atm(){
+    exiftool $1 | grep -E '^(Author|Title|Metadata Date)'| \
+    sed -e 's/.*: //'
 }
-
-
-
-
 
 function _code_here(){code .};
     zle -N _code_here; bindkey  '^[W' _code_here
@@ -147,76 +149,19 @@ function crun(){
 
 bindkey -s '^o' 'cargo run ^M'
 bindkey -s '^t' 'cargo test -- --nocapture ^M'
-
-
-
-export bend="/home/rxz/dev/riboxyzbackend"
-alias grr='gcc -o go_compiled go.c -lncurses; ./go_compiled'
-
-alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
-
-alias sbcli="/home/rxz/dev/SolanaBeach/sb-backend-3-cli"
-alias sbgsr="/home/rxz/dev/SolanaBeach/sb-backend-3-geyser-plugin"
-
-alias curse="/home/rxz/dev/curses"
-alias nightmoves="/home/rxz/dev/nightmoves"
-alias cmprs="/home/rxz/dev/sb-compression-benchmarks"
-alias actxlib="/home/rxz/dev/sb-actix-lib"
-alias sbb="/home/rxz/dev/SolanaBeach"
-alias sblib="/home/rxz/dev/SolanaBeach/sb-backend-3-lib"
-alias thrd="/home/rxz/dev/threading"
-alias rbsd="/home/rxz/dev/ribosome-docker/"
-
-
-alias GG="echo $GIT_TOKEN | xo"
-alias ribxzfigs='cd /home/rxz/dev/docs/ribosomexyz/paper_figs'
-alias ribxz="cd ~/dev/riboxyz/ && source ~/dev/riboxyz/ribxzvenv/bin/activate"
-
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias desk="cd ~/Desktop"
-alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
-
-
-
-
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
-#bindkey -v "^[K"
-#bindkey -v "^[J"
-bindkey -M vicmd 'k' history-beginning-search-backward
-bindkey -M vicmd 'j' history-beginning-search-forward
-
-function tmux_last_session(){
-    LAST_TMUX_SESSION=$(tmux list-sessions | awk -F ":" '{print$1}' | tail -n1);
-    tmux attach -t $LAST_TMUX_SESSION
-}
-bindkey -s '^s' 'tmux_last_session ^M'
-
-
-alias xo="xclip -selection clipboard"
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 
 
 alias szz="du -ah --max-depth=1 . | sort"
 alias vup='VENVS=($(ls | grep *venv)); source $(pwd)/${VENVS[1]}/bin/activate;'
-alias sagu1="sudo apt-get update"
-alias sagu2="sudo apt-get upgrade"
 
-alias zshrc="nvim ~/.zshrc"
 alias ribscp="scp -i ~/dev/docs/AWS/ribosome.pem"
-
-alias htpconf="cd /etc/apache2"
 alias htpstatus="sudo systemctl status apache2"
 
 alias nginxconfs="cd /etc/nginx/conf.d"
 alias nginxconf="sudo vim /etc/nginx/nginx.conf"
 
-
-
 alias secrets='nvim ~/.ssh/secrets.env'
-alias ssc="source ~/.ssh/secrets.env"
-alias dev="cd ~/dev/"
-alias docs="cd ~/notes/docs/"
-alias macs="cd ~/.emacs.d"
 
 
 
@@ -234,6 +179,8 @@ alias plugs="nvim ~/.config/nvim/lua/plugins.lua"
 alias vim="nvim"
 alias v="nvim"
 
+alias ll="nvim ~/.config/nvim/lua/init.lua"
+alias vv="nvim ~/.config/nvim/init.vim"
 
 
 #----------------------[TMUX]-----------------------------------------
@@ -252,19 +199,14 @@ alias xx="exit"
 alias jctl="sudo journalctl -e -u"
 alias p3="python3"
 
-
-alias mkvenv='python3 -m virtualenv --python=/usr/bin/python3.10'
 alias countem="sed 's/,/ /g' | wc -w"
 alias keys="ls -la ~/.ssh | awk -F \" \" '{if (NR>2) {print\$9}}'"
 #----------------------GIT-----------------------------------------
-
 
 alias gsw="git switch"
 alias gs="git status"
 alias gc="git checkout"
 alias gcb="git checkout -b"
-alias ll="nvim ~/.config/nvim/lua/init.lua"
-alias vv="nvim ~/.config/nvim/init.vim"
 
 #Creates a new branch and switches to it right away
 alias gswc="git switch -c" #create and switch into
@@ -275,20 +217,7 @@ alias gitrmall="git ls-tree -r master --name-only|xargs git rm -r --cached"
 #------------------------------------------------------------------
 alias ee='nautilus .'
 alias sshconfig="vim /home/$(whoami)/.ssh/config"
-
 alias sockeye="ssh rtviii@sockeye.arc.ubc.ca"
-alias cv="~/dev/cv/"
-
-alias poly="~/dev/polygen; vup"
-
-alias i3conf="nvim /home/$(whoami)/.config/i3/config"
-alias i3reload="i3-msg reload && i3-msg restart"
-alias shrestart="sudo service ssh restart"
-
-alias confs="cd ~/.config/"
-alias rr='lfcd'
-
-alias biodata="cd /home/$(whoami)/dev/biodata-integration-proposal"
 alias wq="code ."
 alias nst="npm start"
 
@@ -297,38 +226,20 @@ alias nst="npm start"
 alias ribetl="cd ${RIBETL_DATA}"
 alias fend="cd /home/rtviii/dev/ribxz_front"
 
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯NEO4J
-#
-NEO4J_HOME="/var/lib/neo4j/"
-alias mkvenv='python3 -m virtualenv'
-alias neoconf="sudo nvim /etc/neo4j/neo4j.conf"
-alias neolog="sudo nvim /var/log/neo4j"
-alias neodata="cd /var/lib/neo4j/data"
-
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯
-
-alias neologin="sudo -u neo4j /bin/cypher-shell -u neo4j -p 55288"
-alias neostop="sudo systemctl stop neo4j"
-alias neostart="sudo systemctl start neo4j"
-alias neostat="sudo systemctl status  neo4j"
-alias neoimport="/var/lib/neo4j/import"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
 alias dk="docker"
+alias dc="docker-compose"
 alias dkls="docker container ls"
 alias dkc="docker container"
 alias dkn="docker network"
 alias dkv="docker volume"
 alias dki="docker image"
-alias dke="docker execute -it"
-alias dc="docker-compose"
+alias dks="docker system"
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
-alias aws='cd /home/rxz/dev/docs/AWS'
 alias rib='ssh ubuntu@ribosome.xyz'
-alias cifparser='cd ~/dev/rust_train/cifparser'
-
 
 alias ribrsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
 alias ribupdatersync="rsync -hvrPt -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
@@ -349,16 +260,6 @@ export NVM_DIR="$HOME/.nvm"
 
 
 
-alias gpgssh='unset SSH_AGENT_PID;if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then;  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";fi;export GPG_TTY=$(tty);gpg-connect-agent updatestartuptty /bye >/dev/null;'
-#
-alias tfldocs='~/dev/TFL/docs'
-alias rpkfk='cd ~/dev/sb/redpanda-kafka-python'
-
-#
-#
-
-
-
 
 exists()
 {
@@ -366,7 +267,6 @@ exists()
 }
 
 function used_plugins_zsh(){
-
     my_plugins=(
         "https://github.com/zsh-users/zsh-syntax-highlighting"
         "https://github.com/softmoth/zsh-vim-mode"
@@ -375,58 +275,31 @@ function used_plugins_zsh(){
         "https://github.com/zsh-users/zsh-history-substring-search"
         )
     for p in ${my_plugins[@]}; do git -C $ZSH/plugins clone $p; done
-
 }
 
 
 function listppas(){
-
-if exists apt; then
-    grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
-else
-  echo 'Seems like we are not in buntu anymore, Toto.'
-fi
-
+    if exists apt; then
+        grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
+    else
+      echo 'Seems like we are not in buntu anymore, Toto.'
+    fi
 }
 
-function addconfigs(){
-
-# Regular installs:
-https://github.com/ranger/ranger.git
-https://github.com/zsh-users/zsh-syntax-highlighting
-https://github.com/softmoth/zsh-vim-mode
-https://github.com/zsh-users/zsh-autosuggestions
-https://github.com/zsh-users/zsh-history-substring-search
-
-
-
-dot add ~/.emacs.d/init.el
-dot add ~/.config/i3
-dot add ~/.config/ranger/{rifle,rc}.conf
-dot add ~/.config/nvim
-dot add ~/.tmux.conf
-dot add ~/.zshrc
-dot add ~/.config/Code/User/settings.json
-dot add ~/.config/Code/User/keybindings.json
-}
 
 newrepo(){
  curl -i -H "Authorization: token $GIT_TOKEN" -d "{\"name\": \"$1\", \"private\": \"$2\"}" https://api.github.com/user/repos  | grep "clone_url"
 }
 
-
-
-# name it "cline"
 function cl(){
 
-
-if [[ "$#" == "1" ]];
-then
-    cat $1
-elif [[ "$#" == "2" ]]
-then
-    LAST_LINE=$(($1+1));   sed -n '$1,$1p;$LAST_LINEq' "$2"
-fi
+    if [[ "$#" == "1" ]];
+    then
+        cat $1
+    elif [[ "$#" == "2" ]]
+    then
+        LAST_LINE=$(($1+1));   sed -n '$1,$1p;$LAST_LINEq' "$2"
+    fi
 }
 
 
@@ -459,12 +332,6 @@ fi
 
 export PATH=$PATH:/usr/local/go/bin
 
-[ -f "/home/rxz/.ghcup/env" ] && source "/home/rxz/.ghcup/env" # ghcup-env
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rxz/dev/SolanaBeach/sb-backend-3-lib/google-cloud-sdk/completion.zsh.inc'; fi
 alias sv='sudo vim'
 alias nginxreload='sudo nginx -s reload'
+alias hg="history | grep "

@@ -17,5 +17,5 @@
 lfcd () {
     # `command` is needed in case `lfcd` is aliased to `lf`
     #    /path/to/lf -last-dir-path=$tmp $argv
-    cd "$(command lf -print-last-dir "$@")"
+    z "$(command lf -print-last-dir "$@")"
 }

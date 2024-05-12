@@ -11,6 +11,10 @@ setopt extendedglob
 export RUSTFLAGS="-A dead_code -A unused_imports"
 
 
+# --------------- TEMPORARY CONFIGS
+export NEO4J_MOUNTPATH=/opt/ribxz_neo4j_volume
+# --------------- TEMPORARY CONFIGS
+
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯ PROMPT -⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -52,14 +56,14 @@ function prompt_fullpath_toggle() {
 
 
 alias assets="/home/rtviii/dev/riboxyz/ribctl/assets"
-alias litefarm="cd /home/rtviii/dev/LiteFarmDashboard_New"
+alias litefarm="z /home/rtviii/dev/LiteFarmDashboard_New"
 alias downs="~/Downloads/"
 
 #export XDG_SESSION_TYPE=X11
 zmodload zsh/mapfile
 
-alias ubc="cd /home/rtviii/notes/ubc2024"
-alias school="cd /home/rtviii/notes/ubc2024"
+alias ubc="z /home/rtviii/notes/ubc2024"
+alias school="z /home/rtviii/notes/ubc2024"
 
 
 
@@ -75,7 +79,7 @@ export GEMMI_PATH="~/dev/gemmi/"
 export PYMOL_LIB=~/dev/pymol_lib
 export PYTHONPATH="${PYTHONPATH}:${PYMOL_LIB}/modules"
 #export PYTHONPATH="${PYTHONPATH}:/opt/chimerax/lib/python3.9/site-packages/"
-export RIBETL_DATA='~/dev/RIBETL_DATA/'
+export RIBETL_DATA="/home/$(whoami)/dev/RIBETL_DATA/"
 
 
 
@@ -85,8 +89,8 @@ alias kittyconf="vim ~/.config/kitty/kitty.conf"
 alias zshrc="nvim ~/.zshrc"
 alias zshsrc="source ~/.zshrc"
 alias lfrc="vim $HOME/.config/lf/lfrc"
-alias dev="cd ~/dev/"
-alias docs="cd ~/notes/docs/"
+alias dev="z ~/dev/"
+alias docs="z ~/notes/docs/"
 alias papers="~/papers/"
 alias books="~/books/"
 alias notes="~/notes/"
@@ -98,8 +102,8 @@ alias rr='lfcd'
 alias tunnels="sudo lsof -i -n | egrep '\<ssh\>'"
 alias actxlib="/home/$(whoami)/dev/sb-actix-lib"
 alias GG="echo $GIT_TOKEN | xo"
-alias ribxz="cd ~/dev/riboxyz/ && source ~/dev/riboxyz/ribxzvenv/bin/activate"
-alias desk="cd ~/Desktop"
+alias ribxz="z ~/dev/riboxyz/ && source ~/dev/riboxyz/ribxzvenv/bin/activate"
+alias desk="z ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
 
 
@@ -158,7 +162,7 @@ alias vup='VENVS=($(ls | grep *venv)); source $(pwd)/${VENVS[1]}/bin/activate;'
 alias ribscp="scp -i ~/dev/docs/AWS/ribosome.pem"
 alias htpstatus="sudo systemctl status apache2"
 
-alias nginxconfs="cd /etc/nginx/conf.d"
+alias nginxconfs="z /etc/nginx/conf.d"
 alias nginxconf="sudo vim /etc/nginx/nginx.conf"
 
 alias secrets='nvim ~/.ssh/secrets.env'
@@ -223,14 +227,14 @@ alias nst="npm start"
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Ribosome
 
-alias ribetl="cd ${RIBETL_DATA}"
-alias fend="cd /home/rtviii/dev/ribxz_front"
+alias ribetl="z ${RIBETL_DATA}"
+alias fend="z /home/rtviii/dev/ribxz_front"
 
 
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
 alias dk="docker"
 alias dc="docker-compose"
-alias dkls="docker container ls"
+alias dkls="docker container ls -a"
 alias dkc="docker container"
 alias dkn="docker network"
 alias dkv="docker volume"
@@ -335,3 +339,7 @@ export PATH=$PATH:/usr/local/go/bin
 alias sv='sudo vim'
 alias nginxreload='sudo nginx -s reload'
 alias hg="history | grep "
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias z='z'
+eval "$(zoxide init zsh)"

@@ -1,24 +1,36 @@
+
+# sudo pmset -a disablesleep 1
+
+
 ZSH_DISABLE_COMPFIX=true
-
 KEYTIMEOUT=0
-
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir zsh-vim-mode poetry)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions history-substring-search last-working-dir zsh-vim-mode)
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export EDITOR=nvim
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME=$HOME/.config
+export TORCH_HOME="~/.cache/torch/"
 
 RUSTFLAGS="-A dead_code -A unused_imports"
 
-#export PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages/pymol"
+export PYTHONPATH="${PYTHONPATH}:/opt/homebrew/Cellar/pymol/2.5.0/libexec/lib/python3.11/site-packages/pymol/:/opt/homebrew/Cellar/pymol/2.5.0/libexec/lib/python3.11/site-packages/pymol2/:"
+export PYTHONPATH="${PYTHONPATH}:/Users/rtviii/dev/riboxyz/pymol_source/modules"
 
+export LDFLAGS="-L/opt/homebrew/lib"
+export CPPFLAGS="-I/opt/homebrew/include"
+
+
+alias sk="sioyek"
+alias papers="/Users/rtviii/notes/papers"
 alias pws="/Users/rtviii/dev/rtviii.github.io"
 alias dl="~/dev/dl/"
-alias notes="$HOME/dev/notes"
+alias notes="$HOME/notes"
+alias ubc="$HOME/notes/ubc/"
 alias desk="cd ~/Desktop"
 alias seefonts="fc-list | awk '{\$1=""}1' | cut -d: -f1 | sort| uniq"
-
+alias du="ncdu"
+alias ee="open ."
 
 alias xo="pbcopy"
 alias xp="pbpaste"
@@ -30,12 +42,11 @@ alias htpconf="cd /etc/apache2"
 alias htpstatus="sudo systemctl status apache2"
 
 
-alias secrets='vim ~/.ssh/secrets.env'
+
 alias dev="cd ~/dev/"
+alias docs="cd ~/notes/docs"
+alias npet="/Users/rtviii/dev/riboxyz/ribctl/lib/npet"
 
-
-
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 # *************************************** CONFIGS & RCs ****************************************************
 #-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯⋯
 
@@ -80,7 +91,6 @@ alias lfrc="nvim ~/.config/lf/lfrc"
 #
 #
 alias wq="code ."
-alias nst="npm start"
 #
 #
 alias xx="exit"
@@ -89,27 +99,9 @@ alias p3="python3"
 
 
 
-alias sockeye="ssh rtviii@sockeye.arc.ubc.ca"
 alias cv="~/dev/cv/"
-alias confs="cd ~/.config/"
 
-
-##-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯NEO4J
-##
-#NEO4J_HOME="/var/lib/neo4j/"
-#alias mkvenv='python3 -m virtualenv'
-#alias neoconf="sudo nvim /etc/neo4j/neo4j.conf"
-#alias neolog="sudo nvim /var/log/neo4j"
-#alias neodata="cd /var/lib/neo4j/data"
-
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯
-
-# alias neostop="sudo systemctl stop neo4j"
-# alias neostart="sudo systemctl start neo4j"
-# alias neostat="sudo systemctl status  neo4j"
-# alias neoimport="/var/lib/neo4j/import"
-
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Docker
+alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
 alias dk="docker"
 alias dkls="docker container ls"
 alias dkc="docker container"
@@ -120,28 +112,29 @@ alias dke="docker execute -it"
 alias dc="docker-compose"
 
 
-#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Ribosome
-alias rib='ssh ubuntu@ribosome.xyz'
-alias ribrsync="rsync -avzr -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
-alias ribupdatersync="rsync -hvrPt -e \"ssh -i ~/dev/docs/AWS/ribosome.pem\""
-alias ribxz="~/dev/riboxyz/ && vup"
+alias fend="~/dev/ribxz_fend_v1/"
+alias fendt="~/dev/fend_tubulinxyz/"
 
+#-⋯⋯⋅⋱⋰⋆⋅⋅⋄⋅⋅∶⋅⋅⋄▫▪▭┈┅✕⋅⋅⋄⋅⋅✕∶⋅⋅⋄⋱⋰⋯⋯Ribosome
+
+
+alias cpp="clang++"
 # -----------------------------------------------------
 # ------------------------------------------- FUNCTIONS
 # -----------------------------------------------------
-function sb_prod_tunnel(){
-    ssh -f -N -g -L 29092:127.0.0.1:29092 -N -L 8080:127.0.0.1:8080 sb-rp-prod
-}
-
-function sb_dev_tunnel(){
-    ssh -f -N -g -L 9092:127.0.0.1:9092 -N -L 8080:127.0.0.1:8080 sb-rp-dev
-}
 
 
 
 function _open_zshrc(){nvim ~/.zshrc};
     zle -N _open_zshrc; bindkey -v '^[t' _open_zshrc
 
+function _source_zshrc(){ source ~/.zshrc };
+    zle -N _source_zshrc; bindkey -v '^[y' _source_zshrc
+
+
+
+function _open_planner(){ code ~/dev/notes/plan.md};
+    zle -N _open_planner; bindkey -v '^[f' _open_planner
 
 
 
@@ -151,22 +144,20 @@ function xtob(){
 }
 
 
+function nvim_here(){ nvim . }; zle -N nvim_here;
+    bindkey -v '^[r' nvim_here  # Option+r
+
+function tmux_last(){ tmux_last_session }; zle -N tmux_last;
+    bindkey -v '^[s' tmux_last  # Option+s
+
+
+
+
 function tmux_last_session(){
     LAST_TMUX_SESSION=$(tmux list-sessions | awk -F ":" '{print$1}' | tail -n1);
     tmux attach -t $LAST_TMUX_SESSION
 }
 
-
-function _nvim_here(){ nvim . }; zle -N _nvim_here;
-    bindkey -v '^[r' _nvim_here
-
-
-function _tmux_last(){ tmux_last_session  }; zle -N _tmux_last;
-    bindkey -v '^s' _tmux_last;
-
-
-function _source_zshrc(){ source ~/.zshrc };
-    zle -N _source_zshrc; bindkey -v '^[y' _source_zshrc;
 
 
 
@@ -217,17 +208,32 @@ function newrepo(){
 # -----------------------------------------------------
 
 
-export PATH="/usr/local/cuda-11.1/bin:$PATH"
 export PATH="~/.actin/{*}:$PATH"
-export PATH="/home/rxz/.local/share/solana/install/active_release/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/home/rxz/zig-linux-x86_64-0.10.0-dev.2220+802f22073:$PATH"
 export GOROOT=/usr/local/go
+export PATH="/Users/rtviii/dev/rosetta.binary.m1.release-371/main/source/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export NVM_DIR="$HOME/.nvm"
-# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
+
+#export PATH="/opt/homebrew/Cellar/gcc/13.2.0/bin:/usr/local/opt/llvm/bin:$PATH"
+#export CXX=/usr/local/bin/c++
+#export CC=/usr/local/bin/gcc
+#export CMAKE_C_COMPILER=/usr/local/bin/gcc
+#export CMAKE_CXX_COMPILER=/usr/local/bin/g++
+
+
+
+list_compilers(){
+
+for compiler in cc c++ gcc g++ clang clang++
+ do
+     which $compiler;
+    echo "\n $compiler: $($compiler --version)";
+ done
+
+}
+
 
 unsetopt BEEP
 setopt extendedglob
@@ -254,27 +260,68 @@ fi
 function _lf(){ lf };
     zle -N _lf; bindkey -v '^[d' _lf
 
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.3
+
+
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="/Users/rtviii/.local/bin:$PATH"
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
-
-
-export RIBETL_DATA=/Users/rtviii/dev/ptc_extraction/RIBETL_DATA
+export RIBETL_DATA=/Users/rtviii/dev/RIBETL_DATA/
 export NEO4J_URI=""
 export NEO4J_USER=""
 export NEO4J_PASSWORD=""
 export NEO4J_DATABASE=""
 
-alias cpp="clang++"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:${PATH}"
+alias pyvenvload='eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"'
+export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
+alias ribxz='cd ~/dev/riboxyz && source .env && vup'
+alias ribetl='~/dev/RIBETL_DATA'
+export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
+alias blog='~/dev/rtviii.github.io'
 
 
 
-export PATH="$PATH:$HOME/.rvm/bin"
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^[z' edit-command-line  # Meta/Cmd + Z
 
+export KEYTIMEOUT=1
+export VISUAL=vim
+export EDITOR="$VISUAL"
+if [ ! -d "$HOME/.vim/tmp" ]; then
+    mkdir -p "$HOME/.vim/tmp"
+fi
+
+
+export CC=/opt/homebrew/opt/llvm/bin/clang
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export ROSETTA="/Users/rtviii/dev/rosetta.binary.m1.release-371/main"
+
+
+alias yd='yarn dev'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/rtviii/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/rtviii/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/rtviii/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/rtviii/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
